@@ -1,0 +1,548 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  &:before, &:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+*::-webkit-input-placeholder{
+  color: #666;
+  opacity: 1;
+}
+ 
+
+*:-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*::-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*:-ms-input-placeholder{
+  color: #666;
+  opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  color: #666;
+}
+body input:required:valid,
+body textarea:required:valid {
+  color: #666;
+}
+
+html, body{
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.text-gray {
+  color: $text-gray;
+}
+
+.text-purple {
+  color: $purple-color;
+}
+
+.text-red {
+  color: $main-color;
+}
+
+// ======= Flex-clases =========
+.d-flex {
+  display: flex;
+}
+
+.d-column {
+  flex-direction: column;
+}
+
+.j-content-between {
+  justify-content: space-between;
+}
+
+.j-content-around {
+  justify-content: space-around;
+}
+
+.j-content-end {
+  justify-content: flex-end;
+}
+
+.j-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+// ========== footer-down =======
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.main {
+  padding: 45px 0 90px;
+}
+
+// ========= btn ========
+.btn__main {
+  padding: 10px 5px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  background: $main-color;
+  border-radius: 20px;
+
+  &:hover {
+    color: #fff;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,ff6d6c+0,ffb712+100 */
+    background: -moz-linear-gradient(45deg, #ff6d6c 0%, #ffb712 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #ff6d6c 0%, #ffb712 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #ff6d6c 0%, #ffb712 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#ffb712', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+    transition: background 0.4s linear;
+  }
+}
+
+.btn__transparent {
+  border: 1px solid #fff;
+  border-radius: 18px;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+
+  &:hover {
+    outline: 0;
+    outline-offset: 0;
+    color: #fff;
+    background-color: $main-color;
+    border-color: $main-color;
+  }
+}
+
+.btn__white {
+  border: 1px solid #909294;
+  border-radius: 18px;
+  padding: 10px 20px;
+  color: #000;
+  font-weight: bold;
+  font-size: 13px;
+
+  &:hover {
+    outline: 0;
+    outline-offset: 0;
+    color: #fff;
+    border: 1px solid $main-color;
+    background-color: $main-color;
+  }
+}
+
+// ============ custom styles ======
+.input {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: $Proxima;
+    font-weight: 400;
+    border: 1px solid $border-gray;
+    color: #000;
+    background: no-repeat;
+    border-radius: 20px;
+}
+
+.checkbox {
+  position: relative;
+
+  .icon-item {
+    position: absolute;
+    top: 4px;
+    left: 2px;
+    color: #fff;
+    font-size: 12px;
+    z-index: 2;
+    cursor: pointer;
+  }
+}
+
+.checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 20px;
+}
+
+.checkbox__text {
+  position: relative;  
+  padding: 0 0 0 25px;
+  cursor: pointer; 
+}
+
+.checkbox__text:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  border: 1px solid #000;
+  transition: .2s;
+}
+
+.checkbox__text:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 15px;
+  height: 15;
+  border-radius: 2px;
+  transition: .2s;
+}
+
+.checkbox input:checked + .checkbox__text {
+  color: $main-color;
+}
+
+.checkbox input:checked + .checkbox__text:before {
+  background: $main-color;
+  border: 1px solid $main-color;
+}
+
+.checkbox input:checked + .checkbox__text:after {
+  left: 26px;
+}
+
+// ============ select =======
+.header__select {
+  .header__select__control {
+    position: relative;
+    width: 100%;
+    height: 41px;
+    margin-bottom: 10px;
+    padding: 2px 20px 2px;
+    font-size: 13px;
+    border: 1px solid #fff;
+    font-weight: 400;
+    color: $light-text-color;
+    background: no-repeat;
+    border-radius: 20px;
+  }
+
+  .header__select__placeholder {
+    color: $light-text-color;
+  }
+  
+  input {
+    border: none;
+    background-color: transparent;
+  }
+
+  .header__select__value-container {
+    padding: 2px 0;
+  }
+
+  &__indicator-separator,
+  .header__select__indicator {
+    display: none;
+  }
+
+  .header__select__menu {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #000;
+    border: none;
+  }
+
+  .header__select__option,
+  .header__select__option:active {
+    position: relative;
+    padding: 3px 12px 3px 22px;
+    background-color: #000;
+    color: #fff;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      background: url('../img/icons/location-white.svg') no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .header__select__option--is-focused,
+  .header__select__option--is-focused:active {
+    position: relative;
+    background-color: #000;
+    color: $main-color;
+
+    &:before {
+      background: url('../img/icons/location.svg') no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+// ========== calendar =========
+.react-date-picker {
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 6px 20px;
+    font-size: 13px;
+    border: 1px solid #fff;
+    font-weight: 400;
+    color: #b2bec3;
+    background: no-repeat;
+    border-radius: 20px;
+  }
+
+  &__clear-button {
+    color: #fff;
+  }
+
+  &__button__icon {
+    stroke: #fff;
+  }
+
+  &__button:enabled:hover .react-date-picker__button__icon {
+      stroke: $main-color;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__calendar {
+    margin-left: -80px;
+  }
+
+  .react-calendar {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #000;
+    border: none;
+
+    .react-calendar__navigation {
+      margin-bottom: 0;
+
+      &__prev2-button,
+      &__next2-button {
+        display: none;
+      }
+
+      &__prev-button,
+      &__next-button {
+        font-size: 28px;
+        background-color: #000;
+        color: $main-color;
+
+        &:hover {
+          background-color: #000;
+          cursor: default;
+        }
+      }
+
+      &__prev-button {
+        text-align: left
+      }
+
+      &__next-button {
+         text-align: right;
+      }
+
+      &__label {
+        font-size: 18px;
+        color: #fff;
+        text-transform: capitalize;
+
+        &:hover {
+          background-color: #000;
+          cursor: default;
+        }
+      }
+    }
+
+    .react-calendar__month-view__weekdays {
+      font-size: 18px;
+      font-weight: 500;
+      color: $light-text-color;
+      opacity: 0.5;
+
+      abbr[title] {
+        text-decoration: none;
+      }
+    }
+
+    .react-calendar__tile {
+      color: #fff;
+      margin: 2px 8px 2px 8px;
+      max-width: 30px !important;
+      height: 28px;
+      padding: 0;
+      text-align: center;
+      line-height: 11px;
+      border-radius: 50%;
+
+      &:disabled {
+        background-color: #000;
+        color: $light-text-color;
+        opacity: 0.5;
+      }
+
+      &:enabled{
+        &:hover {
+          background-color: $main-color;
+          cursor: default!important;
+        }
+      }
+    }
+  }
+}
+
+// ============ location ==========
+.location {
+    .time {
+      width: fit-content;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 28px;
+      border-bottom: 2px solid $light-text-color;
+    }
+
+    .date,
+    .flight-time {
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: $light-text-color;
+    }
+
+    .flight-time {
+      position: relative;
+      width: 40px;
+      margin-top: 4px;
+      line-height: 1;
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: "";
+        top: 12px;
+        width: 100px;
+        height: 1px;
+        background-color: $light-text-color;
+      }
+
+      &:before {
+        left: -122px;
+      }
+
+      &:after {
+        right: -122px;
+      }
+    }
+
+    .station {
+      font-size: 14px;
+
+      .icon-item {
+        margin-left: 5px;
+
+        i {
+          color: $light-text-color;
+        }
+      }
+
+      &__location {
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: $light-text-color;
+      }
+    }
+
+    .finish-location {
+      .station {
+        .icon-item {
+          margin: 0 5px 0 0;
+        }
+
+        &__location {
+          margin-left: 20px;
+        }
+      }
+    }
+}
+
+// ============ rate-type ========
+.rate-type {
+    margin-bottom: 38px;
+
+    .desc-info {
+        margin-left: 0;
+    } 
+
+    .checkbox__text {
+        padding: 7px 22px;
+        color: #808285;
+        font-size: 16px;
+        font-weight: bold;
+
+        &:before {
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 41px;
+            border-radius: 25px;
+            border: 1px solid #b8c3c7;
+            z-index: -1;
+        }
+    }
+
+    .checkbox input:checked + .checkbox__text {
+        color: #fff;
+    }
+}
+ 

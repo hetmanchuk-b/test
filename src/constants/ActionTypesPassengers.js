@@ -1,0 +1,1 @@
+export const PASSENGERS_FETCH = 'PASSENGERS_FETCH';

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Title</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content"> 
+            <header class="header">
+                <div class="container">
+                    <div class="row header__top">
+                        <div class="col-lg-2 col-6">
+                            <a href="#" class="logo"> 
+                                <img src="img/logo.png" alt="" class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col-lg-10 col-6">
+                            <nav class="header__nav">
+                                 <div class="nav-burger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="header__nav-menu">
+                                    <div class="header__nav-list">
+                                        <a class="nav-item nav-link active" href="#">Лист ожидания</a>
+                                        <a class="nav-item nav-link" href="#">Будильник</a>
+                                        <a class="nav-item nav-link" href="#">Пакетное оформление</a>
+                                        <a class="nav-item nav-link" href="#">Акции</a>
+                                        <a class="nav-item nav-link" href="#">Обратная связь</a>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn__transparent" data-toggle="modal" data-target="#signInModal">
+                                            Войти
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="row header__search">
+                        <div class="col-lg-3 col-sm-6 col-parent">
+                            <input placeholder="Откуда" type="text" class="select-dropdown">
+                            <div class="towns ">
+                                <a href="#">Москва</a>
+                                <a href="#">Тверь</a>
+                                <a href="#">Санкт-Петербург</a>
+                            </div>
+                            <div class="swap">
+                                <a href="#" class="swap-btn">
+                                    <img src="img/icons/search-arrows.png" alt="img item" />
+                                </a>
+                            </div>
+                        </div>
+                         
+                        <div class="col-lg-3 col-sm-6 col-last">
+                            <input placeholder="Куда" type="text" class="select-dropdown">
+                            <div class="towns">
+                                <a href="#">Москва</a>
+                                <a href="#">Тверь</a>
+                                <a href="#">Санкт-Петербург</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-6">
+                            <input class="date" type="date" id="start" name="trip-start"
+                                   value="Когда"
+                                   min="2019-01-01" max="2019-12-31">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-last">
+                            <input class="date" type="date" id="end" name="trip-end"
+                                   value="Обратно"
+                                   min="2019-01-01" max="2019-12-31">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn__main" type="button">Найти билеты</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lang d-flex">
+                    <a href="#" class="lang__item">En</a>
+                    <a href="#" class="lang__item">Ru</a>
+                </div>
+            </header>
+
+<!-- Modal Recover-pass -->
+<div class="modal show modal-message" id="modal-message">
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <button type="button" class="close">
+                <i class="fas fa-times"></i>
+            </button>
+             
+            <div class="modal-body">
+                <div class="text text-top">
+                    Продажа билетов на даты с <span class="text-red">1 апреля</span> ещё не открыта.
+                </div>
+                <div class="text text-bold">
+                    Но не беда!
+                </div>
+                <div class="text">
+                    Вы можете 
+                    <a href="#" class="link">
+                        заказать уведомление</a>
+                    о начале продаж на интерисующую Вас дату или сразу 
+                    <a href="#" class="link">
+                        оформить предзаказ</a>
+                    на неё.
+                </div>
+                <div class="text">
+                    Нажмите на нужную Вам дату в календаре и следуйте дальнейшим шагам.
+                </div>
+            </div>
+            <div class="modal-footer">
+               <label class="checkbox">
+                    <span class="icon-item">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </span>
+                    <input type="checkbox" />
+                    <div class="checkbox__text">
+                        Больше не показывать
+                    </div>
+                </label> 
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content"> 
+                    <div class="row align-items-center">
+                        <div class="col-md-4 col-first">
+                            <div class="footer__text">
+                                Вопросы, жалобы, пожелания!
+                            </div>
+                            <div class="footer__link footer__link-first">
+                                <a href="#">Напишите нам</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="footer__logo"> 
+                                <img src="img/logo.png" alt="" class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-last">
+                            <div class="footer__text">
+                                Телефон горячей линии:
+                            </div>
+                            <div class="footer__link footer__link-phone">
+                                <a href="tel:8 800 111 22 33">8 800 111 22 33</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row copyright align-items-center">
+                    <div class="col-12">
+                        <div class="text">&#9400; Copyright</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <div class="overlay show"></div>
+</body>
+</html>

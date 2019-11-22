@@ -1,0 +1,1 @@
+export const APP_LOADER_ACTIVE = 'APP_LOADER_ACTIVE';

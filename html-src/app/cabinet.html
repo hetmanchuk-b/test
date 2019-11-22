@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Title</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content"> 
+            <header class="header header__cart header__cabinet">
+                <div class="container">
+                    <div class="row header__top">
+                        <div class="col-lg-2 col-6">
+                            <a href="#" class="logo"> 
+                                <img src="img/logo.png" alt="" class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col-lg-10 col-6">
+                            <nav class="header__nav">
+                                 <div class="nav-burger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="header__nav-menu">
+                                    <div class="header__nav-list">
+                                        <a class="nav-item nav-link active" href="#">Лист ожидания</a>
+                                        <a class="nav-item nav-link" href="#">Будильник</a>
+                                        <a class="nav-item nav-link" href="#">Пакетное оформление</a>
+                                        <a class="nav-item nav-link" href="#">Акции</a>
+                                        <a class="nav-item nav-link" href="#">Обратная связь</a>
+                                        <a class="nav-item nav-link user-name" href="#">Олег Фролов</a>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn__transparent">
+                                            <span class="icon-item">
+                                                <img src="img/icons/exit.svg" alt="img item" />
+                                            </span>
+                                            Выйти
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="title-cart">
+                                Личный кабинет
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row header__search">
+                        <div class="col-lg-3 col-sm-6 col-parent">
+                            <input placeholder="Откуда" type="text" class="select-dropdown" />
+                            <div class="towns ">
+                                <a href="#">Москва</a>
+                                <a href="#">Тверь</a>
+                                <a href="#">Санкт-Петербург</a>
+                            </div>
+                            <div class="swap"><a href="#" class="swap-btn"><img src="img/icons/search-arrows.png" alt=""></a></div>
+                        </div>
+                         
+                        <div class="col-lg-3 col-sm-6 col-last">
+                            <input placeholder="Куда" type="text" class="select-dropdown" />
+                            <div class="towns">
+                                <a href="#">Москва</a>
+                                <a href="#">Тверь</a>
+                                <a href="#">Санкт-Петербург</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-6">
+                            <input class="date" type="date" id="start" name="trip-start"
+                                   value="Когда"
+                                   min="2019-01-01" max="2019-12-31" />
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-last">
+                            <input class="date" type="date" id="end" name="trip-end"
+                                   value="Обратно"
+                                   min="2019-01-01" max="2019-12-31" />
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn__main" type="button">Найти билеты</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lang d-flex">
+                    <a href="#" class="lang__item">En</a>
+                    <a href="#" class="lang__item">Ru</a>
+                </div>
+            </header>
+            
+            <main class="main">
+
+                <!-- =============== STEP 1 =============== -->
+                <div class="inner-page cabinet-page">
+                    <div class="cabinet-page__head d-flex j-content-between align-items-center">
+                        <div class="tabs-parent active">
+                            Обо мне
+                        </div>
+                        <div class="tabs-parent">
+                            Мои платежи
+                        </div>
+                        <div class="tabs-parent">
+                            Архив поездок
+                        </div>
+                        <div class="tabs-parent">
+                            Мои пассажиры
+                        </div>
+                        <div class="tabs-parent">
+                            Мои заявки
+                        </div>
+                    </div>
+                    <div class="cabinet-page__content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="user-info">
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Имя
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            Олег
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Фамилия
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            Фролов
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Логин
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            Frolov
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Паспорт
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            АБ 1234567
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Электронная почта
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            frolov.at.home@gmail.com
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                            Номер телефона: 
+                                        </div>
+                                        <div class="user-info__data">
+                                            37 085 122 45 67
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Пол: 
+                                        </div>
+                                        <div class="user-info__data">
+                                            М
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Привязана карта: 
+                                        </div>
+                                        <div class="user-info__data">
+                                            4731********7110
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="circle-box d-flex align-items-end">
+                                    <div class="cont-wrap"> 
+                                        <div id="cont" class="cont" data-pct="6 поездок">
+                                            <svg id="svg" class="svg" width="170" height="170" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <circle r="80" cx="85" cy="85" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                                            </circle>
+                                            <circle id="bar" class="bar" r="80" cx="85" cy="85" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                                            </circle>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="cont-wrap"> 
+                                        <div id="cont" class="cont" data-pct="6000 рублей">
+                                            <svg id="svg" class="svg" width="170" height="170" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <circle r="80" cx="85" cy="85" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                                            </circle>
+                                            <circle id="bar" class="bar" r="80" cx="85" cy="85" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                                            </circle>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn-wrap">
+                            <button class="btn btn__main">Редактировать</button>
+                        </div> 
+
+                        <div class="info-text">
+                            Звёздочкой (<span class="text-red">*</span>) 
+                            обязательные поля, заполняемые при регистрации
+                        </div> 
+                    </div>
+                </div>
+                
+                <!-- =============== STEP 2 =============== -->
+                <div class="inner-page cabinet-page">
+                    <div class="cabinet-page__head d-flex j-content-between align-items-center">
+                        <div class="tabs-parent active">
+                            Обо мне
+                        </div>
+                        <div class="tabs-parent">
+                            Мои платежи
+                        </div>
+                        <div class="tabs-parent">
+                            Архив поездок
+                        </div>
+                        <div class="tabs-parent">
+                            Мои пассажиры
+                        </div>
+                        <div class="tabs-parent">
+                            Мои заявки
+                        </div>
+                    </div>
+                    <div class="cabinet-page__content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="user-info">
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Имя
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            Олег
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Фамилия
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            Фролов
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Логин
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            Frolov
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Паспорт
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            АБ 1234567
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Электронная почта
+                                        <span class="required text-red">*</span>
+                                        : 
+                                        </div>
+                                        <div class="user-info__data">
+                                            frolov.at.home@gmail.com
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                            Номер телефона: 
+                                        </div>
+                                        <div class="user-info__data">
+                                            37 085 122 45 67
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Пол: 
+                                        </div>
+                                        <div class="user-info__data">
+                                            М
+                                        </div>
+                                    </div>
+                                    <div class="user-info__item d-flex align-items-center">
+                                        <div class="user-info__name">
+                                           Привязана карта: 
+                                        </div>
+                                        <div class="user-info__data">
+                                            4731********7110
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="circle-box d-flex align-items-end">
+                                    <div class="cont-wrap"> 
+                                        <div id="cont" class="cont" data-pct="6 поездок">
+                                            <svg id="svg" class="svg" width="170" height="170" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <circle r="80" cx="85" cy="85" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                                            </circle>
+                                            <circle id="bar" class="bar" r="80" cx="85" cy="85" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                                            </circle>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="cont-wrap"> 
+                                        <div id="cont" class="cont" data-pct="6000 рублей">
+                                            <svg id="svg" class="svg" width="170" height="170" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                            <circle r="80" cx="85" cy="85" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                                            </circle>
+                                            <circle id="bar" class="bar" r="80" cx="85" cy="85" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0">
+                                            </circle>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form action="">  
+                            <div class="edit-box d-flex j-content-between align-items-center f-wrap">
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Фамилия:
+                                    </span>
+                                    <input type="text" name="last-name">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Имя:
+                                    </span>
+                                    <input type="text" name="first-name">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Логин:
+                                    </span>
+                                    <input type="text" name="login">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Вид документа:
+                                    </span>
+                                    <input type="text" name="document-type">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        № документа:
+                                    </span>
+                                    <input type="text" name="document-number">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        email:
+                                    </span>
+                                    <input type="text" name="email">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Номе телефона:
+                                    </span>
+                                    <input type="text" name="phone">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Пол:
+                                    </span>
+                                    <input type="text" name="gender">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Привязана карта:
+                                    </span>
+                                    <input type="text" name="card">
+                                </div>
+                            </div>
+
+                            <div class="btn-wrap">
+                                <button class="btn btn__white active">Сохранить</button>
+                                <button class="btn btn__white">Отменить</button>
+                            </div>
+                        </form> 
+
+                        <div class="info-text">
+                            Звёздочкой (<span class="text-red">*</span>) 
+                            обязательные поля, заполняемые при регистрации
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- =============== STEP 3 =============== -->
+                <div class="inner-page cabinet-page">
+                    <div class="cabinet-page__head d-flex j-content-between align-items-center">
+                        <div class="tabs-parent">
+                            Обо мне
+                        </div>
+                        <div class="tabs-parent active">
+                            Мои платежи
+                        </div>
+                        <div class="tabs-parent">
+                            Архив поездок
+                        </div>
+                        <div class="tabs-parent">
+                            Мои пассажиры
+                        </div>
+                        <div class="tabs-parent">
+                            Мои заявки
+                        </div>
+                    </div>
+                    <div class="cabinet-page__content">
+                        <div class="search">
+                            <div class="search__content d-flex align-items-center">
+                                <div class="text">Поиск</div>
+                                <div class="text">с</div>
+                                <div class="input-wrap"> 
+                                    <input class="date" type="date" id="start" name="trip-start"
+                                           value="Туда"
+                                           min="2019-01-01" max="2019-12-31" />
+                                    <i class="far fa-calendar-alt"></i>
+                                </div> 
+                                <div class="text">по</div>
+                                <div class="input-wrap"> 
+                                    <input class="date" type="date" id="end" name="trip-end"
+                                           value="Обратно"
+                                           min="2019-01-01" max="2019-12-31" />
+                                    <i class="far fa-calendar-alt"></i>
+                                </div> 
+                                <button class="btn btn__main" type="button">Поиск</button>
+                            </div>
+                            <ul class="search__list">
+                                <li class="search__list-item">
+                                    <a href="#">За неделю</a>
+                                </li>
+                                <li class="search__list-item">
+                                    <a href="#">За месяц</a>
+                                </li>
+                                <li class="search__list-item">
+                                    <a href="#">За год</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flight">
+                            <div class="flight__item">
+                                <div class="text">Рейс:</div>
+                                <div class="flight__info d-flex  align-items-end">
+                                    <label class="checkbox">
+                                        <span class="icon-item">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="checkbox" />
+                                        <div class="checkbox__text">
+                                        </div>
+                                    </label>
+                                    <div class="title-train">Поезд 752А &laquo;Сапсан&raquo;</div>
+                                    <div class="title-tawn">
+                                        Москва 
+                                        <span class="icon-item">
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                        Санкт-Петербург
+                                    </div>
+                                    <div class="data">
+                                        <span class="text">Отправление:</span>
+                                        <span class="data__time">14:25</span>,
+                                        <span class="date">23.06.2019</span>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="user__name">Андрей Филатов (1000 руб.)</div>
+                                </div>
+                            </div>
+
+                            <div class="flight__item">
+                                <div class="text">Рейс:</div>
+                                <div class="flight__info d-flex  align-items-end">
+                                    <label class="checkbox">
+                                        <span class="icon-item">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="checkbox" />
+                                        <div class="checkbox__text">
+                                        </div>
+                                    </label>
+                                    <div class="title-train">Поезд 800А &laquo;Сапсан&raquo;</div>
+                                    <div class="title-tawn">
+                                        Санкт-Петербург 
+                                        <span class="icon-item">
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                        Москва
+                                    </div>
+                                    <div class="data">
+                                        <span class="text">Отправление:</span>
+                                        <span class="data__time">14:25</span>,
+                                        <span class="date">23.06.2019</span>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="user__name">Андрей Филатов (1000 руб.), Сергей Филатов (700 руб.)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn-wrap d-flex  align-items-center">
+                            <button class="btn btn__white">Проверить статус</button>
+                            <button class="btn btn__white">Вернуть</button>
+                            <button class="btn btn__white">Переоформить</button>
+                            <button class="btn btn__white active">Скачать</button>
+                            <button class="btn btn__white">Распечатать</button>
+                            <button class="btn btn__white">Отправить на e-mail</button>
+                        </div>  
+                    </div>
+                </div>
+
+                <!-- =============== STEP 4 =============== -->
+                <div class="inner-page cabinet-page">
+                    <div class="cabinet-page__head d-flex j-content-between align-items-center">
+                        <div class="tabs-parent">
+                            Обо мне
+                        </div>
+                        <div class="tabs-parent">
+                            Мои платежи
+                        </div>
+                        <div class="tabs-parent active">
+                            Архив поездок
+                        </div>
+                        <div class="tabs-parent">
+                            Мои пассажиры
+                        </div>
+                        <div class="tabs-parent">
+                            Мои заявки
+                        </div>
+                    </div>
+                    <div class="cabinet-page__content">
+                        <div class="search">
+                            <div class="search__content d-flex align-items-center">
+                                <div class="text">Поиск</div>
+                                <div class="text">с</div>
+                                <div class="input-wrap"> 
+                                    <input class="date" type="date" id="start" name="trip-start"
+                                           value="Туда"
+                                           min="2019-01-01" max="2019-12-31" />
+                                    <i class="far fa-calendar-alt"></i>
+                                </div> 
+                                <div class="text">по</div>
+                                <div class="input-wrap"> 
+                                    <input class="date" type="date" id="end" name="trip-end"
+                                           value="Обратно"
+                                           min="2019-01-01" max="2019-12-31" />
+                                    <i class="far fa-calendar-alt"></i>
+                                </div> 
+                                <button class="btn btn__main" type="button">Поиск</button>
+                            </div>
+                            <ul class="search__list">
+                                <li class="search__list-item">
+                                    <a href="#">За неделю</a>
+                                </li>
+                                <li class="search__list-item">
+                                    <a href="#">За месяц</a>
+                                </li>
+                                <li class="search__list-item active">
+                                    <a href="#">За год</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flight">
+                            <div class="flight__item">
+                                <div class="text">Рейс:</div>
+                                <div class="flight__info d-flex  align-items-end">
+                                    <label class="checkbox">
+                                        <span class="icon-item">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="checkbox" />
+                                        <div class="checkbox__text">
+                                        </div>
+                                    </label>
+                                    <div class="title-train">Поезд 752А &laquo;Сапсан&raquo;</div>
+                                    <div class="title-tawn">
+                                        Москва 
+                                        <span class="icon-item">
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                        Санкт-Петербург
+                                    </div>
+                                    <div class="data">
+                                        <span class="text">Отправление:</span>
+                                        <span class="data__time">14:25</span>,
+                                        <span class="date">23.06.2019</span>
+                                    </div>
+                                </div>
+                                <div class="user user-box">
+                                    <div class="ticket-info">
+                                        Билет:
+                                        <span class="number">№ 123456</span>
+                                    </div>
+                                    <div class="user__name">Андрей Филатов (1000 руб.)
+                                        <span class="status text-red">Возвращен</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flight__item">
+                                <div class="text">Рейс:</div>
+                                <div class="flight__info d-flex  align-items-end">
+                                    <label class="checkbox">
+                                        <span class="icon-item">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="checkbox" />
+                                        <div class="checkbox__text">
+                                        </div>
+                                    </label>
+                                    <div class="title-train">Поезд 800А &laquo;Сапсан&raquo;</div>
+                                    <div class="title-tawn">
+                                        Санкт-Петербург 
+                                        <span class="icon-item">
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                        Москва
+                                    </div>
+                                    <div class="data">
+                                        <span class="text">Отправление:</span>
+                                        <span class="data__time">14:25</span>,
+                                        <span class="date">23.06.2019</span>
+                                    </div>
+                                </div>
+                                <div class="user user-box">
+                                    <div class="ticket-info">
+                                        Билет:
+                                        <span class="number">№ 654321</span>
+                                    </div>
+                                    <div class="user__name">Иван Филатов (1000 руб.)
+                                        <span class="status text-red">Поездка состоялась</span>
+                                    </div>
+                                </div>
+                                <div class="user user-box">
+                                    <div class="ticket-info">
+                                        Билет:
+                                        <span class="number">№ 654322</span>
+                                    </div>
+                                    <div class="user__name">Сергей Филатов (700 руб.)
+                                        <span class="status text-red">Поездка состоялась</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn-wrap d-flex  align-items-center">
+                            <button class="btn btn__white">Скачать бланк возврата</button>
+                            <button class="btn btn__white">Скачать бланк билета</button>
+                            <button class="btn btn__white">Распечатать</button>
+                        </div>  
+                    </div>
+                </div>
+
+                <!-- =============== STEP 5 =============== -->
+                <div class="inner-page cabinet-page">
+                    <div class="cabinet-page__head d-flex j-content-between align-items-center">
+                        <div class="tabs-parent">
+                            Обо мне
+                        </div>
+                        <div class="tabs-parent">
+                            Мои платежи
+                        </div>
+                        <div class="tabs-parent">
+                            Архив поездок
+                        </div>
+                        <div class="tabs-parent active">
+                            Мои пассажиры
+                        </div>
+                        <div class="tabs-parent">
+                            Мои заявки
+                        </div>
+                    </div>
+                    <div class="cabinet-page__content">
+                        <form action=""> 
+                            <div class="user user-box user-box__passengers user-box__passengers--top">
+                                <div class="user-box__wrap d-flex j-content-between align-items-center">
+                                    <div class="user-box__item">
+                                        <div class="text">
+                                           Пассажир №1 
+                                        </div>
+                                        <div class="user__name">
+                                            Брат, Иван Филатов
+                                        </div>
+                                    </div>
+                                    <div class="icon-box d-flex align-items-center">
+                                        <div class="icon-item icon-item__edit"></div>
+                                        <div class="icon-item icon-item__delete"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="user user-box user-box__passengers">
+                                <div class="user-box__wrap d-flex j-content-between align-items-center">
+                                    <div class="user-box__item">
+                                        <div class="text">
+                                           Пассажир №1 
+                                        </div>
+                                        <div class="user__name">
+                                            Брат, Иван Филатов
+                                        </div>
+                                    </div>
+                                    <div class="icon-box d-flex align-items-center">
+                                        <div class="icon-item icon-item__edit"></div>
+                                        <div class="icon-item icon-item__delete"></div>
+                                    </div>
+                                </div>
+                                <div class="edit-box d-flex j-content-between align-items-center f-wrap">
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Фамилия:
+                                    </span>
+                                    <input type="text" name="last-name">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Имя:
+                                    </span>
+                                    <input type="text" name="first-name">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Отчество:
+                                    </span>
+                                    <input type="text" name="patronymic">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Вид документа:
+                                    </span>
+                                    <input type="text" name="document-type">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        № документа:
+                                    </span>
+                                    <input type="text" name="document-number">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Дата рождения:
+                                    </span>
+                                    <input type="text" name="date-birth">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Гражданство:
+                                    </span>
+                                    <input type="text" name="citizenship">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Пол:
+                                    </span>
+                                    <input type="text" name="gender">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Прудпочитаемый тариф:
+                                    </span>
+                                    <input type="text" name="tarif" class="tarif">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title">
+                                        Абонемент:
+                                    </span>
+                                    <input type="text" name="abonement">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title text-gray">
+                                        Скидочная карта
+                                    </span>
+                                    <input type="text" name="card-bonus">
+                                </div>
+                                <div class="edit-box__item d-flex align-items-center">
+                                    <span class="title text-gray">
+                                        Карта РЖД Бонус
+                                    </span>
+                                    <input type="text" name="card-rgd">
+                                </div>
+                            </div>
+                                <div class="btn-wrap d-flex  align-items-center">
+                                    <button class="btn btn__white active">Сохранить</button>
+                                    <button class="btn btn__white">Отменить</button>
+                                </div>
+                            </div>
+
+                            <div class="btn-wrap">
+                                <button class="btn btn__main">Добавить пассажира</button>
+                            </div>
+                        </form>  
+                    </div>
+                </div>
+
+                <!-- =============== STEP 6 =============== -->
+                <div class="inner-page cabinet-page">
+                    <div class="cabinet-page__head d-flex j-content-between align-items-center">
+                        <div class="tabs-parent">
+                            Обо мне
+                        </div>
+                        <div class="tabs-parent">
+                            Мои платежи
+                        </div>
+                        <div class="tabs-parent">
+                            Архив поездок
+                        </div>
+                        <div class="tabs-parent">
+                            Мои пассажиры
+                        </div>
+                        <div class="tabs-parent active">
+                            Мои заявки
+                        </div>
+                    </div>
+                    <div class="cabinet-page__content">
+                        <div class="flight flight__last-step">
+                            <div class="flight__item flight__item--top">
+                                <div class="text">Рейс:</div>
+                                <div class="title-train">Поезд 752А &laquo;Сапсан&raquo;</div>
+                                <div class="flight__info d-flex j-content-between align-items-end">
+                                    <div class="flight__info-wrap d-flex align-items-end">    
+                                        <div class="title-tawn">
+                                            Москва 
+                                            <span class="icon-item">
+                                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                            </span>
+                                            Санкт-Петербург
+                                        </div>
+                                        <div class="data">
+                                            <span class="text">Отправление:</span>
+                                            <span class="data__time">14:25</span>,
+                                            <span class="date">23.06.2019</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box d-flex align-items-center">
+                                        <div class="icon-item icon-item__edit"></div>
+                                        <div class="icon-item icon-item__delete"></div>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="user__name">Андрей Филатов (1000 руб.)
+                                        <span class="type">Экономический</span>
+                                        <span class="type">Полный</span>
+                                        <span class="type">Одиночное по ходу</span>
+                                    </div>
+                                </div>
+                                <div class="message-result d-flex align-items-center">
+                                    <div class="message-result__item active">
+                                        Мы ищем для вас место
+                                        <span class="icon-item">
+                                            <i class="fa fa-hourglass-end" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <div class="message-result__item">
+                                        Заявка исполнена
+                                        <span class="icon-item icon-item__check">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flight__item">
+                                <div class="text">Рейс:</div>
+                                <div class="title-train">Поезд 752А &laquo;Сапсан&raquo;</div>
+                                <div class="flight__info d-flex j-content-between align-items-end">
+                                    <div class="flight__info-wrap d-flex align-items-end">    
+                                        <div class="title-tawn">
+                                            Москва 
+                                            <span class="icon-item">
+                                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                            </span>
+                                            Санкт-Петербург
+                                        </div>
+                                        <div class="data">
+                                            <span class="text">Отправление:</span>
+                                            <span class="data__time">14:25</span>,
+                                            <span class="date">23.06.2019</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon-box d-flex align-items-center">
+                                        <div class="icon-item icon-item__edit"></div>
+                                        <div class="icon-item icon-item__delete"></div>
+                                    </div>
+                                </div>
+                                <div class="user">
+                                    <div class="user__name">Андрей Филатов (1000 руб.)
+                                        <span class="type">Экономический</span>
+                                        <span class="type">Полный</span>
+                                        <span class="type">Одиночное по ходу</span>
+                                    </div>
+                                </div>
+                                <div class="message-result d-flex align-items-center">
+                                    <div class="message-result__item">
+                                        Мы ищем для вас место
+                                        <span class="icon-item">
+                                            <i class="fa fa-hourglass-end" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <div class="message-result__item active">
+                                        Заявка исполнена
+                                        <span class="icon-item icon-item__check">
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+  
+                    </div>
+                </div>
+
+               <!--  ================= QUESTIONS ================ -->
+                <section class="questions">
+                    <div class="container">
+                        <div class="row question">
+                            <div class="col-12">
+                                <h2 class="title">Наши уникальные услуги</h2>
+                            </div>
+                            <div class="col-12">
+                                <div class="text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <h2 class="question-title">Распространённые вопросы</h2>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="question-cat"><p>Общие</p><i class="fas fa-caret-right"></i></div>
+                                <div class="question-cat"><p>Стоимость</p><i class="fas fa-caret-right"></i></div>
+                                <div class="question-cat"><p>Возврат</p><i class="fas fa-caret-right"></i></div>
+                                <div class="question-cat"><p>...</p><i class="fas fa-caret-right"></i></div>
+                                <div class="question-cat"><p>...</p><i class="fas fa-caret-right"></i></div>
+                                <div class="question-cat"><p>...</p><i class="fas fa-caret-right"></i></div>
+                            </div>
+                            <div class="col-md-8 tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                     aria-labelledby="v-pills-home-tab">
+                                    <div id="accordion-general">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-general-1"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #1
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-general-1" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <p class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-general-2"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #1
+                                                    </button>
+                                                </p>
+                                            </div>
+
+                                            <div id="card-general-2" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-general-3"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #6
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-general-3" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-general-4"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #6
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-general-4" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-general-5"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #6
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-general-5" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-general-6"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #6
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-general-6" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <div id="accordion-cost">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-cost-1"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #1
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-cost-1" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-cost-2"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #1
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-cost-2" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-cost-3"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #6
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-cost-3" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-cost-4"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #6
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-cost-4" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-cost-5"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #6
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-cost-5" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <i class="fas fa-caret-right"></i>
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#card-cost-6"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                        Collapsible Group Item #6
+                                                    </button>
+                                                </h5>
+                                            </div>
+
+                                            <div id="card-cost-6" class="collapse" aria-labelledby="headingOne"
+                                                 data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                                    richardson ad
+                                                    squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
+                                                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                                                    on it
+                                                    squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                                    helvetica,
+                                                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+                                                    excepteur
+                                                    butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+                                                    synth
+                                                    nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content"> 
+                    <div class="row align-items-center">
+                        <div class="col-md-4 col-first">
+                            <div class="footer__text">
+                                Вопросы, жалобы, пожелания!
+                            </div>
+                            <div class="footer__link footer__link-first">
+                                <a href="#">Напишите нам</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="footer__logo"> 
+                                <img src="img/logo.png" alt="" class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-last">
+                            <div class="footer__text">
+                                Телефон горячей линии:
+                            </div>
+                            <div class="footer__link footer__link-phone">
+                                <a href="tel:8 800 111 22 33">8 800 111 22 33</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row copyright align-items-center">
+                    <div class="col-12">
+                        <div class="text">&#9400; Copyright</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>

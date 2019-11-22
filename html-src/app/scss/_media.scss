@@ -1,0 +1,199 @@
+/*==========  Mobile First  ==========*/
+@media only screen and (min-width : 320px) {
+   
+}
+
+@media only screen and (min-width : 576px) {
+  .header__search .swap {
+    transform: rotate(0deg);
+    top: 10px;
+    left: auto;
+    right: -10px;
+  }
+
+  .col-last {
+      text-align: right;
+  }
+
+  .features {
+    .sect-title {
+      font-size: 36px;
+    }
+
+    .sect-subtitle {
+      font-size: 24px;
+    }
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .header {
+    padding: 20px 0 130px;  
+
+    &__top {
+      margin-bottom: 55px;  
+    }
+
+    &__cart {
+        padding: 20px 0 30px;
+    }
+  }
+
+  .header__search {
+    i {
+      right: 60px
+    }
+  }
+
+  .features {
+    .col-md-4 {
+      margin-bottom: 0;  
+    }
+
+    .feature {
+      margin-bottom: 0; 
+      padding: 60px 15px 50px;
+
+      &-image {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .footer {
+    &__content {
+      .row {
+        flex-direction: row;  
+      }
+
+      .col-md-4 {
+        text-align: left;
+        margin: 0;  
+      }
+    }
+    .col-first {
+      order: 0;
+    }
+
+    .col-last {
+      order: 2;
+    }
+  }
+
+  .modal-register {
+    .modal-dialog {
+      .close i {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width : 992px) {
+  .nav-burger {
+    display: none;
+  }
+
+  .header__nav {
+    justify-content: flex-start;
+  }
+
+  .header__nav-menu {
+    display: block;
+    position: static;
+    width: 100%;
+    height: auto;
+    overflow: visibility;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .header__nav-list {
+    flex-direction: row;
+    padding: 0;
+
+    .nav-link {
+      margin-bottom: 0;
+      font-size: 13px;
+      text-transform: none;
+      border-bottom: 1px solid #808e9b;
+    }
+
+    .btn__transparent {
+      width: auto;
+      background-color: transparent;
+      border: 1px solid #fff;
+
+      &:hover {
+        background-color: $main-color;
+        border: 1px solid $main-color;
+      }
+    }
+  }
+
+  .col-last {
+      text-align: left;
+  }
+
+  .header__search {
+    i {
+      right: 40px
+    }
+
+    .col-last {
+      i {
+        right: 40px;
+      }  
+    }
+    
+    .towns {
+      margin-bottom: 0;
+    }
+
+    .col {
+      justify-content: flex-start;
+      display: inline-block;
+      max-width: 14%;
+      flex: 0 0 14%;
+      margin-top: 0;
+    }
+
+    .btn__main {
+      width: 100%;
+    }
+  }
+
+  .features {
+    .features .feature {
+      padding: 60px 30px 50px;
+    }
+      .sect-title {
+      font-size: 50px;
+    }
+
+    .sect-subtitle {
+      font-size: 29px;
+    }
+  }
+
+  .footer {
+    &__text,
+    &__link {
+      font-size: 18px;
+    }
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+   
+}
+
+@media only screen and (min-width : 1320px) {
+  .header .lang {
+    top: 30px;
+    right: 30px;
+    font-size: 16px;
+  }
+}
+
+

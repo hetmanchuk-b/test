@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Title</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content"> 
+            <header class="header header__cart">
+                <div class="container">
+                    <div class="row header__top">
+                        <div class="col-lg-2 col-6">
+                            <a href="#" class="logo"> 
+                                <img src="img/logo.png" alt="" class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col-lg-10 col-6">
+                            <nav class="header__nav">
+                                 <div class="nav-burger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="header__nav-menu">
+                                    <div class="header__nav-list">
+                                        <a class="nav-item nav-link active" href="#">Лист ожидания</a>
+                                        <a class="nav-item nav-link" href="#">Будильник</a>
+                                        <a class="nav-item nav-link" href="#">Пакетное оформление</a>
+                                        <a class="nav-item nav-link" href="#">Акции</a>
+                                        <a class="nav-item nav-link" href="#">Обратная связь</a>
+                                        <a class="nav-item nav-link user-name" href="#">Олег Фролов</a>
+                                        <div class="icon-item icon-cart">
+                                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                            <div class="cart-count">
+                                                3
+                                            </div>
+                                        </div>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn__transparent">
+                                            <span class="icon-item">
+                                                <img src="img/icons/exit.svg" alt="img item" />
+                                            </span>
+                                            Выйти
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </nav>
+                            <div class="title-cart">
+                                Корзина
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row header__search">
+                        <div class="col-lg-3 col-sm-6 col-parent">
+                            <input placeholder="Откуда" type="text" class="select-dropdown" />
+                            <div class="towns ">
+                                <a href="#">Москва</a>
+                                <a href="#">Тверь</a>
+                                <a href="#">Санкт-Петербург</a>
+                            </div>
+                            <div class="swap"><a href="#" class="swap-btn"><img src="img/icons/search-arrows.png" alt=""></a></div>
+                        </div>
+                         
+                        <div class="col-lg-3 col-sm-6 col-last">
+                            <input placeholder="Куда" type="text" class="select-dropdown" />
+                            <div class="towns">
+                                <a href="#">Москва</a>
+                                <a href="#">Тверь</a>
+                                <a href="#">Санкт-Петербург</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-6">
+                            <input class="date" type="date" id="start" name="trip-start"
+                                   value="Когда"
+                                   min="2019-01-01" max="2019-12-31" />
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 col-last">
+                            <input class="date" type="date" id="end" name="trip-end"
+                                   value="Обратно"
+                                   min="2019-01-01" max="2019-12-31" />
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn__main" type="button">Найти билеты</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="lang d-flex">
+                    <a href="#" class="lang__item">En</a>
+                    <a href="#" class="lang__item">Ru</a>
+                </div>
+                <div class="cart-box">
+                    <a href="#" class="cart-box__item">
+                        <span class="icon-cart">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            <span class="cart-count">
+                                3
+                            </span>
+                        </span>
+                    </a>
+                    <div class="cart-box__dropdown">
+                        <div class="btn-wrap d-flex j-content-between align-items-center">
+                            <button class="btn btn__white">Билеты к покупке</button>
+                            <button class="btn btn__white">Лист ожидания</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="cart-header">
+                <div class="container">
+                    <ul class="cart-header__list">
+                        <li class="cart-header__item">
+                             <a href="#" class="cart-header__link">
+                                <span class="icon-item">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </span>
+                                <span class="text">
+                                    Направление и дата
+                                </span>
+                             </a>
+                        </li>
+                        <li class="cart-header__item">
+                             <a href="#" class="cart-header__link">
+                                <span class="icon-item">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </span>
+                                <span class="text">
+                                    Поезда
+                                </span>
+                             </a>
+                        </li>
+                        <li class="cart-header__item">
+                             <a href="#" class="cart-header__link">
+                                <span class="icon-item">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </span>
+                                <span class="text">
+                                    Пассажиры и места
+                                </span>
+                             </a>
+                        </li>
+                        <li class="cart-header__item">
+                             <a href="#" class="cart-header__link active">
+                                <span class="icon-item">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </span>
+                                <span class="text">
+                                    Корзина
+                                </span>
+                             </a>
+                        </li>
+                        <li class="cart-header__item">
+                             <a href="#" class="cart-header__link white-color">
+                                <span class="icon-item">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </span>
+                                <span class="text">
+                                    Оплата
+                                </span>
+                             </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cart-box">
+                    <a href="#" class="cart-box__item">
+                        <span class="icon-cart">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            <span class="cart-count">
+                                3
+                            </span>
+                        </span>
+                    </a>
+                    <div class="cart-box__dropdown">
+                        <div class="btn-wrap d-flex j-content-between align-items-center">
+                            <button class="btn btn__white">Билеты к покупке</button>
+                            <button class="btn btn__white">Лист ожидания</button>
+                        </div>
+                        <div class="cart-box__dropdown-content">
+                            <div class="cart-box__row d-flex align-items-center">
+                                <div class="title">
+                                   № рейса 
+                                </div>
+                                <div class="desc">
+                                   123 
+                                </div>
+                            </div>
+                            <div class="cart-box__row d-flex align-items-center">
+                                <div class="title">
+                                    Направление 
+                                </div>
+                                <div class="desc">
+                                    Москва 
+                                        <span class="item-icon">
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                    Санкт-Петербург
+                                </div>
+                            </div>
+                            <div class="cart-box__row d-flex align-items-center">
+                                <div class="title">
+                                   Дата 
+                                </div>
+                                <div class="desc">
+                                   25.06.2019
+                                </div>
+                            </div>
+                            <div class="cart-box__row d-flex align-items-center">
+                                <div class="title">
+                                   Количество
+                                </div>
+                                <div class="desc">
+                                   2 
+                                </div>
+                            </div>
+                            <div class="cart-box__row d-flex align-items-center">
+                                <div class="title">
+                                   Цена 
+                                </div>
+                                <div class="desc">
+                                   1000 
+                                </div>
+                            </div>
+                            <div class="cart-box__row d-flex align-items-center">
+                                <div class="title">
+                                   Итого 
+                                </div>
+                                <div class="desc">
+                                   2000 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-box__bottom d-flex j-content-between align-items-center">
+                            <div class="cart-box__bottom-link">
+                                <a href="#" class="link-item">
+                                    Перейти в корзину
+                                </a>
+                                <a href="#" class="link-item">
+                                    Перейти на страницу
+                                </a>
+                            </div>
+                            <button class="btn btn__main">
+                                Оплатить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <main class="main">
+                <div class="inner-page cart-page">
+                    <div class="form">
+                        <form action="">
+                            <div class="form__content d-flex">
+                                <div class="rais">
+                                    <div class="title-top">
+                                        Рейс
+                                    </div>
+                                    <div class="title-train">Поезд 752А &laquo;Сапсан&raquo;</div>
+                                    <div class="title-tawn">
+                                        Москва 
+                                        <span class="icon-item">
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </span>
+                                        Санкт-Петербург
+                                    </div>
+                                    <div class="data">
+                                        <span class="text">Отправление:</span>
+                                        <span class="data__time">14:25</span>,
+                                        <span class="date">23.06.2019</span>
+                                    </div>
+                                </div>
+                                <div class="count-ticket d-flex d-column text-center">
+                                    <div class="title-top">
+                                        Количество билетов
+                                    </div>
+                                    <div class="count-ticket__item">1</div>
+                                </div>
+                                <div class="price">
+                                    <div class="title-top">
+                                        Стоимость
+                                    </div>
+                                    <div class="price__item">
+                                        1000 руб.
+                                    </div>
+                                </div>
+
+                                <a class="checked-link">
+                                    <span class="plus">+</span>
+                                </a>
+                            </div>
+                            <div class="more-info active">
+                                <a href="#" class="more-info__link">Подробнее</a>
+                                <a href="#" class="more-info__link more-info__link-active">Свернуть</a>
+
+                                <div class="passengers-box">
+                                    <div class="title">Пассажир № 1</div>
+                                    <div class="passengers-box__content d-flex j-content-between align-items-center">
+                                        <div class="name">Иванов Иван Иванович</div>
+                                        <div class="passengers-box__info">
+                                            Вагон 7, место 15, Экономический+, полный
+                                        </div>
+                                         <a class="checked-link">
+                                            <span class="plus">+</span>
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="title">Пассажир № 2</div>
+                                    <div class="passengers-box__content d-flex j-content-between align-items-center">
+                                        <div class="name">Иванов Иван Иванович</div>
+                                        <div class="passengers-box__info">
+                                            Вагон 7, место 15, Экономический+, полный
+                                        </div>
+                                         <a class="checked-link">
+                                            <span class="plus">+</span>
+                                        </a>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="btn-wrap d-flex j-content-between align-items-center">
+                                <div class="col-left"> 
+                                    <button class="btn btn__white">
+                                        Изменить заказ
+                                    </button>
+                                </div>
+                                <div class="col-right">
+                                    <span class="text">Оплатить за:</span>
+                                    <button class="btn btn__white btn__icon">
+                                        <span class="icon">
+                                           <img src="img/icons/time-icon.svg" alt="img item" /> 
+                                        </span>
+                                        <span class="time">09:25 мин</span>
+                                    </button>
+                                    <button class="btn btn__main">Оплатить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="summ-price d-flex j-content-between align-items-center">
+                    <div class="text">Итого:</div>
+                    <div class="price">2800 руб.</div>
+                </div>
+            </main>
+
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content"> 
+                    <div class="row align-items-center">
+                        <div class="col-md-4 col-first">
+                            <div class="footer__text">
+                                Вопросы, жалобы, пожелания!
+                            </div>
+                            <div class="footer__link footer__link-first">
+                                <a href="#">Напишите нам</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="footer__logo"> 
+                                <img src="img/logo.png" alt="" class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-last">
+                            <div class="footer__text">
+                                Телефон горячей линии:
+                            </div>
+                            <div class="footer__link footer__link-phone">
+                                <a href="tel:8 800 111 22 33">8 800 111 22 33</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row copyright align-items-center">
+                    <div class="col-12">
+                        <div class="text">&#9400; Copyright</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>

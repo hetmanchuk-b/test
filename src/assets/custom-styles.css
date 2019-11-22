@@ -1,0 +1,420 @@
+.inner-page.apply-page {
+  padding-bottom: 20px !important;
+}
+.buy-ticket-page .inner-page.apply-page {
+  margin-bottom: 20px;
+}
+.flight__item .user__name .type {
+  margin-left: 10px;
+}
+.mt-25 {
+  margin-top: 25px;
+}
+.wrapper {
+  height: 100vh;
+}
+.main {
+  z-index: 0;
+  position: relative;
+}
+.sect-subtitle {
+  font-size: 20px !important;
+}
+.overflow-vsbl {
+  overflow: visible !important;
+}
+.pointer {
+  cursor: pointer;
+}
+.hidden {
+  display: none !important;
+}
+.error-block {
+  color: #fff;
+  background-color: #de5353;
+  padding: 15px;
+  margin-top: 20px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
+}
+.contacts_message {
+  max-width: 100% !important;
+}
+.tasks-page .header__select {
+  height: 43px !important;
+}
+.cart-page {
+  padding-bottom: 40px;
+}
+.header__cart .btn__transparent {
+  padding: 10px 20px 10px 20px;
+}
+.header .icon-cart {
+    position: relative;
+}
+.header .icon-cart .fa {
+    color: #fff;
+}
+.header .icon-cart .cart-count {
+    position: absolute;
+    bottom: -2px;
+    right: -5px;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    font-size: 9px;
+    line-height: 12px;
+    color: #fff;
+    background-color: #ff6c6c;
+    border-radius: 50%;
+}
+.inner-page .form {
+  padding-bottom: 0px !important;
+}
+.inner-page.buy-ticket-page {
+  padding-bottom: 60px;
+}
+.inner-page.apply-page {
+  padding-bottom: 60px;
+}
+.header .css-1uccc91-singleValue {
+  color: #fff !important;
+}
+.page-text-description {
+  max-width: 1065px;
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 3rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px #c3c1c16e;
+  text-align: justify;
+}
+#accordion-general .collapse.show {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 1rem 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px #c3c1c16e;
+}
+.search-empty {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+  color: #ff5722;
+  padding: 40px 10px;
+}
+.search-empty h3 {
+  text-transform: uppercase;
+}
+.search-empty a {
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+/* <-- DatePicker --> */
+.react-date-picker__inputGroup input {
+  color: #fff !important;
+}
+.header__search-result .react-date-picker {
+  width: 100%;
+}
+.header__search-result .react-date-picker__wrapper {
+  border-radius: 0px !important;
+  border: none;
+  border-bottom: solid 1px #fff;
+  padding: 10px 0;
+  width: 100%;
+}
+.header__search-result .react-date-picker__wrapper .react-date-picker__inputGroup {
+  padding: 0 20px;
+  width: 100%;
+}
+.header__search-result .react-date-picker__wrapper button {
+  display: none;
+}
+.header__search-result .title-info {
+  top: -5px;
+  left: 35px;
+}
+/* <!-- DatePicker --> */
+
+/* <-- Loader --> */
+.loader {
+  text-align: center;
+  margin: 100px 0;
+}
+.line-scale-pulse-out > div {
+  width: 10px !important;
+  height: 70px !important;
+  border-radius: 5px !important;
+  margin: 10px !important;
+  background-color: rgb(75, 82, 88) !important;
+}
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+}
+/* <!-- Loader --> */
+
+/* <-- Bag --> */
+.bag-view-wrapper {
+  background-color: #444;
+}
+.bag-view-wrapper .summ-price .btn {
+  margin-left: 20px;
+}
+.cart_time_btn {
+  margin-right: 30px;
+  padding: 8px 20px;
+  line-height: 20px;
+}
+.cart_time_btn .icon {
+  margin-right: 10px;
+}
+.cart_time_btn img {
+  height: 20px;
+  margin-bottom: -4px;
+}
+/* <!-- Bag --> */
+
+/* <-- Train --> */
+.train-view-wrapper {
+  background-color: #444;
+}
+.train-view-wrapper .text__red {
+  margin: 0 10px;
+}
+.train-view-wrapper .fa-arrow-right {
+  margin: 0 10px;
+}
+.train-view-wrapper .time {
+  margin-right: 10px;
+}
+.train-car-classes {
+  border-top: 1px solid #d1d8db;
+  border-bottom: 1px solid #d1d8db;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+.train-car-class-title {
+  float: left;
+  line-height: 50px;
+  width: 110px;
+  margin-right: 20px;
+}
+.train-car-list-head {
+  width: 57px;
+  background: none;
+  pointer-events: none;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 10px;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+  -moz-box-shadow: 0 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  height: 40px;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 10px 5px 6px;
+  padding: 6px 0 6px 25px;
+  color: #414141;
+  border: 1px solid #aebad2;
+  -webkit-border-radius: 30px 4px 4px 10px;
+  -moz-border-radius: 30px 4px 4px 10px;
+  -ms-border-radius: 30px 4px 4px 10px;
+  -o-border-radius: 30px 4px 4px 10px;
+  border-radius: 30px 4px 4px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.train-car-list-head:before {
+  border: 1px solid #aebad2;
+  background-color: #f7f7f7;
+  width: 45px;
+  height: 20px;
+  bottom: 20px;
+  border-bottom-right-radius: 10px;
+  content: '';
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: -8px;
+  margin: auto;
+}
+.train-car-list-head:after {
+  border: 1px solid #aebad2;
+  background-color: #f7f7f7;
+  content: '';
+  width: 10px;
+  height: 4px;
+  position: absolute;
+  left: -3px;
+  bottom: 9px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.car-icon-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1;
+}
+.car-icon-item {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 75px;
+  height: 40px;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 10px 5px 6px;
+  padding: 6px 0 6px 25px;
+  color: #414141;
+  border: 1px solid #aebad2;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.14);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.14);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.14);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.car-icon-item:before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  height: 17px;
+  width: 2px;
+  border-left: 1px solid #aebad2;
+  border-right: 1px solid #aebad2;
+  top: 0;
+  bottom: 0;
+  left: -8px;
+  margin: auto;
+}
+.car-icon-item.active {
+  border-color: #1e282e;
+}
+.car-icon-item-num {
+  background-color: #aebad2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 25px;
+  height: 25px;
+  font-size: 12px;
+  padding: 6px 2px;
+  color: #ffffff;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.car-icon-item.active .car-icon-item-num {
+  background-color: #4b5257;
+}
+.car-icon-item-text {
+  color: #393939;
+  opacity: .5;
+}
+.car-icon-item-seats {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #393939;
+}
+/* <!-- Train --> */
+
+/* <-- Car --> */
+.fill-darkgray {
+  fill: #bdc3c7;
+}
+.fill-lightgray {
+  fill: #ecf0f1;
+}
+.svg-helvetica {
+  font-family: "Helvetica";
+}
+.svg-fontsize {
+  font-size: 17.7123px;
+}
+.t60-arrow {
+  fill: none;
+  stroke: #bdc3c7;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.svg-helveticabold {
+  font-family: "Helvetica-Bold";
+}
+.t79-train-curve {
+  fill: none;
+  stroke: #ecf0f1;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+g.train-seat.disabled {
+  fill: #d6d6d6;
+}
+g.train-seat.available {
+  cursor: pointer;
+  fill: #758fc1;
+}
+g.train-seat.selected {
+  cursor: pointer;
+  fill: #4b5256;
+}
+/* <!-- Car --> */
+
+/* <-- Car --> */
+.tasks-page .inner-page {
+  z-index: 0 !important;
+}
+.tasks-page .header__select {
+  border: solid 1px #000;
+  border-radius: 20px;
+  height: 45px;
+}
+.tasks-page .date_wrapper {
+  border: solid 1px #000;
+  border-radius: 20px;
+  height: 45px;
+}
+.tasks-page .react-date-picker__inputGroup input {
+  color: #000 !important;
+}
+.tasks-page .date_wrapper svg {
+  stroke: #000 !important;
+}
+/* <!-- Car --> */

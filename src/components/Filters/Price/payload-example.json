@@ -1,0 +1,695 @@
+[
+  {
+      "number": "752А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T05:45:00",
+      "localArrivalDateTime": "2019-09-30T09:29:00",
+      "tripDuration": 224,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 3171.6,
+              "maxPrice": 3375.6,
+              "placeQuantity": 26,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 3630.4,
+              "maxPrice": 3834.4,
+              "placeQuantity": 42,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 3272.3,
+              "maxPrice": 3672.3,
+              "placeQuantity": 285,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 5306.2,
+              "maxPrice": 5510.2,
+              "placeQuantity": 11,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 6789.1,
+              "maxPrice": 7197.1,
+              "placeQuantity": 42,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 12447.4,
+              "maxPrice": 13212.4,
+              "placeQuantity": 14,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 40885,
+              "maxPrice": 50125.6,
+              "placeQuantity": 4,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "754А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T06:45:00",
+      "localArrivalDateTime": "2019-09-30T10:50:00",
+      "tripDuration": 245,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 2977.6,
+              "maxPrice": 3162.2,
+              "placeQuantity": 76,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 3436.4,
+              "maxPrice": 3621,
+              "placeQuantity": 91,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 3078.3,
+              "maxPrice": 3478.3,
+              "placeQuantity": 602,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 5112.2,
+              "maxPrice": 5296.8,
+              "placeQuantity": 32,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 6401.1,
+              "maxPrice": 6770.3,
+              "placeQuantity": 85,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 11865.4,
+              "maxPrice": 12557.7,
+              "placeQuantity": 32,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 40885,
+              "maxPrice": 50125.6,
+              "placeQuantity": 8,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "756А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T07:00:00",
+      "localArrivalDateTime": "2019-09-30T11:10:00",
+      "tripDuration": 250,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 3267.6,
+              "maxPrice": 3481.2,
+              "placeQuantity": 33,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 3726.4,
+              "maxPrice": 3940,
+              "placeQuantity": 39,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 3368.3,
+              "maxPrice": 3768.3,
+              "placeQuantity": 253,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 5402.2,
+              "maxPrice": 5615.8,
+              "placeQuantity": 12,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 6981.1,
+              "maxPrice": 7408.3,
+              "placeQuantity": 43,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 12735.4,
+              "maxPrice": 13536.4,
+              "placeQuantity": 15,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 40885,
+              "maxPrice": 50125.6,
+              "placeQuantity": 4,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "760А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T09:40:00",
+      "localArrivalDateTime": "2019-09-30T13:43:00",
+      "tripDuration": 243,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 0,
+              "maxPrice": 0,
+              "placeQuantity": 0,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 4818.4,
+              "maxPrice": 4818.4,
+              "placeQuantity": 3,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 4860.3,
+              "maxPrice": 4860.3,
+              "placeQuantity": 2,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 6817,
+              "maxPrice": 6817,
+              "placeQuantity": 1,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 9165.1,
+              "maxPrice": 9810.7,
+              "placeQuantity": 10,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 16011.4,
+              "maxPrice": 17221.9,
+              "placeQuantity": 17,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 51925,
+              "maxPrice": 61165.6,
+              "placeQuantity": 4,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "768А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T16:05:00",
+      "localArrivalDateTime": "2019-09-30T19:58:00",
+      "tripDuration": 233,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 3217.6,
+              "maxPrice": 3426.2,
+              "placeQuantity": 16,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 3676.4,
+              "maxPrice": 3885,
+              "placeQuantity": 36,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 3318.3,
+              "maxPrice": 3718.3,
+              "placeQuantity": 46,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 5352.2,
+              "maxPrice": 5560.8,
+              "placeQuantity": 14,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 6881.1,
+              "maxPrice": 6881.1,
+              "placeQuantity": 4,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 12585.4,
+              "maxPrice": 13367.7,
+              "placeQuantity": 12,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 40165,
+              "maxPrice": 49405.6,
+              "placeQuantity": 4,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "770А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T16:15:00",
+      "localArrivalDateTime": "2019-09-30T20:15:00",
+      "tripDuration": 240,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 2999.6,
+              "maxPrice": 3186.4,
+              "placeQuantity": 10,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 3458.4,
+              "maxPrice": 3645.2,
+              "placeQuantity": 38,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 3100.3,
+              "maxPrice": 3500.3,
+              "placeQuantity": 36,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 5134.2,
+              "maxPrice": 5321,
+              "placeQuantity": 16,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 6445.1,
+              "maxPrice": 6818.7,
+              "placeQuantity": 34,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 11931.4,
+              "maxPrice": 12631.9,
+              "placeQuantity": 17,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 40165,
+              "maxPrice": 49405.6,
+              "placeQuantity": 4,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "772А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T17:30:00",
+      "localArrivalDateTime": "2019-09-30T21:27:00",
+      "tripDuration": 237,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 2899.6,
+              "maxPrice": 3076.4,
+              "placeQuantity": 23,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 3358.4,
+              "maxPrice": 3535.2,
+              "placeQuantity": 38,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 3000.3,
+              "maxPrice": 3400.3,
+              "placeQuantity": 181,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 5034.2,
+              "maxPrice": 5211,
+              "placeQuantity": 16,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 6245.1,
+              "maxPrice": 6245.1,
+              "placeQuantity": 8,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 11631.4,
+              "maxPrice": 12294.4,
+              "placeQuantity": 14,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 0,
+              "maxPrice": 0,
+              "placeQuantity": 0,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "774А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T17:40:00",
+      "localArrivalDateTime": "2019-09-30T21:48:00",
+      "tripDuration": 248,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 2739.6,
+              "maxPrice": 2900.4,
+              "placeQuantity": 36,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 3198.4,
+              "maxPrice": 3359.2,
+              "placeQuantity": 44,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 2840.3,
+              "maxPrice": 3240.3,
+              "placeQuantity": 192,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 4874.2,
+              "maxPrice": 5035,
+              "placeQuantity": 16,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 5925.1,
+              "maxPrice": 5925.1,
+              "placeQuantity": 5,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 11151.4,
+              "maxPrice": 11754.4,
+              "placeQuantity": 16,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 37285,
+              "maxPrice": 46525.6,
+              "placeQuantity": 4,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "776А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T19:30:00",
+      "localArrivalDateTime": "2019-09-30T23:35:00",
+      "tripDuration": 245,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 2495.6,
+              "maxPrice": 2632,
+              "placeQuantity": 90,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 2954.4,
+              "maxPrice": 3090.8,
+              "placeQuantity": 88,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 2596.3,
+              "maxPrice": 2996.3,
+              "placeQuantity": 539,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 4630.2,
+              "maxPrice": 4766.6,
+              "placeQuantity": 32,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 5437.1,
+              "maxPrice": 5709.9,
+              "placeQuantity": 86,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 10419.4,
+              "maxPrice": 10930.9,
+              "placeQuantity": 32,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 32845,
+              "maxPrice": 42085.6,
+              "placeQuantity": 8,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "778А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T19:45:00",
+      "localArrivalDateTime": "2019-09-30T23:54:00",
+      "tripDuration": 249,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 2495.6,
+              "maxPrice": 3162.2,
+              "placeQuantity": 93,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 2954.4,
+              "maxPrice": 3621,
+              "placeQuantity": 92,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 2596.3,
+              "maxPrice": 3478.3,
+              "placeQuantity": 532,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 4630.2,
+              "maxPrice": 5296.8,
+              "placeQuantity": 32,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 5437.1,
+              "maxPrice": 6770.3,
+              "placeQuantity": 95,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 10419.4,
+              "maxPrice": 12557.7,
+              "placeQuantity": 35,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 32845,
+              "maxPrice": 50125.6,
+              "placeQuantity": 8,
+              "name": "Переговорная"
+          }
+      }
+  },
+  {
+      "number": "780А",
+      "name": "САПСАН",
+      "destinationFrom": "МОСКВА ОКТ",
+      "destinationTo": "С-ПЕТЕР-ГЛ",
+      "localDepartureDateTime": "2019-09-30T21:00:00",
+      "localArrivalDateTime": "2019-10-01T00:53:00",
+      "tripDuration": 233,
+      "tripDistance": 650,
+      "initialStationName": "МОСКВА ОКТ",
+      "finalStationName": "С-ПЕТЕР-ГЛ",
+      "serviceClasses": {
+          "2Р": {
+              "typeName": "СИД",
+              "minPrice": 2299.6,
+              "maxPrice": 2416.4,
+              "placeQuantity": 30,
+              "name": "Базовый"
+          },
+          "2В": {
+              "typeName": "СИД",
+              "minPrice": 2758.4,
+              "maxPrice": 2875.2,
+              "placeQuantity": 45,
+              "name": "Эконом +"
+          },
+          "2С": {
+              "typeName": "СИД",
+              "minPrice": 2400.3,
+              "maxPrice": 2800.3,
+              "placeQuantity": 287,
+              "name": "Эконом"
+          },
+          "2Е": {
+              "typeName": "СИД",
+              "minPrice": 4434.2,
+              "maxPrice": 4551,
+              "placeQuantity": 16,
+              "name": "Бистро"
+          },
+          "1С": {
+              "typeName": "СИД",
+              "minPrice": 5045.1,
+              "maxPrice": 5278.7,
+              "placeQuantity": 43,
+              "name": "Бизнес"
+          },
+          "1В": {
+              "typeName": "СИД",
+              "minPrice": 9831.4,
+              "maxPrice": 10269.4,
+              "placeQuantity": 16,
+              "name": "Первый"
+          },
+          "1Р": {
+              "typeName": "СИД",
+              "minPrice": 32845,
+              "maxPrice": 42085.6,
+              "placeQuantity": 4,
+              "name": "Переговорная"
+          }
+      }
+  }
+]

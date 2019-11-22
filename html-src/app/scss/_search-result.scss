@@ -1,0 +1,377 @@
+.search-result {
+	&__nav {
+		margin-bottom: 40px;
+
+		&-content {
+			width: 100%;
+			padding: 0 30px;
+		}
+
+		&-link {
+			margin-bottom: 5px;
+			color: $light-text-color;
+
+			&:hover {
+				color: #000;
+			}
+
+			&.active {
+				color: #000;
+				font-weight: bold;
+			}
+
+			&.throw-off {
+				width: 180px;
+			    display: block;
+			    text-align: right;
+			    padding: 0 30PX;
+				color: $light-text-color;
+
+				&.active {
+					color: $main-color;
+				}
+			}
+		}
+	}
+
+	.btn__search-result {
+		position: relative;
+	    width: fit-content;
+	    padding: 0 20px 1px 8px;
+		border: 1px solid #000;
+		border-radius: 25px;
+		font-size: 12px;
+	}
+
+	.close-icon {
+		position: absolute;
+		top: 0;
+		right: 6px;
+		color: $main-color;
+		cursor: pointer;
+
+		i {
+			font-size: 10px;
+		}
+	}
+
+	.list {
+		width: 100%;
+		margin-bottom: 40px;
+
+		&__head {
+			margin-bottom: 5px;
+		}
+
+		&__title {
+			position: relative;
+			font-size: 13px;
+			color: $light-text-color;
+			text-align: center;
+			font-style: italic;
+			transition: 0.2s;
+			cursor: pointer;
+
+			&-economy {
+				width: 57%;
+			}
+
+			&-bisiness {
+				position: relative;
+				width: 14%;
+
+			}
+
+			&-premium {
+				width: 28%;
+			}
+
+			.tooltip-info {
+				position: absolute;
+				top: -45px;
+				left: 50%;
+				width: 310px;
+				margin-left: -155px;
+				padding: 5px;
+			    line-height: 1.2;
+			    font-style: normal;
+			    font-size: 12px;
+			    color: #212529;
+			    background-color: #fff;
+			    border: 1px solid #eee;
+			    box-shadow: 1px 4px 4px #c3c1c16e;
+			   	border-radius: 5px;
+			   	transition: opacity 0.2;
+			   	opacity: 0;
+			}
+
+			&.active,
+			&:hover {
+				color: $main-color;
+			}
+
+			&:hover .tooltip-info {
+				opacity: 1;
+			}
+		}
+
+		&__item {
+			width: 	140px;
+			padding: 15px;
+			border: 1px solid #000;
+			border-radius: 25px;
+			transition: 0.2s;
+
+			&-bisiness {
+				position: relative;
+
+				&:before,
+				&:after {
+					position: absolute;
+					content: "";
+					top: -10px;
+					width: 1px;
+					height: 110%;
+					border: 1px dotted $light-text-color;
+				}
+
+
+				&:before {
+					left: -13px;
+				}
+
+				&:after {
+					right: -13px;
+				}
+			}
+
+			.top-link {
+				margin-bottom: 15px;
+				font-size: 13px;
+
+				&__item {
+					line-height: 18px;
+				}
+
+				.line {
+					width: 1px;
+					height: 15px;
+					margin: 0 3px;
+					background-color: #000;
+				}
+			}
+
+			.link-icon {
+				i {
+					width: 20px;
+					height: 20px;
+					color: #212529;
+					opacity: 0.6;
+				}
+
+				img {
+					width: 20px;
+				}
+			}
+
+			.price {
+				font-size: 14px;
+
+				&__info {
+					font-size: 12px;
+					color: $light-text-color;
+				}
+			}
+
+			.place {
+				font-size: 12px;
+				font-style: italic;
+			}
+
+			&.active,
+			&:hover {
+				color: #fff;
+				border: 1px solid $main-color;
+				background-color: $main-color;
+
+				.top-link .line {
+					background-color: #fff;
+				}
+
+				.link-icon i {
+					color: #fff;
+				}
+
+				.place {
+					opacity: 0.6;
+				}
+			}
+		}
+
+	}
+
+}
+
+.search-filter {
+	&__item {
+		margin-bottom: 40px;
+		border: 1px solid #eee;
+	    box-shadow: 4px 4px 10px #c3c1c16e;
+	    border-radius: 25px;
+	    overflow: hidden;
+	}
+
+	.very {
+		width: 44px;
+		position: relative;
+		background-color: $purple-color;
+		border-radius: 25px 0 0 25px;
+
+		.text {
+			position: absolute;
+		    top: 50%;
+		    left: -30px;
+		    width: 100px;
+		    margin-top: -25px;
+		    line-height: 44px;
+		    height: 44px;
+		    color: #fff;
+		    font-size: 12px;
+		    font-weight: bold;
+		    transform: rotate(-90deg);
+		}
+
+		&__speed {
+			background-color: $purple-color;
+
+			&:after {
+				position: absolute;
+				content: "";
+				top: 0;
+				right: 0;
+				width: 6px;
+				height: 100%;
+				background: url('../img/pink-border.jpg') repeat;
+			}
+		}
+
+		&__cheap {
+			background-color: $yellow-color;
+
+			&:after {
+				position: absolute;
+				content: "";
+				top: 0;
+				right: 0;
+				width: 6px;
+				height: 100%;
+				background: url('../img/yellow-border.jpg') repeat;
+			}
+		}
+
+	}
+
+	.col-left {
+		width: 25%;
+		padding: 50px 15px 40px 40px;
+	}
+
+	.col-center {
+		width: 75%;
+		padding: 85px 15px 40px 40px;
+	}
+
+	.flight {
+		&__number .text{
+		    width: fit-content;
+		    margin-bottom: 5px;
+		    font-weight: bold;
+		    font-size: 25px;
+		    line-height: 28px;
+		    border-bottom: 2px solid $light-text-color;
+		}
+
+		.icon-star {
+		    display: inline-block;
+		    height: 35px;
+		    vertical-align: middle;
+		    font-size: 16px;
+		    color: $light-text-color;
+		    opacity: 0.3;
+		}
+
+		&__text {
+			margin-bottom: 10px;
+			font-size: 12px;
+			color: $light-text-color;
+
+			.desc {
+				padding: 0px 4px;
+			    display: inline-block;
+			    line-height: 9px;
+			    font-size: 10px;
+			    border-radius: 3px;
+				border: 1px solid $light-text-color;
+			}
+		}
+
+		&-list {
+			&__item {
+				margin-bottom: 5px;
+			}
+
+			.icon {
+				width: 14px;
+
+				&__rating {
+					width: 24px;
+					margin-right: -10px;
+				    height: 35px;
+				}
+
+				&__tarif {
+					max-width: 14px;
+					height: 14px;
+					font-size: 12px;
+					text-align: center;
+					line-height: 14px;
+					color: #fff;
+					border-radius: 50%;
+					background-color: $light-text-color;
+				}
+			}
+
+			.text {
+				font-size: 12px;
+			}
+		}
+	}
+
+	.info-list {
+		padding: 85px 40px 40px 15px;
+
+		.col-item {
+			width: 33.3%;
+		}
+
+		.text {
+			display: inline-block;
+			font-size: 12px;
+		}
+
+		.sid {
+			display: inline-block;
+			font-size: 12px;
+			color: $light-text-color;
+		}
+
+		.col-price {
+			text-align: right;
+
+			.text {
+				display: inline-block;
+				font-size: 14px;
+			}
+		}
+	}
+}

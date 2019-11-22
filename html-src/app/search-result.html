@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Title</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content"> 
+            <header class="header header__search-result">
+                <div class="container">
+                    <div class="row header__top">
+                        <div class="col-lg-2 col-6">
+                            <a href="#" class="logo"> 
+                                <img src="img/logo.png" alt="" class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col-lg-10 col-6">
+                            <nav class="header__nav">
+                                 <div class="nav-burger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="header__nav-menu">
+                                    <div class="header__nav-list">
+                                        
+                                        <div class="row header__search">
+                                            <div class="col-lg-3 col-sm-6 col-parent col-item">
+                                                <div class="title-info">Откуда</div>
+                                                <input placeholder="" type="text" class="select-dropdown" />
+                                                <div class="swap"><a href="#" class="swap-btn"><img src="img/icons/search-arrows.png" alt=""></a></div>
+                                            </div>
+                                             
+                                            <div class="col-lg-3 col-sm-6 col-last col-item">
+                                                <div class="title-info">Куда</div>
+                                                <input placeholder="" type="text" class="select-dropdown" / />
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 col-item">
+                                                <div class="title-info">Дата</div>
+                                                <input class="date" type="date" id="start" name="trip-start"
+                                                       value=""
+                                                       min="2019-01-01" max="2019-12-31">
+                                                <i class="far fa-calendar-alt"></i>
+                                            </div>
+                                            <div class="col-lg-3 col-sm-6 col-last col-item">
+                                                <div class="title-info">Обратно</div>
+                                                <input class="date" type="date" id="end" name="trip-end"
+                                                       value="Обратно"
+                                                       min="2019-01-01" max="2019-12-31" / />
+                                                <i class="far fa-calendar-alt"></i>
+                                            </div>
+                                        </div>
+
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn__transparent" data-toggle="modal" data-target="#signInModal">
+                                            Войти
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="lang d-flex">
+                    <a href="#" class="lang__item">En</a>
+                    <a href="#" class="lang__item">Ru</a>
+                </div>
+            </header>
+
+            <main class="main">
+                <div class="container"> 
+                    <div class="search-result">
+
+                        <div class="search-result__nav d-flex j-content-between">
+                          <div class="search-result__nav-content d-flex j-content-between">
+                            <div class="search-result__nav-item d-flex d-column">
+                               <a href="#" class="search-result__nav-link">
+                                   Постоимости
+                               </a>
+                               <button class="btn btn__search-result price">
+                                   4 000
+                                   <span class="r-icon"></span>
+                                   -
+                                   4 000
+                                   <span class="r-icon"></span>
+                                   <span class="close-icon">
+                                       <i class="fa fa-times" aria-hidden="true"></i>
+                                   </span>
+                               </button>
+                           </div>
+                           <div class="search-result__nav-item d-flex d-column">
+                               <a href="#" class="search-result__nav-link">
+                                   По классу обслуживания
+                               </a>
+                               <button class="btn btn__search-result price">
+                                    Эконом-сегмент
+                                    <span class="close-icon">
+                                       <i class="fa fa-times" aria-hidden="true"></i>
+                                   </span>
+                               </button>
+                           </div>
+                           <div class="search-result__nav-item d-flex d-column">
+                               <a href="#" class="search-result__nav-link">
+                                   По времени отправления
+                               </a>
+                               <button class="btn btn__search-result time">
+                                   03:00
+                                   -
+                                   21:00
+                                   <span class="close-icon">
+                                       <i class="fa fa-times" aria-hidden="true"></i>
+                                   </span>
+                               </button>
+                           </div>
+                           <div class="search-result__nav-item d-flex d-column">
+                               <a href="#" class="search-result__nav-link active">
+                                   По времени прибытия
+                               </a>
+                               <button class="btn btn__search-result time">
+                                   03:00
+                                   -
+                                   21:00
+                                   <span class="close-icon">
+                                       <i class="fa fa-times" aria-hidden="true"></i>
+                                   </span>
+                               </button>
+                           </div>
+                             
+                          </div>
+                          <div class="search-result__nav-item">
+                               <a href="#" class="search-result__nav-link throw-off active">
+                                   Сбросить
+                               </a>
+                            </div>
+                       </div>
+
+                       <div class="search-result__info d-flex j-content-between">
+                           <div class="list">
+                                <div class="list__head d-flex j-content-between"> 
+                                   <div class="list__title list__title-economy active">
+                                       Эконом-сегмент
+
+                                       <div class="tooltip-info">
+                                         Вы можете выбрать все классы обслуживания эконом-сегмента в одно нажатие
+                                       </div>
+                                   </div>
+                                   <div class="list__title list__title-bisiness">
+                                       Бизнес-сегмент
+
+                                       <div class="tooltip-info">
+                                         Вы можете выбрать все классы обслуживания бизнес-сегмента в одно нажатие
+                                       </div>
+                                   </div>
+                                    <div class="list__title list__title-premium">
+                                       Премиум-сегмент
+
+                                       <div class="tooltip-info">
+                                         Вы можете выбрать все классы обслуживания премиум-сегмента в одно нажатие
+                                       </div>
+                                   </div>
+                                </div>
+                                
+                                <div class="list__content d-flex j-content-between">
+                                   <div class="list__item list__item-economy d-flex d-column j-content-between active">
+                                        <div class="top-link d-flex align-items-center j-content-center">
+                                           <span class="top-link__item">2Р</span>
+                                           <span class="line"></span>
+                                           <span class="top-link__item">Базовый</span>
+                                        </div>
+
+                                        <div class="bottom-box">
+                                           <div class="price">
+                                               от
+                                               1 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="price price__info">
+                                               до
+                                               10 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="place">
+                                               1 место
+                                           </div>
+                                        </div>
+                                   </div>
+
+                                   <div class="list__item list__item-economy d-flex d-column j-content-between active">
+                                        <div class="top-link d-flex align-items-center j-content-center">
+                                           <span class="top-link__item">2Р</span>
+                                           <span class="line"></span>
+                                           <span class="top-link__item">Базовый</span>
+                                        </div>
+
+                                       <div class="bottom-box">
+                                           <div class="price">
+                                               от
+                                               1 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="price price__info">
+                                               до
+                                               10 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="place">
+                                               1 место
+                                           </div>
+                                       </div>
+                                   </div>
+
+                                   <div class="list__item list__item-economy d-flex d-column j-content-between active">
+                                        <div class="top-link d-flex align-items-center j-content-center">
+                                           <span class="top-link__item">2Р</span>
+                                           <span class="line"></span>
+                                           <span class="top-link__item">Базовый</span>
+                                        </div>
+
+                                       <div class="bottom-box">
+                                           <div class="price">
+                                               от
+                                               1 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="price price__info">
+                                               до
+                                               10 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="place">
+                                               1 место
+                                           </div>
+                                       </div>
+                                   </div>
+
+                                   <div class="list__item list__item-economy d-flex d-column j-content-between active">
+                                        <div class="top-link d-flex align-items-center j-content-center">
+                                           <span class="top-link__item">2Р</span>
+                                           <span class="line"></span>
+                                           <span class="top-link__item">Базовый</span>
+                                        </div>
+
+                                       <div class="bottom-box">
+                                           <div class="price">
+                                               от
+                                               1 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="price price__info">
+                                               до
+                                               10 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="place">
+                                               1 место
+                                           </div>
+                                       </div>
+                                   </div>
+
+                                   <div class="list__item list__item-bisiness d-flex d-column j-content-between">
+                                        <div class="top-link d-flex align-items-center j-content-center">
+                                           <span class="top-link__item">2Р</span>
+                                           <span class="line"></span>
+                                           <span class="top-link__item">Базовый</span>
+                                        </div>
+
+                                       <div class="bottom-box">
+                                           <div class="price">
+                                               от
+                                               1 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="price price__info">
+                                               до
+                                               10 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="place">
+                                               1 место
+                                           </div>
+                                       </div>
+
+                                   </div>
+
+                                   <div class="list__item list__item-premium d-flex d-column j-content-between">
+                                        <div class="top-link d-flex align-items-center j-content-center">
+                                           <span class="top-link__item">2Р</span>
+                                           <span class="line"></span>
+                                           <span class="top-link__item">Базовый</span>
+                                        </div>
+
+                                       <div class="bottom-box">
+                                           <div class="price">
+                                               от
+                                               1 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="price price__info">
+                                               до
+                                               10 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="place">
+                                               1 место
+                                           </div>
+                                       </div>
+                                   </div>
+
+                                   <div class="list__item list__item-premium d-flex d-column j-content-between">
+                                        <div class="top-link d-flex align-items-center j-content-center">
+                                           <span class="top-link__item">2Р</span>
+                                           <span class="line"></span>
+                                           <span class="top-link__item">Базовый</span>
+                                        </div>
+
+                                       <div class="bottom-box">
+                                           <div class="price">
+                                               от
+                                               1 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="price price__info">
+                                               до
+                                               10 000,00 &#8381
+                                               <span class="r-icon"></span>
+                                           </div>
+
+                                           <div class="place">
+                                               1 место
+                                           </div>
+                                       </div>
+                                   </div>
+                                </div>
+
+                            </div>
+                       </div>
+
+                       <section class="search-filter">
+                          <div class="search-filter__item">
+                            <div class="row">
+                              <div class="col-md-8 d-flex">
+                                <div class="col-left">
+                                  <div class="flight">
+                                    <div class="flight__number">
+                                      <span class="text">752A</span> 
+                                      <span class="icon-star">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                      </span>
+                                    </div>
+                                    <div class="flight__text">
+                                      &laquo;Сапсан&raquo;
+                                      <span class="desc">эр</span>
+                                      <span class="desc">дц</span>
+                                    </div>
+                                    <ul class="flight-list">
+                                      <li class="flight-list__item">
+                                        <span class="icon">
+                                           <img src="img/icons/location-gray.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Маршрут</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                        <span class="icon">
+                                           <img src="img/icons/grafic-icon.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Годовой график</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                          <span class="icon icon__rating">
+                                           <img src="img/icons/rating-icon.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Рейтинг рейса</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                        <span class="icon icon__tarif">
+                                           %
+                                        </span>
+                                        <span class="text">Тарифы</span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="col-center">
+                                  <div class="location">
+                                    <div class="top-box d-flex j-content-between">
+                                      <div class="time-date">
+                                        <div class="time">05:45</div>
+                                        <div class="date">12 янв, пт</div>
+                                      </div>
+                                      <div class="flight-time">
+                                        3ч30м в пути
+                                      </div>
+                                      <div class="time-date">
+                                        <div class="time">05:45</div>
+                                        <div class="date">12 янв, пт</div>
+                                      </div>
+                                    </div>
+                                    <div class="bottom-box d-flex align-items-center j-content-between">
+                                      <div class="start-location">
+                                        <div class="station">
+                                          Ленинградский вокзал
+                                          <span class="icon">
+                                             <img src="img/icons/metro-logo.svg" alt="img item" />
+                                          </span>
+                                        </div>
+                                        <div class="station__location">
+                                          Москва Октябрьская
+                                        </div>
+                                      </div>
+                                      <div class="finish-location">
+                                        <div class="station">
+                                          <span class="icon">
+                                             <img src="img/icons/metro-logo.svg" alt="img item" />
+                                          </span>
+                                          Московский вокзал
+                                        </div>
+                                        <div class="station__location">
+                                          Санкт-Петербург-Главн.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="info-list">
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div> 
+                            </div>
+                          </div>
+
+                        <!-- ============ VERY SPEED =========== -->
+                          <div class="search-filter__item">
+                            <div class="row">
+                              <div class="col-md-8 d-flex">
+                                <div class="very very__speed">
+                                  <div class="text">Самый быстрый</div>
+                                </div>
+                                <div class="col-left">
+                                  <div class="flight">
+                                    <div class="flight__number">
+                                      <span class="text">752A</span> 
+                                      <span class="icon-star">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                      </span>
+                                    </div>
+                                    <div class="flight__text">
+                                      &laquo;Сапсан&raquo;
+                                      <span class="desc">эр</span>
+                                      <span class="desc">дц</span>
+                                    </div>
+                                    <ul class="flight-list">
+                                      <li class="flight-list__item">
+                                        <span class="icon">
+                                           <img src="img/icons/location-gray.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Маршрут</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                        <span class="icon">
+                                           <img src="img/icons/grafic-icon.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Годовой график</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                          <span class="icon icon__rating">
+                                           <img src="img/icons/rating-icon.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Рейтинг рейса</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                        <span class="icon icon__tarif">
+                                           %
+                                        </span>
+                                        <span class="text">Тарифы</span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="col-center">
+                                  <div class="location">
+                                    <div class="top-box d-flex j-content-between">
+                                      <div class="time-date">
+                                        <div class="time">05:45</div>
+                                        <div class="date">12 янв, пт</div>
+                                      </div>
+                                      <div class="flight-time">
+                                        3ч30м в пути
+                                      </div>
+                                      <div class="time-date">
+                                        <div class="time">05:45</div>
+                                        <div class="date">12 янв, пт</div>
+                                      </div>
+                                    </div>
+                                    <div class="bottom-box d-flex align-items-center j-content-between">
+                                      <div class="start-location">
+                                        <div class="station">
+                                          Ленинградский вокзал
+                                          <span class="icon">
+                                             <img src="img/icons/metro-logo.svg" alt="img item" />
+                                          </span>
+                                        </div>
+                                        <div class="station__location">
+                                          Москва Октябрьская
+                                        </div>
+                                      </div>
+                                      <div class="finish-location">
+                                        <div class="station">
+                                          <span class="icon">
+                                             <img src="img/icons/metro-logo.svg" alt="img item" />
+                                          </span>
+                                          Московский вокзал
+                                        </div>
+                                        <div class="station__location">
+                                          Санкт-Петербург-Главн.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="info-list">
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div> 
+                            </div>
+                          </div>
+
+                          <!-- ============ VERY SHEAP =========== -->
+                          <div class="search-filter__item">
+                            <div class="row">
+                              <div class="col-md-8 d-flex">
+                                <div class="very very__cheap">
+                                  <div class="text">Самый дешевый</div>
+                                </div>
+                                <div class="col-left">
+                                  <div class="flight">
+                                    <div class="flight__number">
+                                      <span class="text">752A</span> 
+                                      <span class="icon-star">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                      </span>
+                                    </div>
+                                    <div class="flight__text">
+                                      &laquo;Сапсан&raquo;
+                                      <span class="desc">эр</span>
+                                      <span class="desc">дц</span>
+                                    </div>
+                                    <ul class="flight-list">
+                                      <li class="flight-list__item">
+                                        <span class="icon">
+                                           <img src="img/icons/location-gray.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Маршрут</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                        <span class="icon">
+                                           <img src="img/icons/grafic-icon.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Годовой график</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                          <span class="icon icon__rating">
+                                           <img src="img/icons/rating-icon.svg" alt="IMG ITEM" />
+                                        </span>
+                                        <span class="text">Рейтинг рейса</span>
+                                      </li>
+                                      <li class="flight-list__item">
+                                        <span class="icon icon__tarif">
+                                           %
+                                        </span>
+                                        <span class="text">Тарифы</span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="col-center">
+                                  <div class="location">
+                                    <div class="top-box d-flex j-content-between">
+                                      <div class="time-date">
+                                        <div class="time">05:45</div>
+                                        <div class="date">12 янв, пт</div>
+                                      </div>
+                                      <div class="flight-time">
+                                        3ч30м в пути
+                                      </div>
+                                      <div class="time-date">
+                                        <div class="time">05:45</div>
+                                        <div class="date">12 янв, пт</div>
+                                      </div>
+                                    </div>
+                                    <div class="bottom-box d-flex align-items-center j-content-between">
+                                      <div class="start-location">
+                                        <div class="station">
+                                          Ленинградский вокзал
+                                          <span class="icon">
+                                             <img src="img/icons/metro-logo.svg" alt="img item" />
+                                          </span>
+                                        </div>
+                                        <div class="station__location">
+                                          Москва Октябрьская
+                                        </div>
+                                      </div>
+                                      <div class="finish-location">
+                                        <div class="station">
+                                          <span class="icon">
+                                             <img src="img/icons/metro-logo.svg" alt="img item" />
+                                          </span>
+                                          Московский вокзал
+                                        </div>
+                                        <div class="station__location">
+                                          Санкт-Петербург-Главн.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="info-list">
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                  <div class="info-list__item d-flex j-content-between">
+                                    <div class="col-item">
+                                      <span class="text">Базовый</span>
+                                      <span class="sid">сид</span>
+                                    </div>
+                                    <div class="col-item">
+                                      <span class="text">66 мест</span>
+                                    </div>
+                                    <div class="col-item col-price">
+                                      <span class="text">от 1 000,00 &#8381</span> 
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div> 
+                            </div>
+                          </div>
+
+                       </section>
+
+                   </div>
+               </div> 
+            </main>
+ 
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content"> 
+                    <div class="row align-items-center">
+                        <div class="col-md-4 col-first">
+                            <div class="footer__text">
+                                Вопросы, жалобы, пожелания!
+                            </div>
+                            <div class="footer__link footer__link-first">
+                                <a href="#">Напишите нам</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="footer__logo"> 
+                                <img src="img/logo.png" alt="" class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-last">
+                            <div class="footer__text">
+                                Телефон горячей линии:
+                            </div>
+                            <div class="footer__link footer__link-phone">
+                                <a href="tel:8 800 111 22 33">8 800 111 22 33</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row copyright align-items-center">
+                    <div class="col-12">
+                        <div class="text">&#9400; Copyright</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
