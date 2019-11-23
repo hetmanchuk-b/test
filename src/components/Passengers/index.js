@@ -14,7 +14,9 @@ class Passengers extends Component
       <Fragment>
         {Object.keys(selectedSeats).map(car =>
           Object.keys(selectedSeats[car]).map(seat => (
-            <Passenger key={car + seat} car={car} seat={seat} saveOption={true} selectSavedOption={true} />
+            <Passenger key={car + seat} car={car} seat={seat} saveOption={true} selectSavedOption={true}
+              handleRemove={() => this.props.handleRemove(car, seat)}
+            />
           ))
         )}
 

@@ -46,16 +46,18 @@ class Form extends Component
   }
 
   render() {
-    const { title = null, passenger = {}, passengers = [], saveOption = false, selectSavedOption = false, error = null } = this.props;
+    const { title = null, passenger = {}, passengers = [], saveOption = false, selectSavedOption = false, handleRemove = null, error = null } = this.props;
     const { email, phone, lastName, firstName, middleName, documentType, nationality, gender, documentNumber, birthdate, rzhdBonus, universalRzhdCard, businessTravel } = passenger;
 
     return (
       <div className="inner-page apply-page">
         <div className="form">
           {title ? ( <div className="title">{title}</div>) : null}
-          <div className="deletePassenger" onClick={this.handleRemovePassenger}>
-            <span>&times;</span>
-          </div>
+          {handleRemove === null ? null : (
+            <div className="deletePassenger" onClick={this.props.handleRemove}>
+              <span>&times;</span>
+            </div>
+          )}
           <div className="box-info">
             <div className="desc-info d-flex align-items-center f-wrap">
               <div className="desc-info__item">

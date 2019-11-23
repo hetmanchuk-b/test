@@ -5,7 +5,7 @@ const initialState = {
   departureTime: { from: null, to: null },
   arrivalTime: { from: null, to: null },
   serviceClasses: {
-    economy: { '2Р': false, '2В': false, '2С': false, '2Е': false },
+    economy: { '2Р': false, '2В': false, '2С': false, '2Е': false, '2Ю': false, '2Я': false, '1Ж': false },
     business: { '1С': false },
     premium: { '1В': false, '1Р': false }
   },
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
         departureTime: { from: null, to: null },
         arrivalTime: { from: null, to: null },
         serviceClasses: {
-          economy: { '2Р': false, '2В': false, '2С': false, '2Е': false },
+          economy: { '2Р': false, '2В': false, '2С': false, '2Е': false, '2Ю': false, '2Я': false, '1Ж': false },
           business: { '1С': false },
           premium: { '1В': false, '1Р': false }
         }

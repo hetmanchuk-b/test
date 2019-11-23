@@ -34,10 +34,15 @@ class Tasks extends PureComponent
     this.setState({ passengers });
   }
 
-  passengerUpdate = i => (key, value) => {
+  passengerUpdate = index => (key, value) => {
     let passengers = [ ...this.state.passengers ];
 
-    passengers[i][key] = value;
+    passengers[index][key] = value;
+    this.setState({ passengers });
+  }
+
+  passengerRemove = index => () => {
+    let passengers = this.state.passengers.filter((el, i) => i !== index);
     this.setState({ passengers });
   }
 
@@ -221,6 +226,7 @@ class Tasks extends PureComponent
                     saveOption={true}
                     selectSavedOption={true}
                     fieldUpdate={this.passengerUpdate(i)}
+                    handleRemove={this.passengerRemove(i)}
                     title={`Пассажир № ${i + 1}:`}
                     key={i}
                   />

@@ -8,6 +8,9 @@ const serviceClassesData = trains => {
     '2В': { minPrice: 0, maxPrice: 0, placeQuantity: 0 },
     '2С': { minPrice: 0, maxPrice: 0, placeQuantity: 0 },
     '2Е': { minPrice: 0, maxPrice: 0, placeQuantity: 0 },
+    '2Ю': { minPrice: 0, maxPrice: 0, placeQuantity: 0 },
+    '2Я': { minPrice: 0, maxPrice: 0, placeQuantity: 0 },
+    '1Ж': { minPrice: 0, maxPrice: 0, placeQuantity: 0 },
     '1С': { minPrice: 0, maxPrice: 0, placeQuantity: 0 },
     '1В': { minPrice: 0, maxPrice: 0, placeQuantity: 0 },
     '1Р': { minPrice: 0, maxPrice: 0, placeQuantity: 0 }

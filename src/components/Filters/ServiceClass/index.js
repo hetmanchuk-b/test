@@ -171,6 +171,84 @@ export default class ServiceClass extends PureComponent
                </div>
              </div>
 
+             <div className={this.serviceClassName('economy', '2Ю')} onClick={this.serviceClassToggle('economy', '2Ю')}>
+                <div className="top-link d-flex align-items-center j-content-center">
+                 <span className="top-link__item">2Ю</span>
+                 <span className="line"></span>
+                 <span className="top-link__item">Семейный</span>
+                </div>
+
+               <div className="bottom-box">
+                 <div className="price">
+                   от&nbsp;
+                   {data['2Ю'].minPrice} ₽
+                   <span className="r-icon"></span>
+                 </div>
+
+                 <div className="price price__info">
+                   до&nbsp;
+                   {data['2Ю'].maxPrice} ₽
+                   <span className="r-icon"></span>
+                 </div>
+
+                 <div className="place">
+                   {data['2Ю'].placeQuantity} мест
+                 </div>
+               </div>
+             </div>
+
+             <div className={this.serviceClassName('economy', '2Я')} onClick={this.serviceClassToggle('economy', '2Я')}>
+                <div className="top-link d-flex align-items-center j-content-center">
+                 <span className="top-link__item">2Я</span>
+                 <span className="line"></span>
+                 <span className="top-link__item">Комфорт</span>
+                </div>
+
+               <div className="bottom-box">
+                 <div className="price">
+                   от&nbsp;
+                   {data['2Я'].minPrice} ₽
+                   <span className="r-icon"></span>
+                 </div>
+
+                 <div className="price price__info">
+                   до&nbsp;
+                   {data['2Я'].maxPrice} ₽
+                   <span className="r-icon"></span>
+                 </div>
+
+                 <div className="place">
+                   {data['2Я'].placeQuantity} мест
+                 </div>
+               </div>
+             </div>
+
+             <div className={this.serviceClassName('economy', '1Ж')} onClick={this.serviceClassToggle('economy', '1Ж')}>
+                <div className="top-link d-flex align-items-center j-content-center">
+                 <span className="top-link__item">1Ж</span>
+                 <span className="line"></span>
+                 <span className="top-link__item">Купе-сьют</span>
+                </div>
+
+               <div className="bottom-box">
+                 <div className="price">
+                   от&nbsp;
+                   {data['1Ж'].minPrice} ₽
+                   <span className="r-icon"></span>
+                 </div>
+
+                 <div className="price price__info">
+                   до&nbsp;
+                   {data['1Ж'].maxPrice} ₽
+                   <span className="r-icon"></span>
+                 </div>
+
+                 <div className="place">
+                   {data['1Ж'].placeQuantity} мест
+                 </div>
+               </div>
+             </div>
+
              <div className={this.serviceClassName('business', '1С')} onClick={this.serviceClassToggle('business', '1С')}>
                 <div className="top-link d-flex align-items-center j-content-center">
                  <span className="top-link__item">1С</span>

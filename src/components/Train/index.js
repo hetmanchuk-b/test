@@ -41,6 +41,11 @@ class Train extends Component {
     }
   }
 
+  seatRemove = (car, seat) => {
+    this.setState({ selectedSeatsCount: this.state.selectedSeatsCount - 1 });
+    this.props.removeSeat(car, seat);
+  }
+
   handleBuy = () => {
     const { destinationFrom, destinationTo, isSearchBack, dateFrom, dateTo, getList, paramSet, clear, history, selectedSeats, trainNumber } = this.props;
     const params = {
@@ -82,7 +87,7 @@ class Train extends Component {
       : null;
 
     const passengers = (( selectedSeatsCount !== 0 )
-      ? (<Passengers selectedSeats={selectedSeats} handleBuy={this.handleBuy} />)
+      ? (<Passengers selectedSeats={selectedSeats} handleBuy={this.handleBuy} handleRemove={this.seatRemove} />)
       : null);
 
     const errorBlock = error !== null ? (<p className="error-block">{error}</p>) : null;
