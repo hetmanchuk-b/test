@@ -78,22 +78,22 @@ class Tasks extends PureComponent
     const { passengers, destinationFrom, destinationTo, serviceClass, date } = this.state;
 
     if ( destinationFrom === null ) {
-      this.setState({ error: 'Все поля обязательны для заполнения' });
+      this.setState({ error: 'Выберите станцию отправления.' });
       return false;
     }
 
     if ( destinationTo === null ) {
-      this.setState({ error: 'Все поля обязательны для заполнения' });
+      this.setState({ error: 'Выберите станцию назначения.' });
       return false;
     }
 
     if ( serviceClass === null ) {
-      this.setState({ error: 'Все поля обязательны для заполнения' });
+      this.setState({ error: 'Выберите класс обслуживания.' });
       return false;
     }
 
     if ( date === null ) {
-      this.setState({ error: 'Все поля обязательны для заполнения' });
+      this.setState({ error: 'Выберите дату отправления.' });
       return false;
     }
 
@@ -126,12 +126,28 @@ class Tasks extends PureComponent
     }).then(data => this.setState({ passengers: [{}] }));
   }
 
+  renderTimeToSelect(timeFrom) {
+    for (let i = 0; i < timeOptions.length; i++) {
+      if (timeFrom === timeOptions[i].value) {
+        return (
+          <Select 
+            options={timeOptions.concat().splice(i + 1, 24)} 
+            placeholder="Время отправления до"
+            onChange={option => this.handleSet('timeTo', option.value)}
+          />
+        )
+      } 
+    }
+  }
+  
+
   render() {
     const { passengers, destinationFrom, destinationTo, date, error } = this.state;
     const errorBlock = error !== null ? (<p className="error-block">{error}</p>) : null;
     const { user, cities, modalOpen, jwt } = this.props;
     const dateNow = new Date();
     const dateNextYear = new Date(dateNow.getFullYear() + 1, dateNow.getMonth(), dateNow.getDate());
+
 
     return (
       <Fragment>
@@ -190,7 +206,7 @@ class Tasks extends PureComponent
                 <div className="desc-info__item">
                   <div className="title-info">Дата отправления</div>
                   <div className="input-icon date_wrapper">
-                    <DatePicker onChange={date => this.handleSet('date', date)} value={date} minDate={dateNow} maxDate={dateNextYear} />
+                    <DatePicker className={date ? "form__datepicker opened" : "form__datepicker"} onChange={date => this.handleSet('date', date)} value={date} minDate={dateNow} maxDate={dateNextYear} />
                   </div>
                 </div> 
                 <div className="desc-info__item">
@@ -204,10 +220,27 @@ class Tasks extends PureComponent
                   />
                 </div>
                 <div className="desc-info__item">
+
+                  { 
+                    this.state.timeFrom ? this.renderTimeToSelect(this.state.timeFrom)
+                      : (
+                        <Select 
+                          options={timeOptions} 
+                          placeholder="Время отправления до"
+                          onChange={option => this.handleSet('timeTo', option.value)}
+                        />
+                      )
+                  }
+
+                  
+
+                  
+                </div>
+                {/* <div className="desc-info__item">
                   <Select options={timeOptions} placeholder="Время отправления до"
                     onChange={option => this.handleSet('timeTo', option.value)}
-                  />
-                </div>
+                  /> 
+                </div> */}
                 <div className="desc-info__item">
                   <Select options={trainsOptions} placeholder="Номер поезда"
                     onChange={option => this.handleSet('trainNumber', option.value)}

@@ -1105,7 +1105,7 @@ body {
     padding: 15px;
     border: 1px solid #000;
     border-radius: 25px;
-    transition: 0.2s; }
+    transition: all 0.2s ease-in-out; }
     .search-result .list__item-bisiness {
       position: relative; }
       .search-result .list__item-bisiness:before, .search-result .list__item-bisiness:after {
@@ -1434,7 +1434,8 @@ body {
       .inner-page.apply-page .desc-info__item {
         width: 33.3%;
         margin-bottom: 20px;
-        padding-left: 20px; }
+        padding-left: 20px;
+        position: relative; }
       .inner-page.apply-page .desc-info .input-icon {
         position: relative; }
         .inner-page.apply-page .desc-info .input-icon input.select-dropdown,
@@ -2196,6 +2197,19 @@ body {
   .overlay.show {
     opacity: 0.5; }
 
+.modal-body > form {
+  padding-bottom: 20px;
+}
+
+.signup-error-block {
+  padding: 5px;
+  display: block;
+  color: #ff5b5b;
+  line-height: 1.3;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
 .modal {
   overflow-y: auto; }
   .modal.show {
@@ -2332,7 +2346,7 @@ body {
   .modal-register .modal-dialog .col-md-6 .modal-header {
     padding: 20px 30px 5px; }
   .modal-register .modal-dialog .col-md-6 .modal-body {
-    padding: 0 30px 30px; }
+    padding: 0 30px 15px; }
     .modal-register .modal-dialog .col-md-6 .modal-body .form .reg-btn.btn {
       margin-bottom: 0; }
     .modal-register .modal-dialog .col-md-6 .modal-body .accept-wrap {
@@ -2598,7 +2612,6 @@ body {
       color: #b2bec3; }
     .modal__info-reviews .reviews-desc__item .content {
       font-size: 12px; }
-
 .flight-rating__item {
   margin-top: 30px; }
   .flight-rating__item:first-child {
@@ -2759,3 +2772,331 @@ body {
     top: 30px;
     right: 30px;
     font-size: 16px; } }
+.input-icon.date_wrapper > div {
+  width: 100%;
+}
+.train-form-error {
+  border-color: rgb(255, 132, 132)!important;
+}
+
+.header__datepicker-wrapper {
+  width: 180px;
+  display: flex;
+  justify-content: center;
+}
+
+.header__datepicker {
+  width: 100%
+}
+.conditions__title {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.conditions__subtitle {
+  font-size: 16px;
+  display: block;
+  margin: 8px 0;
+}
+.conditions__nav-sublist {
+  padding-left: 20px;
+}
+.conditions__nav-item > a {
+  text-transform: uppercase;
+}
+.condition__topic {
+  text-transform: uppercase;
+  padding: 24px 0 12px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  border-bottom: 1px dashed #d1d8db;
+}
+.conditions-page p {
+  margin: 16px 0;
+  line-height: 1.4;
+}
+.condition__subtopic {
+  padding: 12px 0;
+}
+
+.public-offer__tlc {
+  text-transform: lowercase;
+}
+.public-offer__list {
+  list-style-type: disc;
+  padding-left: 30px;
+  margin: 8px 0 16px;
+}
+.react-date-picker__clear-button {
+  opacity: .1;
+}
+.header__datepicker.opened .react-date-picker__clear-button {
+  opacity: 1;
+}
+.form__datepicker.opened .react-date-picker__clear-button {
+  opacity: 1;
+}
+.input__birthdate.react-date-picker {
+  height: 43px;
+  padding: 0 20px!important;
+  width: 30%!important;
+  margin-bottom: 0!important;
+}
+.inner-page.apply-page .desc-info__item--birthdate {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.inner-page.apply-page .desc-info__item--birthdate .title {
+  margin-right: 30px;
+  margin-bottom: 0;
+}
+.input__birthdate.react-date-picker .react-date-picker__button__icon {
+  stroke: #000;
+}
+.input__birthdate.react-date-picker .react-date-picker__clear-button {
+  display: none;
+}
+.input__birthdate.react-date-picker .react-date-picker__wrapper {
+  padding: 0;
+  margin: 0;
+}
+.desc-info__item-required {
+  position: absolute;
+  top: -6px;
+  right: 11px;
+  color: red;
+  font-size: 24px;
+}
+.input__birthdate.react-date-picker .react-date-picker__wrapper .react-date-picker__inputGroup input {
+  color: #000!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+  .list__content {
+    flex-wrap: wrap;
+  }
+  .search-result .list__item {
+    width: 19%;
+    margin-bottom: 15px
+  }
+  .header__datepicker-wrapper {
+    width: 100%
+  }
+}
+/* @media only screen and (max-width: 1130px) {
+
+} */
+
+@media only screen and (max-width: 991px) {
+  .header__nav-list .btn__transparent {
+    margin-bottom: 20px;
+  }
+  .inner-page .form {
+    padding: 40px 20px 0
+  }
+  .title.email {
+    white-space: nowrap
+  }
+  .search-result__nav-content {
+    flex-wrap: wrap;
+  }
+  .header__select .header__select__control {
+    margin-bottom: 10px
+  }
+  .header.header__search-result .title-info {
+    top: -15px
+  }
+  .header__search .btn__main {
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
+    max-width: 304px;
+  }
+  .header.header__search-result .header__search {
+    margin-right: 0;
+  }
+  .header__nav-list .header__select .header__select__control {
+    margin-bottom: 40px;
+  }
+  .header__nav-list .react-date-picker__wrapper {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .search-result .list__item {
+    width: 32%
+  }
+  .search-result .list__title-economy, .search-result .list__title-business, .search-result .list__title-premium {
+    width: 33%
+  }
+}
+@media only screen and (max-width: 689px) {
+  .inner-page.apply-page .desc-info__item {
+    width: 50%
+  }
+  .inner-page.apply-page .user-data .desc-info.d-flex.align-items-center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start!important;
+  }
+  .inner-page.apply-page .input__phone, .inner-page.apply-page .input__email {
+    max-width: 100%;
+  }
+  .search-result .list__title .tooltip-info {
+    width: 160px;
+    top: -75px;
+    left: auto;
+    right: 0
+  }
+  .search-result .list__title.list__title-economy .tooltip-info {
+    margin-left: 0;
+    left: 0
+  }
+  
+}
+@media only screen and (max-width: 575px) {
+  .header__datepicker {
+    width: 80%;
+    max-width: 360px;
+    margin: 0 auto!important;
+  }
+  .search-result__nav-content {
+    padding: 0 15px;
+  }
+  .header__search .swap {
+    top: 55px;
+    left: 90%;
+  }
+  
+  .react-date-picker__calendar {
+    margin-left: -20px
+  }
+  .header__search .towns {
+    max-width: 100%
+  }
+  .header__nav-list .header__search .swap {
+    top: 53px;
+    left: 50%;
+  }
+}
+@media only screen and (max-width: 517px) {
+  .inner-page.apply-page .desc-info__item {
+    width: 100%;
+  }
+  .inner-page .input {
+    margin-right: 0
+  }
+  .inner-page.apply-page .desc-info .input-icon .icon-item {
+    top: 150%;
+    left: 50%;
+  }
+  .inner-page.apply-page .desc-info .input-icon .icon-item > i {
+    transform: rotate(90deg)
+  }
+  .header__search .swap {
+    top: 58px
+  }
+  .header__search-result .react-date-picker__wrapper {
+    margin-bottom: 40px
+  }
+  .inner-page {
+    width: 97%;
+  }
+  .inner-page.conditions-page {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .react-date-picker .react-calendar .react-calendar__month-view__weekdays {
+    font-size: 15px
+  }
+  .react-date-picker .react-calendar .react-calendar__tile {
+    max-width: 23px!important
+  }
+  .react-date-picker__calendar {
+    width: 300px!important;
+    margin-left: -30px
+  }
+  .inner-page.apply-page .react-date-picker__calendar {
+    margin-left: 0
+  }
+  .page-text-description {
+    padding: 1.4rem!important
+  }
+  .header__cart .title-cart {
+    font-size: 16px
+  }
+  .search-result .list__item {
+    width: 49%
+  }
+  .search-result__nav-link.throw-off {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0;
+  }
+  .search-result__nav {
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+  .search-result__nav-content {
+    flex-direction: column;
+  }
+  .search-result__nav-item {
+    width: 100%;
+  }
+  .inner-page.apply-page {
+    padding: 0 5px;
+  }
+  .inner-page.apply-page .desc-info {
+    margin-left: 0;
+  }
+  .inner-page.apply-page .desc-info__item {
+    padding-left: 0;
+  }
+  .inner-page .form {
+    padding: 20px 5px 0;
+  }  
+}
+@media only screen and (max-width: 340px) {
+  .inner-page .form {
+    padding: 20px 5px 0
+  }
+  .modal-body {
+    padding: 0 10px
+  }
+}

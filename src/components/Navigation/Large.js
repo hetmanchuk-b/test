@@ -7,8 +7,12 @@ import DatePicker from 'react-date-picker';
 import Select from 'react-select';
 
 class Navigation extends PureComponent {
-  state = {
-    menu: false
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      menu: false
+    }
   }
 
   handleSet = (key, value) => {
@@ -107,10 +111,14 @@ class Navigation extends PureComponent {
               </div>
             </div>
             <div className="col-lg-2 col-sm-6">
-              <DatePicker onChange={date => this.handleSet('dateFrom', date)} value={dateFrom} minDate={dateNow} maxDate={dateNextYear} />
+              <div className="header__datepicker-wrapper">
+                <DatePicker className={dateFrom ? "header__datepicker opened" : "header__datepicker"} onChange={date => this.handleSet('dateFrom', date)} value={dateFrom} minDate={dateNow} maxDate={dateNextYear} />
+              </div>
             </div>
             <div className="col-lg-2 col-sm-6 col-last">
-              <DatePicker onChange={date => this.handleSet('dateTo', date)} value={dateTo} minDate={dateNow} maxDate={dateNextYear} />
+              <div className="header__datepicker-wrapper">
+                <DatePicker className={dateTo ? "header__datepicker opened" : "header__datepicker"} onChange={date => this.handleSet('dateTo', date)} value={dateTo} minDate={dateFrom ? dateFrom : dateNow} maxDate={dateNextYear} />
+              </div>
             </div>
             <div className="col">
               <button className="btn btn__main" type="button" onClick={this.handleSearch}>Найти билеты</button>

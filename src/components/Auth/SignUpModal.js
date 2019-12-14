@@ -1,4 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
+import InputMask from 'react-input-mask';
+import { Link } from 'react-router-dom';
 
 class Modal extends PureComponent
 {
@@ -12,7 +14,9 @@ class Modal extends PureComponent
       password: '',
       passwordRepeat: '',
       accept: false,
-      validationError: null
+      validationError: null,
+      passwordType: true,
+      confirmPasswordType: true
     };
   }
 
@@ -28,7 +32,7 @@ class Modal extends PureComponent
     const { email, phone, firstName, lastName, password, passwordRepeat, accept } = this.state;
     let validationError = null;
 
-    if ( ! accept ) validationError = 'Обработка персональных данных';
+    if ( ! accept ) validationError = 'Дайте согласие на обработку ваших персональных даннных';
 
     if ( email.length < 1 ) validationError = 'Введите Ваш email';
 
@@ -53,6 +57,17 @@ class Modal extends PureComponent
     const { email, phone, password, firstName, lastName } = this.state;
 
     if ( this.validation() ) this.props.signUp({ email, phone, password, firstName, lastName });
+  }
+
+  handlePasswordType = event => {
+    this.setState({
+      passwordType: !this.state.passwordType
+    });
+  }
+  handleConfirmPasswordType = event => {
+    this.setState({
+      confirmPasswordType: !this.state.confirmPasswordType
+    });
   }
 
   render() {
@@ -82,54 +97,59 @@ class Modal extends PureComponent
                         </div>
                         <hr />
                         <div className="form-group">
-                          <input type="text" className="form-control" id="phone-for-reg" placeholder="+7 (__) ___-__-__"
+                          {/* <input type="text" className="form-control" id="phone-for-reg" placeholder="+7 (__) ___-__-__"
                             name="phone" value={phone} onChange={this.handleInput}
-                          />
+                          /> */}
+                          <InputMask type="text" className="form-control" id="phone-for-reg" placeholder="+7 (___) ___-__-__"
+                            name="phone" value={phone} onChange={this.handleInput} mask="+9 (999) 999-99-99" />
                         </div>
                         <hr />
                         <div className="form-group eye-wrap">
-                          <input type="text" className="form-control" id="pass-for-reg" placeholder="Имя"
+                          <input type="text" className="form-control" id="firstname-for-reg" placeholder="Имя"
                             name="firstName" value={firstName} onChange={this.handleInput}
                           />
                         </div>
                         <hr />
                         <div className="form-group eye-wrap">
-                          <input type="text" className="form-control" id="pass-for-reg" placeholder="Фамилия"
+                          <input type="text" className="form-control" id="lastname-for-reg" placeholder="Фамилия"
                             name="lastName" value={lastName} onChange={this.handleInput}
                           />
                         </div>
                         <hr />
                         <div className="form-group eye-wrap">
-                          <input type="text" className="form-control" id="pass-for-reg" placeholder="Пароль"
+                          <input type={this.state.passwordType ? "password" : "text"} className="form-control" id="pass-for-reg" placeholder="Пароль"
                             name="password" value={password} onChange={this.handleInput}
                           />
-                          <span className="eye-icon">
+                          <span className="eye-icon" onClick={event => this.handlePasswordType(event)}>
                              <i className="fas fa-eye"></i> 
                           </span>
                         </div>
                         <hr />
                         <div className="form-group eye-wrap">
-                          <input type="text" className="form-control" id="confirm-pass" placeholder="Повторите пароль"
+                          <input type={this.state.confirmPasswordType ? "password" : "text"} className="form-control" id="confirm-pass" placeholder="Повторите пароль"
                             name="passwordRepeat" value={passwordRepeat} onChange={this.handleInput}
                           />
-                          <span className="eye-icon">
+                          <span className="eye-icon" onClick={event => this.handleConfirmPasswordType(event)}>
                              <i className="fas fa-eye"></i> 
                           </span>
                         </div>
                       </div>
                       <div className="accept-wrap">
                         <input type="checkbox" id="accept" placeholder="Повторите пароль" checked={accept} onChange={this.handleAccept} />
-                        <label htmlFor="accept">Я даю согласие на <a href="#">обработку моих персональных данных</a></label>
+                        <label htmlFor="accept">Я соглашаюсь с&nbsp;
+                          <Link to="/conditions" target="_blank" >обработкой моих персональных данных</Link>
+                          &nbsp;и&nbsp;<Link to="/public-offer" target="_blank" >публичной офертой</Link>
+                        </label>
                       </div>
 
                       <button type="submit" className="btn reg-btn" onClick={this.handleSubmit}>Зарегистрироваться</button>
 
-                      {validationError !== null ? (<p>{validationError}</p>) : null}
-                      {error !== null ? (<p>{error}</p>) : null}
+                      {validationError !== null ? (<p className="signup-error-block">{validationError}</p>) : null}
+                      {error !== null ? (<p className="signup-error-block">{error}</p>) : null}
                     </form>
                   </div>
                   <div className="modal-footer">
-                    <p>Вы также можете зайти <br /> через свой профиль в социальных сетях</p>
+                    {/* <p>Вы также можете зайти <br /> через свой профиль в социальных сетях</p>
                     <div className="social-btn-wrap">
                       <a href="#" className="fb">
                         <svg className="img-fluid" height="512pt" viewBox="0 0 512 512" width="512pt"
@@ -204,7 +224,7 @@ class Modal extends PureComponent
                     </svg>
 
                       </a>
-                    </div>
+                    </div> */}
                     <p>У меня уже есть личный кабинет, <a href="#" onClick={() => this.props.modalOpen('signIn')}>войти</a></p>
                   </div>
                 </div>

@@ -38,7 +38,6 @@ class Navigation extends PureComponent {
     this.setState({
       menu: !this.state.menu
     });
-    console.log('asd')
   }
 
   render() {
@@ -101,7 +100,7 @@ class Navigation extends PureComponent {
                       </div>
                       <div className="col-lg-3 col-sm-6 col-last col-item">
                         <div className="title-info">Обратно</div>
-                        <DatePicker onChange={date => this.handleSet('dateTo', date)} value={dateTo} minDate={dateNow} maxDate={dateNextYear} />
+                        <DatePicker onChange={date => this.handleSet('dateTo', date)} value={dateTo} minDate={dateFrom ? dateFrom : dateNow} maxDate={dateNextYear} />
                         <i className="far fa-calendar-alt"></i>
                       </div>
                     </div>

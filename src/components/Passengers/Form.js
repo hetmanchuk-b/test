@@ -19,8 +19,8 @@ class Form extends Component
     this.props.fieldUpdate(e.target.name, e.target.value);
   }
 
-  handleInputDate = e => {
-    let str = e.target.value;
+  handleInputDate = birthdate => {
+    // let str = e.target.value;
     // let rv = '';
 
     // for ( let i = 0; i < str.length; i++ ) {
@@ -29,8 +29,9 @@ class Form extends Component
 
     //   rv += str[i];
     // }
-
-    this.props.fieldUpdate('birthdate', str);
+    // let string = birthdate.getDate() + '.' + (birthdate.getMonth() + 1) + '.' + birthdate.getFullYear();
+    console.log(birthdate.toString());
+    this.props.fieldUpdate('birthdate', birthdate.toString());
   }
 
   handleSelect = key => option => {
@@ -51,7 +52,7 @@ class Form extends Component
 
     return (
       <div className="inner-page apply-page">
-        <div className="form">
+        <div className="form train-form">
           {title ? ( <div className="title">{title}</div>) : null}
           {handleRemove === null ? null : (
             <div className="deletePassenger" onClick={this.props.handleRemove}>
@@ -61,16 +62,19 @@ class Form extends Component
           <div className="box-info">
             <div className="desc-info d-flex align-items-center f-wrap">
               <div className="desc-info__item">
+                <span className="desc-info__item-required">*</span>
                 <input className="input input__last-name" type="text" name="lastName" placeholder="Фамилия:"
                   onChange={this.handleInput} value={lastName || ''}
                 />
               </div>
               <div className="desc-info__item">
+                <span className="desc-info__item-required">*</span>
                 <input className="input input__first-name" type="text" name="firstName" placeholder="Имя:"
                   onChange={this.handleInput} value={firstName || ''}
                 />
               </div>
               <div className="desc-info__item">
+                <span className="desc-info__item-required">*</span>
                 <input className="input input__first-name" type="text" name="middleName" placeholder="Отчество:"
                   onChange={this.handleInput} value={middleName || ''}
                 />
@@ -92,15 +96,33 @@ class Form extends Component
                 />
               </div> 
               <div className="desc-info__item">
-                <input className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
+                {/* <input className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
                   onChange={this.handleInput} value={documentNumber || ''}
+                /> */}
+                <InputMask maskChar="0" className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
+                  onChange={this.handleInput} value={documentNumber || ''}
+                  mask="9999999999"
                 />
               </div>
-              <div className="desc-info__item">
+              <div className="desc-info__item desc-info__item--birthdate">
                 {/* <input className="input input__first-name" type="text" name="birthdate" placeholder="Дата рождения: 19.11.1991"
                   onChange={this.handleInputDate} value={birthdate || ''}
                 /> */}
-                <InputMask className="input input__first-name" type="text" name="birthdate" placeholder="Дата рождения: 19.11.1991" mask="99.99.9999" onChange={this.handleInputDate} value={birthdate || ''} />
+                {/* <InputMask maskChar="x" className="input input__first-name" type="text" name="birthdate" placeholder="Дата рождения: 19.11.1991" mask="99.99.9999" onChange={this.handleInputDate} value={birthdate || ''} /> */}
+                <span className="title">Дата рождения:</span>
+                <DatePicker 
+                  className="input input__first-name input__birthdate" name="birthdate"
+                  onChange={birthdate => this.handleInputDate(birthdate)}
+                  value={birthdate || ''}
+                  minDate={new Date(1900, 0, 0)}
+                  maxDate={new Date(2010, 0, 0)}
+                  yearPlaceholder="гггг"
+                  monthPlaceholder="мм"
+                  dayPlaceholder="дд"
+                  disableCalendar={true}
+                  format="d-M-y"
+                  showLeadingZeros={true}
+                />
               </div>
             </div>
 
@@ -110,10 +132,10 @@ class Form extends Component
                 {/* <input className="input input__phone" type="tel" name="phone" placeholder="+7 985 000 0000"
                   onChange={this.handleInput} value={phone || ''}
                 /> */}
-                <InputMask className="input input__phone" type="tel" name="phone" placeholder="+7 985 000 0000" mask="+9 999 999 9999" onChange={this.handleInput} value={phone || ''} />
+                <InputMask maskChar="0" className="input input__phone" type="tel" name="phone" placeholder="+7 985 000 0000" mask="+9 999 999 9999" onChange={this.handleInput} value={phone || ''} />
                 
                 <div className="title email">E-mail:</div>
-                <input className="input input__email" type="email" name="email" placeholder="e-mail"
+                <input className="input input__email" type="email" name="email" placeholder="E-mail:"
                   onChange={this.handleInput} value={email || ''}
                 />
               </div>
@@ -147,19 +169,19 @@ class Form extends Component
                 {/* <input className="input input__last-name" type="text" name="rzhdBonus" placeholder="Карта «РЖД Бонус»"
                   onChange={this.handleInput} value={rzhdBonus || ''}
                 /> */}
-                <InputMask className="input input__last-name" type="text" name="rzhdBonus" placeholder="Карта «РЖД Бонус»" mask="9999999999999" onChange={this.handleInput} value={rzhdBonus || ''} />
+                <InputMask maskChar="x" className="input input__last-name" type="text" name="rzhdBonus" placeholder="Карта «РЖД Бонус»" mask="9999999999999" onChange={this.handleInput} value={rzhdBonus || ''} />
               </div>
               <div className="desc-info__item">
                 {/* <input className="input input__first-name" type="text" name="universalRzhdCard" placeholder="Универсальная карта РЖД"
                   onChange={this.handleInput} value={universalRzhdCard || ''}
                 /> */}
-                <InputMask className="input input__first-name" type="text" name="universalRzhdCard" placeholder="Универсальная карта РЖД" mask="9999999999999" onChange={this.handleInput} value={universalRzhdCard || ''} />
+                <InputMask maskChar="x" className="input input__first-name" type="text" name="universalRzhdCard" placeholder="Универсальная карта РЖД" mask="9999999999999" onChange={this.handleInput} value={universalRzhdCard || ''} />
               </div>
               <div className="desc-info__item">
                 {/* <input className="input input__first-name" type="text" name="businessTravel" placeholder="Деловой проездной"
                   onChange={this.handleInput} value={businessTravel || ''}
                 /> */}
-                <InputMask className="input input__first-name" type="text" name="businessTravel" placeholder="Деловой проездной" mask="9999999999999" onChange={this.handleInput} value={businessTravel || ''} />
+                <InputMask maskChar="x" className="input input__first-name" type="text" name="businessTravel" placeholder="Деловой проездной" mask="9999999999999" onChange={this.handleInput} value={businessTravel || ''} />
               </div>   
             </div>
           </div>

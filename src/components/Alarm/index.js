@@ -31,11 +31,10 @@ class Alarm extends PureComponent
     passengers.push({});
     this.setState({ passengers });
   }
-  
-  passengerRemove = () => {
-    let passengers = [ ...this.state.passengers ];
 
-
+  passengerRemove = index => () => {
+    let passengers = this.state.passengers.filter((el, i) => i !== index);
+    this.setState({ passengers });
   }
 
   passengerUpdate = i => (key, value) => {
@@ -77,22 +76,22 @@ class Alarm extends PureComponent
     const { passengers, destinationFrom, destinationTo, serviceClass, date } = this.state;
 
     if ( destinationFrom === null ) {
-      this.setState({ error: 'Все поля обязательны для заполнения' });
+      this.setState({ error: 'Выберите станцию отправления.' });
       return false;
     }
 
     if ( destinationTo === null ) {
-      this.setState({ error: 'Все поля обязательны для заполнения' });
+      this.setState({ error: 'Выберите станцию назначения.' });
       return false;
     }
 
     if ( serviceClass === null ) {
-      this.setState({ error: 'Все поля обязательны для заполнения' });
+      this.setState({ error: 'Выберите класс обслуживания.' });
       return false;
     }
 
     if ( date === null ) {
-      this.setState({ error: 'Все поля обязательны для заполнения' });
+      this.setState({ error: 'Выберите дату отправления.' });
       return false;
     }
 
@@ -122,6 +121,20 @@ class Alarm extends PureComponent
       serviceClass: this.state.serviceClass,
       date: getDate(this.state.date, {})
     }).then(data => this.setState({ passengers: [{}] }));
+  }
+
+  renderTimeToSelect(departureTimeFrom) {
+    for (let i = 0; i < departureTimeOptions.length; i++) {
+      if (departureTimeFrom === departureTimeOptions[i].value) {
+        return (
+          <Select 
+            options={departureTimeOptions.concat().splice(i + 1, 24)} 
+            placeholder="Время отправления до"
+            onChange={option => this.handleSet('departureTimeTo', option.value)}
+          />
+        )
+      }
+    }
   }
 
   render() {
@@ -187,7 +200,7 @@ class Alarm extends PureComponent
                 <div className="desc-info__item">
                   <div className="title-info">Дата отправления</div>
                   <div className="input-icon date_wrapper">
-                    <DatePicker onChange={date => this.handleSet('date', date)} value={date} minDate={new Date()} />
+                    <DatePicker className={date ? "form__datepicker opened" : "form__datepicker"} onChange={date => this.handleSet('date', date)} value={date} minDate={new Date()} />
                   </div>
                 </div> 
                 <div className="desc-info__item">
@@ -201,9 +214,21 @@ class Alarm extends PureComponent
                   />
                 </div>
                 <div className="desc-info__item">
-                  <Select options={departureTimeOptions} placeholder="Время отправления до"
+
+                  { 
+                    this.state.departureTimeFrom ? this.renderTimeToSelect(this.state.departureTimeFrom)
+                      : (
+                        <Select 
+                          options={departureTimeOptions} 
+                          placeholder="Время отправления до"
+                          onChange={option => this.handleSet('departureTimeTo', option.value)}
+                        />
+                      )
+                  }
+
+                  {/* <Select options={departureTimeOptions} placeholder="Время отправления до"
                     onChange={option => this.handleSet('departureTimeTo', option.value)}
-                  />
+                  /> */}
                 </div>
                 {/*<div className="desc-info__item">
                   <div className="title-info">Категория места</div>
@@ -213,7 +238,7 @@ class Alarm extends PureComponent
 
               <div className="box-info">
                 {passengers.map((el, i) => (
-                  <Passenger passenger={el} fieldUpdate={this.passengerUpdate(i)} saveOption={true} title={`Пассажир № ${i + 1}:`} key={i} />
+                  <Passenger passenger={el} fieldUpdate={this.passengerUpdate(i)} saveOption={true} selectSavedOption={true} title={`Пассажир № ${i + 1}:`} key={i} handleRemove={this.passengerRemove(i)} />
                 ))}
               </div>
 

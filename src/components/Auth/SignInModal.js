@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 class Modal extends PureComponent {
   constructor(props) {
@@ -16,7 +17,7 @@ class Modal extends PureComponent {
       passwordType: !this.state.passwordType
     });
 
-    if (this.state.passwordType) {
+    if (!this.state.passwordType) {
       document.querySelector('#pass').type = "password";
     } else {
       document.querySelector('#pass').type = "text";
@@ -93,7 +94,7 @@ class Modal extends PureComponent {
                 </div>
               </div>
               <div className="modal-footer">
-                <p>Вы также можете зайти через свой профиль в социальных сетях</p>
+                {/* <p>Вы также можете зайти через свой профиль в социальных сетях</p>
                 <div className="social-btn-wrap">
                   <a href="#" className="fb">
                     <svg className="img-fluid" height="512pt" viewBox="0 0 512 512" width="512pt"
@@ -168,12 +169,12 @@ class Modal extends PureComponent {
                     </svg>
 
                   </a>
-                </div>
+                </div> */}
                 <p>Нажимая кнопку "Войти" я соглашаюсь с</p>
                   <div className="bottom-link"> 
-                    <a href="#">политикой конфиденциальности</a> 
+                    <Link to="/conditions" target="_blank">политикой конфиденциальности </Link>
                     &nbsp;и&nbsp; 
-                    <a href="#">обработкой персональных данных.</a>
+                    <Link to="/conditions" target="_blank">обработкой персональных данных.</Link>
                   </div>
               </div>
             </div>

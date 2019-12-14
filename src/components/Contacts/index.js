@@ -100,7 +100,7 @@ class Contacts extends PureComponent {
                       />
                     </div>
                     <div className="desc-info__item">
-                      <input className={`input input__first-name ${this.errorClass(this.state.formErrors.email)}`} type="email" required name="email" placeholder="e-mail"
+                      <input className={`input input__first-name ${this.errorClass(this.state.formErrors.email)}`} type="email" required name="email" placeholder="E-mail:"
                         onChange={(event) => this.handleInput(event)} value={email}
                       />
                     </div>

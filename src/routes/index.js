@@ -10,6 +10,8 @@ import Alarm from './../containers/Alarm';
 import Package from './../containers/Package';
 import Bag from './../containers/Bag';
 import Cabinet from './Cabinet';
+import Conditions from '../components/Conditions';
+import PublicOffer from '../components/PublicOffer';
 
 export default () => (
   <Switch>
@@ -22,6 +24,8 @@ export default () => (
     <Route exact path="/promotions" component={Promotions} />
     <Route exact path="/package" component={Package} />
     <Route exact path="/bag" component={Bag} />
+    <Route exact path="/conditions" component={Conditions} />
+    <Route exact path="/public-offer" component={PublicOffer} />
     <Route path="/cabinet" component={Cabinet} />
   </Switch>
 );
