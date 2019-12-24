@@ -5,7 +5,8 @@ import Form from './../../components/Passengers/Form';
 const mapStateToProps = (state, ownProps) => {
   return {
     passenger: { ...state.booking.selectedSeats[ownProps.car][ownProps.seat] },
-    title: `Вагон: ${ownProps.car} Место: ${ownProps.seat}`
+    title: `Вагон: ${ownProps.car} Место: ${ownProps.seat}`,
+    data: state.user.data
   }
 };
 

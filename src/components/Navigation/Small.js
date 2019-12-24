@@ -6,8 +6,13 @@ import DatePicker from 'react-date-picker';
 import Select from 'react-select';
 
 class Navigation extends PureComponent {
-  state = {
-    menu: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      menu: false
+    }
+    this.fromRef = React.createRef();
+    this.toRef = React.createRef();
   }
   handleSet = (key, value) => {
     const { destinationFrom, destinationTo, dateFrom, dateTo } = this.props.booking;
@@ -38,6 +43,15 @@ class Navigation extends PureComponent {
     this.setState({
       menu: !this.state.menu
     });
+  }
+  handleDestinationSwap = event => {
+    event.preventDefault();
+    let fromValue = this.fromRef.current.props.value;
+    let toValue = this.toRef.current.props.value;
+    if (toValue !== undefined && fromValue !== undefined) {
+      this.handleSet('destinationFrom', toValue.value);
+      this.handleSet('destinationTo', fromValue.value);
+    }
   }
 
   render() {
@@ -81,8 +95,9 @@ class Navigation extends PureComponent {
                           options={cities} placeholder="Откуда"
                           onChange={option => this.handleSet('destinationFrom', option.value)}
                           value={cities.find(el => el.value === destinationFrom)}
+                          ref={this.fromRef}
                         />
-                        <div className="swap"><a href="#" className="swap-btn"><img src="img/icons/search-arrows.png" alt="" /></a></div>
+                        <div className="swap"><a href="#" onClick={event => this.handleDestinationSwap(event)} className="swap-btn"><img src="img/icons/search-arrows.png" alt="" /></a></div>
                       </div>
                       <div className="col-lg-3 col-sm-6 col-last col-item">
                         <Select
@@ -91,17 +106,18 @@ class Navigation extends PureComponent {
                           options={cities} placeholder="Куда"
                           onChange={option => this.handleSet('destinationTo', option.value)}
                           value={cities.find(el => el.value === destinationTo)}
+                          ref={this.toRef}
                         />
                       </div>
                       <div className="col-lg-3 col-sm-6 col-item">
                         <div className="title-info">Дата</div>
-                        <DatePicker onChange={date => this.handleSet('dateFrom', date)} value={dateFrom} minDate={dateNow} maxDate={dateNextYear} />
-                        <i className="far fa-calendar-alt"></i>
+                        <DatePicker className={dateFrom ? "small-datepicker show" : "small-datepicker"} onChange={date => this.handleSet('dateFrom', date)} value={dateFrom} minDate={dateNow} maxDate={dateNextYear} />
+                        {/* <i className="far fa-calendar-alt"></i> */}
                       </div>
                       <div className="col-lg-3 col-sm-6 col-last col-item">
                         <div className="title-info">Обратно</div>
-                        <DatePicker onChange={date => this.handleSet('dateTo', date)} value={dateTo} minDate={dateFrom ? dateFrom : dateNow} maxDate={dateNextYear} />
-                        <i className="far fa-calendar-alt"></i>
+                        <DatePicker className={dateTo ? "small-datepicker show" : "small-datepicker"} onChange={date => this.handleSet('dateTo', date)} value={dateTo} minDate={dateFrom ? dateFrom : dateNow} maxDate={dateNextYear} />
+                        {/* <i className="far fa-calendar-alt"></i> */}
                       </div>
                     </div>
                     <Bag />

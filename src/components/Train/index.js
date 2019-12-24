@@ -21,7 +21,10 @@ class Train extends Component {
 
   carSelect = (carNumber, carType, availableSeats) => () => {
     this.setState({ carNumber, carType, availableSeats });
-    window.scrollTo(0, this.schemaRef.current.offsetTop);
+    setTimeout(() => {
+      // window.scrollTo(0, this.schemaRef.current.offsetTop);
+      this.schemaRef.current.scrollIntoView({behavior: "smooth", block: "center"});
+    }, 200);
   }
 
   seatSelect = seat => {
@@ -32,7 +35,11 @@ class Train extends Component {
         this.setState({ selectedSeatsCount: selectedSeatsCount + 1 });
 
         this.props.selectSeat(carNumber, seat);
-        window.scrollTo(0, this.seatsRef.current.offsetTop);
+        // window.scrollTo(0, this.seatsRef.current.offsetTop);
+        setTimeout(() => {
+          this.seatsRef.current.scrollIntoView({behavior: "smooth", block: "start"});
+        }, 200);
+        
       } else {
         this.setState({ selectedSeatsCount: selectedSeatsCount - 1 });
 
@@ -75,6 +82,11 @@ class Train extends Component {
       .catch(error => this.setState({ error }));
   }
 
+  handleGoBack = (event) => {
+    event.preventDefault();
+    window.history.back();
+  }
+
   render() {
     const { carNumber, carType, availableSeats, selectedSeatsCount, error } = this.state;
     const { train, selectedSeats } = this.props;
@@ -98,6 +110,7 @@ class Train extends Component {
           <title>Поезд: {train.destinationFromName} > {train.destinationToName}</title>
         </Helmet>
         <div className="inner-page buy-ticket-page">
+          <div className="go-back-btn" onClick={event => this.handleGoBack(event)}>Назад</div>
           <div className="form">
             {/*<div className="date-top">
               {train.departureDate}

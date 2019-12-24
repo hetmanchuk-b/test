@@ -11,27 +11,20 @@ class Form extends Component
 {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = { error: null };
   }
 
+  componentDidUpdate(prevProps) {
+    if ( prevProps.passenger.error !== this.props.passenger.error )
+      this.setState({ error: this.props.passenger.error });
+  }
 
   handleInput = e => {
     this.props.fieldUpdate(e.target.name, e.target.value);
   }
 
   handleInputDate = birthdate => {
-    // let str = e.target.value;
-    // let rv = '';
-
-    // for ( let i = 0; i < str.length; i++ ) {
-
-    //   if ( ( i === 2 || i === 5 ) && str[i] !== '.' ) rv += '.';
-
-    //   rv += str[i];
-    // }
-    // let string = birthdate.getDate() + '.' + (birthdate.getMonth() + 1) + '.' + birthdate.getFullYear();
-    console.log(birthdate.toString());
-    this.props.fieldUpdate('birthdate', birthdate.toString());
+    this.props.fieldUpdate('birthdate', birthdate);
   }
 
   handleSelect = key => option => {
@@ -45,6 +38,7 @@ class Form extends Component
   handleSelectSaved = el => {
     Object.keys(el).map(key => this.props.fieldUpdate(key, el[key]));
   }
+
 
   render() {
     const { title = null, passenger = {}, passengers = [], saveOption = false, selectSavedOption = false, handleRemove = null, error = null } = this.props;
@@ -80,36 +74,35 @@ class Form extends Component
                 />
               </div>
               <div className="desc-info__item">
+                <span className="desc-info__item-required desc-info__item-required--select">*</span>
                 <Select options={documentOptions} placeholder="Вид документа"
                   onChange={this.handleSelect('documentType')} value={documentOptions.find(el => el.value === documentType)}
                 />
               </div>
               <div className="desc-info__item">
+                <span className="desc-info__item-required desc-info__item-required--select">*</span>
                 <Select options={nationalityOptions} placeholder="Гражданство"
-                  value={nationalityOptions.find(el => el.value === nationality || ( nationality === undefined && el.value === 'RU' ))}
+                  value={nationalityOptions.find(el => el.value === nationality)}
+                  //  || ( nationality === undefined && el.value === 'RU' )
                   onChange={this.handleSelect('nationality')}
                 />
               </div>
               <div className="desc-info__item">
+                <span className="desc-info__item-required desc-info__item-required--select">*</span>
                 <Select options={genderOptions} placeholder="Пол"
                   onChange={this.handleSelect('gender')} value={genderOptions.find(el => el.value === gender)}
                 />
               </div> 
               <div className="desc-info__item">
-                {/* <input className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
-                  onChange={this.handleInput} value={documentNumber || ''}
-                /> */}
+                <span className="desc-info__item-required">*</span>
                 <InputMask maskChar="0" className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
                   onChange={this.handleInput} value={documentNumber || ''}
                   mask="9999999999"
                 />
               </div>
               <div className="desc-info__item desc-info__item--birthdate">
-                {/* <input className="input input__first-name" type="text" name="birthdate" placeholder="Дата рождения: 19.11.1991"
-                  onChange={this.handleInputDate} value={birthdate || ''}
-                /> */}
-                {/* <InputMask maskChar="x" className="input input__first-name" type="text" name="birthdate" placeholder="Дата рождения: 19.11.1991" mask="99.99.9999" onChange={this.handleInputDate} value={birthdate || ''} /> */}
-                <span className="title">Дата рождения:</span>
+                
+                <span className="title">Дата рождения: <span className="required-item">*</span></span>
                 <DatePicker 
                   className="input input__first-name input__birthdate" name="birthdate"
                   onChange={birthdate => this.handleInputDate(birthdate)}
@@ -128,16 +121,22 @@ class Form extends Component
 
             <div className="box-info user-data mt-25">
               <div className="desc-info d-flex align-items-center">
-                <div className="title phone">Телефон:</div>
-                {/* <input className="input input__phone" type="tel" name="phone" placeholder="+7 985 000 0000"
-                  onChange={this.handleInput} value={phone || ''}
-                /> */}
-                <InputMask maskChar="0" className="input input__phone" type="tel" name="phone" placeholder="+7 985 000 0000" mask="+9 999 999 9999" onChange={this.handleInput} value={phone || ''} />
+                <div className="title phone">Телефон: <span className="required-item">*</span></div>
+
+                  <InputMask maskChar="0" className="input input__phone" type="tel" name="phone" 
+                    placeholder="+7 985 000 0000" 
+                    mask="+9 999 999 9999" 
+                    onChange={this.handleInput} 
+                    value={phone || ''}
+                  />
+
                 
-                <div className="title email">E-mail:</div>
-                <input className="input input__email" type="email" name="email" placeholder="E-mail:"
-                  onChange={this.handleInput} value={email || ''}
-                />
+                <div className="title email">E-mail: <span className="required-item">*</span></div>
+
+                  <input className="input input__email" type="email" name="email" placeholder="E-mail:"
+                    onChange={this.handleInput} value={email || ''}
+                  />
+               
               </div>
 
               {saveOption === false ? null : (
@@ -166,31 +165,23 @@ class Form extends Component
             <div className="title">Дорожная карта:</div>
             <div className="desc-info d-flex align-items-center f-wrap">
               <div className="desc-info__item">
-                {/* <input className="input input__last-name" type="text" name="rzhdBonus" placeholder="Карта «РЖД Бонус»"
-                  onChange={this.handleInput} value={rzhdBonus || ''}
-                /> */}
                 <InputMask maskChar="x" className="input input__last-name" type="text" name="rzhdBonus" placeholder="Карта «РЖД Бонус»" mask="9999999999999" onChange={this.handleInput} value={rzhdBonus || ''} />
               </div>
               <div className="desc-info__item">
-                {/* <input className="input input__first-name" type="text" name="universalRzhdCard" placeholder="Универсальная карта РЖД"
-                  onChange={this.handleInput} value={universalRzhdCard || ''}
-                /> */}
                 <InputMask maskChar="x" className="input input__first-name" type="text" name="universalRzhdCard" placeholder="Универсальная карта РЖД" mask="9999999999999" onChange={this.handleInput} value={universalRzhdCard || ''} />
               </div>
               <div className="desc-info__item">
-                {/* <input className="input input__first-name" type="text" name="businessTravel" placeholder="Деловой проездной"
-                  onChange={this.handleInput} value={businessTravel || ''}
-                /> */}
                 <InputMask maskChar="x" className="input input__first-name" type="text" name="businessTravel" placeholder="Деловой проездной" mask="9999999999999" onChange={this.handleInput} value={businessTravel || ''} />
               </div>   
             </div>
           </div>
 
-          {error !== null ? (<p className="error-block">{error}</p>) : null}
+          {( error !== null || this.state.error !== null ) ? (<p className="error-block">{error}{this.state.error}</p>) : null}
         </div>
       </div>
     );
   }
 }
+
 
 export default Form;

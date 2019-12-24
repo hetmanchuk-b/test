@@ -1,5 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import Tabs from './Tabs';
+import Helmet from 'react-helmet';
 
 class Account extends PureComponent {
   constructor(props) {
@@ -83,6 +84,9 @@ class Account extends PureComponent {
 
     return (
       <Fragment>
+        <Helmet>
+          <title>Личный кабинет</title>
+        </Helmet>
         <Tabs tab="account" />
         <div className="cabinet-page__content">
           <div className="row">

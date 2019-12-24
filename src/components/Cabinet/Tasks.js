@@ -1,9 +1,13 @@
 import React, { Fragment } from 'react';
 import Tabs from './Tabs';
 import { getByValue } from './../../_data/serviceClassOptions';
+import Helmet from 'react-helmet';
 
 export default props => (
   <Fragment>
+    <Helmet>
+      <title>Личный кабинет</title>
+    </Helmet>
     <Tabs tab="tasks" />
     <div className="cabinet-page__content">
       <div className="flight flight__last-step">

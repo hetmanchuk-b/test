@@ -1,8 +1,12 @@
 import React, { Fragment } from 'react';
 import Tabs from './Tabs';
+import Helmet from 'react-helmet';
 
 export default props => (
   <Fragment>
+    <Helmet>
+      <title>Личный кабинет</title>
+    </Helmet>
     <Tabs tab="tickets" />
     <div className="cabinet-page__content">
       {/*<div className="search">

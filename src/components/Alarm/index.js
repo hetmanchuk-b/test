@@ -2,6 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import Navigation from './../../containers/Navigation/Cabinet';
 import serviceClassOptions from './_serviceClassOptions';
 import departureTimeOptions from './_departureTimeOptions';
+import { options as trainsOptions } from './../../_data/trainsOptions';
 import Passenger from './../Passengers/Form';
 import { getDate } from './../../utility/time';
 import DatePicker from 'react-date-picker';
@@ -14,6 +15,7 @@ class Alarm extends PureComponent
     super(props);
     this.state = {
       passengers: [{}],
+      trainNumber: null,
       destinationFrom: null,
       destinationTo: null,
       departureTimeFrom: null,
@@ -21,7 +23,8 @@ class Alarm extends PureComponent
       serviceClass: null,
       isSaved: false,
       date: null,
-      error: null
+      error: null,
+      textReadMore: false
     };
   }
 
@@ -96,13 +99,13 @@ class Alarm extends PureComponent
     }
 
     if ( passengers.length === 0 ) {
-      this.setState({ error: 'Добавьте пассажиров' });
+      this.setState({ error: 'Добавьте пассажиров.' });
       return false;
     }
 
     for ( let i in passengers )
       if ( ! this.validatePassenger(passengers[i]) ) {
-        this.setState({ error: 'Все поля обязательны для заполнения' });
+        this.setState({ error: 'Все поля обязательны для заполнения.' });
         return false;
       }
 
@@ -114,6 +117,7 @@ class Alarm extends PureComponent
 
     this.props.create({
       passengers: this.state.passengers,
+      trainNumber: this.state.trainNumber,
       destinationFrom: this.state.destinationFrom,
       destinationTo: this.state.destinationTo,
       departureTimeFrom: this.state.departureTimeFrom,
@@ -137,6 +141,12 @@ class Alarm extends PureComponent
     }
   }
 
+  handleReadMore = () => {
+    this.setState({
+      textReadMore: !this.state.textReadMore
+    });
+  }
+
   render() {
     const { passengers, destinationFrom, destinationTo, date, error } = this.state;
     const errorBlock = error !== null ? (<p className="error-block">{error}</p>) : null;
@@ -154,12 +164,18 @@ class Alarm extends PureComponent
           <div className="page-text-description">
             <p>Хотите сэкономить, оформив билеты заранее при открытии продажи на поезда "Сапсан"? Тогда сервис "Будильник" - именно то, что нужно.</p>
             <p>Сервис самостоятельно "разбудит" сайт и оформит билеты в момент открытия продажи, пока вы спите.</p>
-            <p>Вам достаточно заранее спланировать свою поездку на "Сапсане": выбрать дату (или даты), продажа на которые ещё не открыта, временной интервал отправления, интересующие классы обслуживания и пассажиров, для кого мы будем оформлять билеты.</p>
-            <p>Оформление и списание денег происходит автоматически. Билеты направляются на электронную почту, указанную в заявке.</p>
-            <p>Перед использованием сервиса вам необходимо будет привязать банковскую карту в личном кабинете или выбрать одну из ранее привязанных карт.</p>
-            <p>Просим вас перед формированием заявки убедиться в достаточности средств на счёте.</p>
-            <p>Направляя нам заявку, вы подтверждаете согласие с автоматическим списанием денежных средств с выбранной банковской карты в случае успешного оформления билетов.</p>
-            <p>Полные условия оказания услуги "Будильник" в Оферте пользователю ресурса.</p>
+            { this.state.textReadMore ? (
+              <React.Fragment>
+                <p>Вам достаточно заранее спланировать свою поездку на "Сапсане": выбрать дату (или даты), продажа на которые ещё не открыта, временной интервал отправления, интересующие классы обслуживания и пассажиров, для кого мы будем оформлять билеты.</p>
+                <p>Оформление и списание денег происходит автоматически. Билеты направляются на электронную почту, указанную в заявке.</p>
+                <p>Перед использованием сервиса вам необходимо будет привязать банковскую карту в личном кабинете или выбрать одну из ранее привязанных карт.</p>
+                <p>Просим вас перед формированием заявки убедиться в достаточности средств на счёте.</p>
+                <p>Направляя нам заявку, вы подтверждаете согласие с автоматическим списанием денежных средств с выбранной банковской карты в случае успешного оформления билетов.</p>
+                <p>Полные условия оказания услуги "Будильник" в Оферте пользователю ресурса.</p>
+              </React.Fragment>
+            ) : null }
+            <button className="page-text__read-more" onClick={this.handleReadMore}>{ this.state.textReadMore ? 'Скрыть' : 'Показать полностью' }</button>
+            
           </div>
 
           <div className="inner-page apply-page tasks-page">
@@ -229,6 +245,11 @@ class Alarm extends PureComponent
                   {/* <Select options={departureTimeOptions} placeholder="Время отправления до"
                     onChange={option => this.handleSet('departureTimeTo', option.value)}
                   /> */}
+                </div>
+                <div className="desc-info__item">
+                  <Select options={trainsOptions} placeholder="Номер поезда"
+                    onChange={option => this.handleSet('trainNumber', option.value)}
+                  />
                 </div>
                 {/*<div className="desc-info__item">
                   <div className="title-info">Категория места</div>

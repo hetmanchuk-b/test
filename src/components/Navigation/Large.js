@@ -13,6 +13,9 @@ class Navigation extends PureComponent {
     this.state = {
       menu: false
     }
+
+    this.fromRef = React.createRef();
+    this.toRef = React.createRef();
   }
 
   handleSet = (key, value) => {
@@ -31,6 +34,16 @@ class Navigation extends PureComponent {
     this.setState({
       menu: !this.state.menu
     });
+  }
+
+  handleDestinationSwap = event => {
+    event.preventDefault();
+    let fromValue = this.fromRef.current.props.value;
+    let toValue = this.toRef.current.props.value;
+    if (toValue !== undefined && fromValue !== undefined) {
+      this.handleSet('destinationFrom', toValue.value);
+      this.handleSet('destinationTo', fromValue.value);
+    }    
   }
 
   render() {
@@ -88,13 +101,14 @@ class Navigation extends PureComponent {
                 options={cities} placeholder="Откуда"
                 onChange={option => this.handleSet('destinationFrom', option.value)}
                 value={cities.find(el => el.value === destinationFrom)}
+                ref={this.fromRef}
               />
               <div className="towns ">
                 <a href="#" onClick={() => this.handleSet('destinationFrom', '2000000')}>Москва</a>
                 <a href="#" onClick={() => this.handleSet('destinationFrom', '2004600')}>Тверь</a>
                 <a href="#" onClick={() => this.handleSet('destinationFrom', '2004000')}>Санкт-Петербург</a>
               </div>
-              <div className="swap"><a href="#" className="swap-btn"><img src="img/icons/search-arrows.png" alt="" /></a></div>
+              <div className="swap"><a href="#" onClick={event => this.handleDestinationSwap(event)} className="swap-btn"><img src="img/icons/search-arrows.png" alt="" /></a></div>
             </div>
 
             <div className="col-lg-3 col-sm-6 col-last">
@@ -103,6 +117,7 @@ class Navigation extends PureComponent {
                 classNamePrefix="header__select"
                 onChange={option => this.handleSet('destinationTo', option.value)}
                 value={cities.find(el => el.value === destinationTo)}
+                ref={this.toRef}
               />
               <div className="towns">
                 <a href="#" onClick={() => this.handleSet('destinationTo', '2000000')}>Москва</a>

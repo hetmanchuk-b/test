@@ -2,6 +2,8 @@ import React, { PureComponent, Fragment } from 'react';
 import Navigation from './../../containers/Navigation/Cabinet';
 import FormErrors from './FormErrors';
 import {Helmet} from 'react-helmet';
+import InputMask from 'react-input-mask';
+import { connect } from 'react-redux';
 
 class Contacts extends PureComponent {
   constructor(props) {
@@ -28,15 +30,15 @@ class Contacts extends PureComponent {
     switch(fieldName) {
       case 'email':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? '' : 'Введите корректный email.';
+        fieldValidationErrors.email = emailValid ? '' : 'Введите корректный email';
         break;
       case 'firstName':
         firstNameValid = value.trim() !== '';
-        fieldValidationErrors.firstName = firstNameValid ? '' : 'Введите своё имя.';
+        fieldValidationErrors.firstName = firstNameValid ? '' : 'Введите своё имя';
         break;
       case 'message':
         messageValid = value.trim().length >= 10;
-        fieldValidationErrors.message = messageValid ? '' : 'Слишком короткое сообщение.';
+        fieldValidationErrors.message = messageValid ? '' : 'Минимальная длина сообщения 10 символов';
         break;
       default:
         break;
@@ -68,10 +70,32 @@ class Contacts extends PureComponent {
     return(error.length === 0 ? '' : 'has-error');
   }
 
+  fillInputs = () => {
+    const userFirstName = this.props.data.user.data.firstName;
+    const userLastName = this.props.data.user.data.lastName;
+    const userPhone = this.props.data.user.data.phone;
+    const userEmail = this.props.data.user.data.email;
+
+    if (userFirstName && userLastName && userPhone && userEmail) {
+      this.setState({
+        firstName: (userFirstName && userLastName) ? `${userFirstName} ${userLastName}` : '',
+        phone: userPhone ? userPhone : '', 
+        email: userEmail ? userEmail : ''
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.data.user.data.firstName) {
+      this.fillInputs();
+    }    
+  }
+
   
 
   render() {
     const { firstName, phone, email, message } = this.state;
+    
 
     return (
       <Fragment>
@@ -95,8 +119,13 @@ class Contacts extends PureComponent {
                       />
                     </div>
                     <div className="desc-info__item">
-                      <input className="input input__first-name" type="tel" name="phone" placeholder="+7 985 000 0000"
+                      {/* <input className="input input__first-name" type="tel" name="phone" placeholder="+7 985 000 0000"
                         onChange={(event) => this.handleInput(event)} value={phone}
+                      /> */}
+                      <InputMask maskChar="0" 
+                        className="input input__first-name" type="tel" name="phone" placeholder="+7 985 000 0000"
+                        onChange={(event) => this.handleInput(event)} value={phone}
+                        mask="+9 999 999 9999"
                       />
                     </div>
                     <div className="desc-info__item">
@@ -124,4 +153,10 @@ class Contacts extends PureComponent {
   }
 }
 
-export default Contacts;
+function mapStateToProps(state) {
+  return {
+    data: state
+  }
+}
+
+export default connect(mapStateToProps)(Contacts);
