@@ -19,10 +19,18 @@ class Train extends Component {
     this.seatsRef = React.createRef();
   }
 
+  setDefaultPassengerDetails = (car, seat, key, value) => {
+    const { user } = this.props;
+
+    this.props.seatDataUpdate(car, seat, 'email', user.email);
+    this.props.seatDataUpdate(car, seat, 'phone', user.phone);
+    this.props.seatDataUpdate(car, seat, 'firstName', user.firstName);
+    this.props.seatDataUpdate(car, seat, 'lastName', user.lastName);
+  }
+
   carSelect = (carNumber, carType, availableSeats) => () => {
     this.setState({ carNumber, carType, availableSeats });
     setTimeout(() => {
-      // window.scrollTo(0, this.schemaRef.current.offsetTop);
       this.schemaRef.current.scrollIntoView({behavior: "smooth", block: "center"});
     }, 200);
   }
@@ -35,7 +43,8 @@ class Train extends Component {
         this.setState({ selectedSeatsCount: selectedSeatsCount + 1 });
 
         this.props.selectSeat(carNumber, seat);
-        // window.scrollTo(0, this.seatsRef.current.offsetTop);
+        this.setDefaultPassengerDetails(carNumber, seat);
+
         setTimeout(() => {
           this.seatsRef.current.scrollIntoView({behavior: "smooth", block: "start"});
         }, 200);

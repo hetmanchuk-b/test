@@ -13,7 +13,6 @@ class Tasks extends PureComponent
   constructor(props) {
     super(props);
     this.state = {
-      passengers: [{}],
       destinationFrom: null,
       destinationTo: null,
       departureTimeFrom: null,
@@ -22,8 +21,25 @@ class Tasks extends PureComponent
       isSaved: false,
       date: null,
       error: null,
-      textReadMore: false
+      textReadMore: false,
+      passengers: [{
+        email: props.user.email,
+        phone: props.user.phone,
+        firstName: props.user.firstName,
+        lastName: props.user.lastName
+      }],
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if ( this.state.passengers[0].email === undefined && this.props.user.email !== null ) {
+      this.setState({ passengers: [{
+        email: this.props.user.email,
+        phone: this.props.user.phone,
+        firstName: this.props.user.firstName,
+        lastName: this.props.user.lastName
+      }]});
+    }
   }
 
   passengerAdd = () => {
