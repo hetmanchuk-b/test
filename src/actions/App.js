@@ -1,3 +1,4 @@
+import axiosDispatch from './../axios/dispatch';
 import * as types from './../constants/ActionTypesApp';
 
 export function notification(type, message) {
@@ -18,4 +19,8 @@ export function loaderShow(active) {
     type: types.APP_LOADER_ACTIVE,
     payload: { active }
   }
+}
+
+export function contactFormSend(params) {
+  return dispatch => axiosDispatch(dispatch, '/index/contact', params);
 }

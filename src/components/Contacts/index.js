@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import { contactFormSend } from './../../actions/App';
 import Navigation from './../../containers/Navigation/Cabinet';
 import FormErrors from './FormErrors';
 import {Helmet} from 'react-helmet';
@@ -64,12 +65,23 @@ class Contacts extends PureComponent {
   }
 
   handleSend = () => {
-    // Send function
-    
-    // //
+    console.log('SEND FORM');
+    this.props.contactFormSend({
+      firstName: this.state.firstName,
+      phone: this.state.phone,
+      email: this.state.email,
+      message: this.state.message
+    }).then(data => {
+      // Success handler
+      console.log('SUCCESS', data);
+    }).catch(error => {
+      // Error handler
+      console.log('ERROR', error);
+    });
+
+    // Это думаю лучше перенести на 75 строку в Success handler
     this.setState({ messageSent: true });
     this.setState({ firstName: '', phone: '', email: '', message: '' });
-
   }
 
   errorClass(error) {
@@ -176,4 +188,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Contacts);
+export default connect(mapStateToProps, { contactFormSend })(Contacts);
