@@ -7,7 +7,8 @@ import Tasks from './../../components/Tasks';
 const mapStateToProps = state => ({
   user: state.user.data,
   cities: state.cities,
-  jwt: state.auth.jwt
+  jwt: state.auth.jwt,
+  booking: state.booking
 });
 
 export default connect(mapStateToProps, { create, authorizePayment, modalOpen })(Tasks);

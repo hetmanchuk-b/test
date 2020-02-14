@@ -6,6 +6,7 @@ import nationalityOptions from './_nationalityOptions';
 import documentOptions from './_documentOptions';
 import genderOptions from './_genderOptions';
 import InputMask from 'react-input-mask';
+import { connect } from 'react-redux';
 
 class Form extends Component
 {
@@ -37,6 +38,68 @@ class Form extends Component
 
   handleSelectSaved = el => {
     Object.keys(el).map(key => this.props.fieldUpdate(key, el[key]));
+
+    if ( el.email === null ) {
+      this.props.fieldUpdate('email', this.props.data.email);
+    }
+
+    if ( el.phone === null ) {
+      this.props.fieldUpdate('phone', this.props.data.phone);
+    }
+  }
+
+  renderDocumentNumber = documentType => {
+    const { documentNumber } = this.props.passenger;
+
+    if ( documentType === 'RussianPassport' || documentType === undefined ) {
+      return (
+        <InputMask maskChar="0" className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
+          onChange={this.handleInput} value={documentNumber || ''}
+          mask="9999 999999"
+          maskChar={null}
+        />
+      )
+    }
+
+    if ( documentType === 'UssrPassport' ) {
+      return (
+        <input className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
+          onChange={this.handleInput} value={documentNumber || ''}
+        />
+      )
+    }
+
+    if ( documentType === 'BirthCertificate' ) {
+      return (
+        <input className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
+          onChange={this.handleInput} value={documentNumber || ''}
+        />
+      )
+    }
+
+    if ( documentType === 'ForeignPassport' ) {
+      return (
+        <input className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
+          onChange={this.handleInput} value={documentNumber || ''}
+        />
+      )
+    }
+
+    if ( documentType === 'RussianForeignPassport' ) {
+      return (
+        <InputMask maskChar="0" className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
+          onChange={this.handleInput} value={documentNumber || ''}
+          mask="999999999"
+          maskChar={null}
+        />
+      )
+    }
+
+    return (
+      <input className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
+        onChange={this.handleInput} value={documentNumber || ''}
+      />
+    )
   }
 
 
@@ -92,13 +155,14 @@ class Form extends Component
                 <Select options={genderOptions} placeholder="Пол"
                   onChange={this.handleSelect('gender')} value={genderOptions.find(el => el.value === gender)}
                 />
-              </div> 
+              </div>
               <div className="desc-info__item">
                 <span className="desc-info__item-required">*</span>
-                <InputMask maskChar="0" className="input input__first-name" type="text" name="documentNumber" placeholder="№ документа:"
-                  onChange={this.handleInput} value={documentNumber || ''}
-                  mask="9999999999"
-                />
+
+                { 
+                  this.renderDocumentNumber(documentType)
+                }
+
               </div>
               <div className="desc-info__item desc-info__item--birthdate">
                 
@@ -108,13 +172,13 @@ class Form extends Component
                   onChange={birthdate => this.handleInputDate(birthdate)}
                   value={birthdate || ''}
                   minDate={new Date(1900, 0, 0)}
-                  maxDate={new Date(2010, 0, 0)}
+                  maxDate={new Date()}
                   yearPlaceholder="гггг"
                   monthPlaceholder="мм"
                   dayPlaceholder="дд"
                   disableCalendar={true}
                   format="d-M-y"
-                  showLeadingZeros={true}
+                  showLeadingZeros={false}
                 />
               </div>
             </div>
@@ -124,10 +188,11 @@ class Form extends Component
                 <div className="title phone">Телефон: <span className="required-item">*</span></div>
 
                   <InputMask maskChar="0" className="input input__phone" type="tel" name="phone" 
-                    placeholder="+7 985 000 0000" 
-                    mask="+9 999 999 9999" 
-                    onChange={this.handleInput} 
+                    placeholder="+7 985 000 0000"
+                    mask="+9 999 999 9999"
+                    onChange={this.handleInput}
                     value={phone || ''}
+                    maskChar={null}
                   />
 
                 
@@ -183,5 +248,11 @@ class Form extends Component
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    data: state.user.data
+  }
+}
 
-export default Form;
+
+export default connect(mapStateToProps)(Form);

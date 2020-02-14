@@ -172,7 +172,7 @@ class Modal extends PureComponent {
                 </div> */}
                 <p>Нажимая кнопку "Войти" я соглашаюсь с</p>
                   <div className="bottom-link"> 
-                    <Link to="/conditions" target="_blank">политикой конфиденциальности </Link>
+                    <Link to="/conditions" target="_blank">политикой конфиденциальности</Link>
                     &nbsp;и&nbsp; 
                     <Link to="/conditions" target="_blank">обработкой персональных данных.</Link>
                   </div>

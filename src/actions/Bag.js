@@ -86,3 +86,10 @@ export function setOrderId(id) {
     payload: { id }
   }
 }
+
+export function refund(reservationId) {
+  return {
+    type: types.BAG_REFUND,
+    payload: reservationId
+  }
+}

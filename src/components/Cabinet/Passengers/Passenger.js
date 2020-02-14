@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import Edit from './Edit';
+import nationalityOptions from '../../Passengers/_nationalityOptions';
 
 class Passenger extends PureComponent {
   constructor(props) {
@@ -18,8 +19,48 @@ class Passenger extends PureComponent {
     this.setState({ info: ! this.state.info })
   }
 
+  renderBithdate = date => {
+    let arr = date.split('-');
+    return arr[2] + '.' + arr[1] + '.' + arr[0];
+  }  
+
+  renderDocumentType = type => {
+    const types = [
+      { value: 'RussianPassport', label: 'Общегражданский паспорт' },
+      { value: 'RussianForeignPassport', label: 'Общегражданский заграничный паспорт' },
+      { value: 'ForeignPassport', label: 'Национальный паспорт' },
+      { value: 'BirthCertificate', label: 'Свидетельство о рождении' },
+      { value: 'MilitaryCard', label: 'Военный билет военнослужащего срочной службы' },
+      { value: 'MilitaryOfficerCard', label: 'Удостоверение личности для военнослужащих' },
+      { value: 'ReturnToCisCertificate', label: 'Свидетельство на возвращение' },
+      { value: 'DiplomaticPassport', label: 'Дипломатический паспорт' },
+      { value: 'ServicePassport', label: 'Служебный паспорт' },
+      { value: 'SailorPassport', label: 'Паспорт моряка' },
+      { value: 'StatelessPersonIdentityCard', label: 'Удостоверение личности лица без гражданства' },
+      { value: 'ResidencePermit', label: 'Вид на жительство' },
+      { value: 'RussianTemporaryIdentityCard', label: 'Временное удостоверение личности' },
+      { value: 'UssrPassport', label: 'Паспорт СССР' },
+      { value: 'MedicalBirthCertificate', label: 'Медицинское свидетельство о рождении (для детей не старше 1 мес.)' },
+      { value: 'LostPassportCertificate', label: 'Справка об утере паспорта' },
+      { value: 'PrisonReleaseCertificate', label: 'Справка об освобождении из мест лишения свободы' }
+    ];
+    const obj = types.find(item => {
+      return item.value === type;
+    });
+    return obj.label;
+  }
+
+  renderNationality = nationality => {
+    const obj = nationalityOptions.find(item => {
+      return item.value === nationality;
+    });
+
+    return obj.label;
+  }
+
   render() {
     const { id, lastName, firstName, middleName, email, phone, documentType, documentNumber, nationality, birthdate, gender, rzhdBonus, universalRzhdCard, businessTravel } = this.props.data;
+
 
     return (
       <div className="user user-box user-box__passengers">
@@ -72,7 +113,9 @@ class Passenger extends PureComponent {
             <div className="user-box__info-item">
               <p>
                 <b>Тип документа:</b>
-                <strong>{documentType}</strong>
+                <strong>
+                  { this.renderDocumentType(documentType) }
+                </strong>
               </p>
             </div>
             <div className="user-box__info-item">
@@ -84,19 +127,21 @@ class Passenger extends PureComponent {
             <div className="user-box__info-item">
               <p>
                 <b>Гражданство:</b>
-                <strong>{nationality}</strong>
+                <strong>
+                  { this.renderNationality(nationality) }
+                </strong>
               </p>
             </div>
             <div className="user-box__info-item">
               <p>
                 <b>Дата рождения:</b>
-                <strong>{birthdate}</strong>
+                <strong>{this.renderBithdate(birthdate)}</strong>
               </p>
             </div>
             <div className="user-box__info-item">
               <p>
                 <b>Пол:</b>
-                <strong>{gender}</strong>
+                <strong>{gender === 'Male' ? 'Мужской' : 'Женский'}</strong>
               </p>
             </div>
             <div className="user-box__info-item">
@@ -127,17 +172,3 @@ class Passenger extends PureComponent {
 }
 
 export default Passenger;
-    // id: 408
-// email: "testst@test.com"
-// phone: "+7 777 777 7777"
-// firstName: "Ye"
-// lastName: "Ye"
-// middleName: "Yeich"
-// documentType: "RussianPassport"
-// documentNumber: "9999999999"
-// nationality: "RU"
-// birthdate: "1991-11-13"
-// gender: "Male"
-// rzhdBonus: "6666666666666"
-// universalRzhdCard: "6666666666666"
-// businessTravel: "6666666666666"

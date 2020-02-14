@@ -17,7 +17,8 @@ class Contacts extends PureComponent {
       firstNameValid: false,
       emailValid: false,
       messageValid: false,
-      formValid: false
+      formValid: false,
+      messageSent: false
     };
   }
 
@@ -63,14 +64,19 @@ class Contacts extends PureComponent {
   }
 
   handleSend = () => {
+    // Send function
+    
+    // //
+    this.setState({ messageSent: true });
     this.setState({ firstName: '', phone: '', email: '', message: '' });
+
   }
 
   errorClass(error) {
     return(error.length === 0 ? '' : 'has-error');
   }
 
-  fillInputs = () => {
+  fillInputs() {
     const userFirstName = this.props.data.user.data.firstName;
     const userLastName = this.props.data.user.data.lastName;
     const userPhone = this.props.data.user.data.phone;
@@ -80,18 +86,24 @@ class Contacts extends PureComponent {
       this.setState({
         firstName: (userFirstName && userLastName) ? `${userFirstName} ${userLastName}` : '',
         phone: userPhone ? userPhone : '', 
-        email: userEmail ? userEmail : ''
+        email: userEmail ? userEmail : '',
+        emailValid: true,
+        firstNameValid: true
       });
     }
   }
 
-  componentDidUpdate() {
+  componentDidMount(prevProps) {
     if (this.props.data.user.data.firstName) {
       this.fillInputs();
     }    
   }
 
-  
+  componentDidUpdate(prevProps) {
+    if (this.props.data.user.data.firstName) {
+      this.fillInputs();
+    }    
+  }
 
   render() {
     const { firstName, phone, email, message } = this.state;
@@ -144,6 +156,11 @@ class Contacts extends PureComponent {
                 <div className="box-info">
                   <button type="submit" disabled={!this.state.formValid} className="btn btn__main" onClick={this.handleSend}>Отправить</button>
                 </div>
+                { this.state.messageSent ? (
+                  <div className="box-info message-sent">
+                    <p>Ваше обращение направлено в службу технической поддержки. С Вами мы становимся лучше. Спасибо!</p>
+                  </div>
+                ) : null }
               </div>
             </form>
           </div>

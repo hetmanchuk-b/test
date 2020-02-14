@@ -832,12 +832,16 @@ body {
   overflow: auto;
   padding: 60px 0 20px;
   background-color: #1e272e;
-  z-index: 1;
+  z-index: 4;
   height: 100vh;
 }
 
 .header__nav-menu.open-mobile {
   display: flex;
+}
+
+.contacts_message {
+  outline: none;
 }
 
 .header__nav-list {
@@ -1110,7 +1114,7 @@ body {
 
 .nav-burger.open {
   position: fixed;
-  z-index: 2;
+  z-index: 5;
 }
 
 .nav-burger span {
@@ -2771,7 +2775,7 @@ body {
 }
 
 .cabinet-page .edit-box__item input {
-  width: 150px;
+  width: 80%;
   padding: 0 5px;
   border: none;
   font-family: "ProximaNova-Bold", Arial, sans-serif;
@@ -4127,7 +4131,11 @@ body {
 }
 
 .inner-page.apply-page .desc-info__item--birthdate {
-  display: flex;
+  display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
   align-items: center;
   width: 100%;
 }
@@ -4154,7 +4162,7 @@ body {
   position: absolute;
   top: -6px;
   right: 11px;
-  color: red;
+  color: #ff6c6c;
   font-size: 24px;
 }
 
@@ -4163,7 +4171,8 @@ body {
 }
 
 .required-item {
-  color: red;
+  color: #ff6c6c;
+  font-size: 18px;
 }
 
 .input__birthdate.react-date-picker .react-date-picker__wrapper .react-date-picker__inputGroup input {
@@ -4240,7 +4249,35 @@ body {
 	-o-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
+.overlay--confirm {
+  z-index: 1060;
+}
+.modal--confirm {
+  z-index: 1070;
+}
+.modal-dialog--confirm {
+  margin-top: 200px;
+  z-index: 1070;
+}
 
+.modal-dialog--confirm .modal-content {
+  padding: 20px;
+}
+
+.modal-dialog--confirm .modal-content h4 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+.confirm-modal__btn-wrapper .btn:first-child {
+  margin-right: 30px;
+}
+
+.message-sent {
+  border: 2px dashed #36ce36!important;
+  padding: 10px 0!important;
+  margin-top: 10px;
+  border-radius: 10px;
+}
 
 
 
@@ -4294,6 +4331,13 @@ body {
 
   .location .flight-time:after {
     right: -72px;
+  }
+
+  .cabinet-page .tabs-parent, .cabinet-page .tabs-parent:first-child {
+    padding: 0 15px;
+  }
+  .cabinet-page .edit-box__item {
+    width: 100%;
   }
 }
 
@@ -4363,6 +4407,52 @@ body {
 
   .search-result .list__title.list__title-economy .tooltip-info {
     left: 70%;
+  }
+}
+
+@media only screen and (max-width: 811px) {
+  .cabinet-page__head {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cabinet-page .tabs-parent, .cabinet-page .tabs-parent.active {
+    border-bottom: 1px solid #989a9c;
+    border-right: 1px solid #989a9c;
+  }
+  .cabinet-page .tabs-parent.active+.tabs-parent:before {
+    display: none;
+  }
+  .cabinet-page .tabs-parent.active+.tabs-parent {
+    border-left: 1px solid #989a9c;
+  }
+  .cabinet-page .tabs-parent:first-child.active:after {
+    display: none;
+  }
+  .cabinet-page .tabs-parent.active:after {
+    display: none;
+  }
+  .cabinet-page .tabs-parent.active:before {
+    display: none;
+  }
+  .cabinet-page__content {
+    margin-top: 0;
+  }
+  .cabinet-page .tabs-parent:last-child.active {
+    border-bottom: 1px solid #989a9c;
+  }
+  .cabinet-page .tabs-parent, .cabinet-page .tabs-parent:first-child, .cabinet-page .tabs-parent.active+.tabs-parent, .cabinet-page .tabs-parent+.tabs-parent {
+    width: 50%;
+    border-radius: 3px;
+  }
+  .cabinet-page .tabs-parent.active+.tabs-parent:last-child:after {
+    display: none;
+  }
+  .cabinet-page .tabs-parent.active {
+    border-color: #212529;
   }
 }
 
@@ -4496,11 +4586,45 @@ body {
   .inner-page.conditions-page {
     width: 100%;
   }
+  .cabinet-page .tabs-parent, .cabinet-page .tabs-parent:first-child, .cabinet-page .tabs-parent.active+.tabs-parent, .cabinet-page .tabs-parent+.tabs-parent {
+    width: 100%;
+  }
+  .cabinet-page .tabs-parent {
+    height: 52px;
+  }
+  .cabinet-page__content {
+    padding: 20px 10px;
+  }
+  .cabinet-page .flight .title-tawn {
+    margin: 1rem 0;
+  }
+  .flight__info-wrap {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: flex-start!important;
+	  align-items: flex-start!important;
+  }
+  .cabinet-page .user-box__passengers {
+    padding: 20px 10px;
+  }
+  .cabinet-page__content .circle-box .cont-wrap {
+    width: 50%;
+    margin: 0;
+  }
+  .inner-page .form {
+    padding: 40px 0 0
+  }
 }
 
 @media only screen and (max-width: 400px) {
   .react-date-picker .react-calendar .react-calendar__month-view__weekdays {
     font-size: 15px
+  }
+  .cabinet-page .user-box__passengers .user__name {
+    font-size: 18px;
   }
 
   .react-date-picker .react-calendar .react-calendar__tile {
@@ -4548,7 +4672,13 @@ body {
   }
 
   .inner-page.apply-page {
-    padding: 0 5px;
+    padding: 0;
+  }
+
+  .user-box .inner-page.apply-page {
+    border: none;
+    margin: 0!important;
+    width: 100%
   }
 
   .inner-page.apply-page .desc-info {
@@ -4565,6 +4695,38 @@ body {
 
   .inner-page {
     padding: 0 5px;
+  }
+
+  .cabinet-page__content .circle-box {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: center!important;
+	  align-items: center!important;
+  }
+  .user-info__item {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .cabinet-page__content .user-info__name, .cabinet-page__content .user-info__data {
+    width: 100%;
+  }
+  .user-box__info-item {
+    margin-bottom: 10px;
+  }
+  .user-box__info-item p b {
+    width: 100%;
+    max-width: 100%;
+    margin: 0px;
+  }
+  .user-box__user-info {
+    padding: 20px 0;
   }
 }
 

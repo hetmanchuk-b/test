@@ -36,7 +36,6 @@ class Home extends PureComponent {
 				<Navigation />
 				<Helmet>
 					<title>Главная</title>
-					<meta name="description" content="Description"/>
 				</Helmet>
 
 				<main className="main">  
@@ -44,7 +43,7 @@ class Home extends PureComponent {
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-8 offset-lg-2">
-									<h2 className="sect-title">Наши уникальные услуги</h2>
+									<h1 className="sect-title">Наши уникальные услуги</h1>
 									<p className="sect-subtitle">Наш сайт станет вашим надёжным и верным помощником для оформления билетов на высокоскоростные поезда "Сапсан".</p>
 									<p className="sect-subtitle">Наши уникальные сервисы помогут вам оформить билеты, даже когда мест уже нет в продаже или продажа ещё не открыта.</p>
 									<p className="sect-subtitle">Счастливые пассажиры уже едут на встречу приключениям, купив билеты у нас. Присоединяйся!</p>
@@ -54,7 +53,7 @@ class Home extends PureComponent {
 								<div className="col-md-4">
 									<div className="feature">
 										<img src="img/icons/feature-image1.svg" alt="" className="img-fluid feature-image" />
-										<p className="feature-name">Лист ожидания</p>
+										<h3 className="feature-name">Лист ожидания</h3>
 										<p className="feature-desc">Сервис "Лист ожидания" предназначен для покупки билетов тогда, когда их уже нет в продаже.</p>
 										<button className="btn btn__main" onClick={() => this.props.history.push('/tasks')}>Найти нужные билеты</button>
 									</div>
@@ -62,7 +61,7 @@ class Home extends PureComponent {
 								<div className="col-md-4">
 									<div className="feature">
 										<img src="img/icons/feature-image2.svg" alt="" className="img-fluid feature-image" />
-										<p className="feature-name">Будильник</p>
+										<h3 className="feature-name">Будильник</h3>
 										<p className="feature-desc">Сервис самостоятельно "разбудит" сайт и оформит билеты в момент открытия продажи, пока вы спите.</p>
 										<button className="btn btn__main" onClick={() => this.props.history.push('/alarm')}>Найти нужные билеты</button>
 									</div>
@@ -70,7 +69,7 @@ class Home extends PureComponent {
 								<div className="col-md-4">
 									<div className="feature">
 										<img src="img/icons/feature-image3.svg" alt="" className="img-fluid feature-image" />
-										<p className="feature-name">Пакетное оформление</p>
+										<h3 className="feature-name">Пакетное оформление</h3>
 										<p className="feature-desc">Сервис "Пакетное оформление" для пассажиров, которые путешествуют часто и с известной регулярностью.</p>
 										<button className="btn btn__main" onClick={() => this.props.history.push('/package')}>Найти нужные билеты</button>
 									</div>

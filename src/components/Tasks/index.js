@@ -14,7 +14,6 @@ class Tasks extends PureComponent
   constructor(props) {
     super(props);
     this.state = {
-      passengers: [{}],
       trainNumber: null,
       destinationFrom: null,
       destinationTo: null,
@@ -24,9 +23,38 @@ class Tasks extends PureComponent
       date: null,
       error: null,
       isSaved: false,
-      textReadMore: false
+      textReadMore: false,
+      passengers: [{
+        email: props.user.email,
+        phone: props.user.phone,
+        firstName: props.user.firstName,
+        lastName: props.user.lastName
+      }]
     };
   }
+
+  componentDidUpdate(prevProps) {
+    
+  }
+
+  componentDidMount() {
+    if ( this.state.destinationFrom === null && this.props.booking.destinationFrom !== null ) {
+      this.setState({
+        destinationFrom: this.props.booking.destinationFrom,
+        destinationTo: this.props.booking.destinationTo,
+        date: this.props.booking.dateFrom
+      });
+    }
+    if ( this.state.passengers[0] && this.state.passengers[0].email === undefined && this.props.user.email !== null ) {
+      this.setState({ passengers: [{
+        email: this.props.user.email,
+        phone: this.props.user.phone,
+        firstName: this.props.user.firstName,
+        lastName: this.props.user.lastName
+      }]});
+    }   
+  }
+  
 
   passengerAdd = () => {
     let passengers = [ ...this.state.passengers ];
@@ -56,7 +84,7 @@ class Tasks extends PureComponent
 
     if ( email === undefined || email.length === 0 ) return false;
 
-    if ( phone === undefined || phone.length === 0 ) return false;
+    if ( phone === undefined || phone === null || phone.length === 0 ) return false;
 
     if ( lastName === undefined || lastName.length === 0 ) return false;
 
@@ -124,7 +152,8 @@ class Tasks extends PureComponent
       date: getDate(this.state.date, {}),
       timeFrom: this.state.timeFrom,
       timeTo: this.state.timeTo
-    }).then(data => this.setState({ passengers: [{}] }));
+    }).then(data => this.setState({ passengers: [{}] }))
+      .then(this.props.history.push('/request-success'));
   }
 
   renderTimeToSelect(timeFrom) {
@@ -141,7 +170,7 @@ class Tasks extends PureComponent
     }
   }
 
-  handleReadMore = () => {
+  handleReadMore = () => {    
     this.setState({
       textReadMore: !this.state.textReadMore
     });
@@ -154,7 +183,6 @@ class Tasks extends PureComponent
     const { user, cities, modalOpen, jwt } = this.props;
     const dateNow = new Date();
     const dateNextYear = new Date(dateNow.getFullYear() + 1, dateNow.getMonth(), dateNow.getDate());
-
 
     return (
       <Fragment>
@@ -197,7 +225,7 @@ class Tasks extends PureComponent
 
               <div className="desc-info d-flex align-items-center f-wrap">
                 <div className="desc-info__item">
-                  <div className="title-info">Станция отправления</div>
+                  <div className="title-info">Станция отправления <span className="required-item">*</span></div>
                   <div className="input-icon"> 
                     <Select
                       className="header__select"
@@ -212,7 +240,7 @@ class Tasks extends PureComponent
                   </div>
                 </div>
                 <div className="desc-info__item">
-                  <div className="title-info">Станция назначения</div>
+                  <div className="title-info">Станция назначения <span className="required-item">*</span></div>
                   <Select options={cities} placeholder="Куда"
                     className="header__select"
                     classNamePrefix="header__select"
@@ -221,12 +249,13 @@ class Tasks extends PureComponent
                   />
                 </div>
                 <div className="desc-info__item">
-                  <div className="title-info">Дата отправления</div>
+                  <div className="title-info">Дата отправления <span className="required-item">*</span></div>
                   <div className="input-icon date_wrapper">
                     <DatePicker className={date ? "form__datepicker opened" : "form__datepicker"} onChange={date => this.handleSet('date', date)} value={date} minDate={dateNow} maxDate={dateNextYear} />
                   </div>
                 </div> 
                 <div className="desc-info__item">
+                  <span className="desc-info__item-required desc-info__item-required--select">*</span>
                   <Select options={serviceClassOptions} placeholder="Класс обслуживания"
                     onChange={option => this.handleSet('serviceClass', option.value)}
                   />

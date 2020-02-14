@@ -12,6 +12,8 @@ import Bag from './../containers/Bag';
 import Cabinet from './Cabinet';
 import Conditions from '../components/Conditions';
 import PublicOffer from '../components/PublicOffer';
+import PaymentSuccess from '../components/PaymentSuccess';
+import RequestSuccess from '../components/RequestSuccess';
 
 export default () => (
   <Switch>
@@ -26,6 +28,8 @@ export default () => (
     <Route exact path="/bag" component={Bag} />
     <Route exact path="/conditions" component={Conditions} />
     <Route exact path="/public-offer" component={PublicOffer} />
+    <Route exact path="/payment-success" component={PaymentSuccess} />
+    <Route exact path="/request-success" component={RequestSuccess} />
     <Route path="/cabinet" component={Cabinet} />
   </Switch>
 );

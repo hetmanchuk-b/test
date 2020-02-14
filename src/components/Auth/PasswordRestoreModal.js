@@ -29,7 +29,10 @@ class Modal extends PureComponent {
     e.preventDefault();
     const { email } = this.state;
 
+
     if ( this.validation() ) this.props.passwordRestore({ email });
+
+    this.props.modalOpen('passwordRestoreSuccess');
   }
 
   render() {
@@ -57,7 +60,6 @@ class Modal extends PureComponent {
                     </div>
                   </div>
                   <button type="submit" className="btn" onClick={this.handleSubmit}>Восстановить пароль</button>
-
                   {validationError !== null ? (<p>{validationError}</p>) : null}
                   {error !== null ? (<p>{error}</p>) : null}
                 </form>

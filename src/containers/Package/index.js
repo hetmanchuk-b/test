@@ -5,6 +5,7 @@ import { modalOpen } from './../../actions/Auth';
 import Package from './../../components/Package';
 
 const mapStateToProps = state => ({
+  user: state.user.data,
   cities: state.cities,
   jwt: state.auth.jwt
 });
