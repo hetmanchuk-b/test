@@ -35,36 +35,15 @@ class Tasks extends PureComponent
   }
 
   componentDidUpdate(prevProps) {
-<<<<<<< HEAD
-    
-  }
-
-  componentDidMount() {
-    if ( this.state.destinationFrom === null && this.props.booking.destinationFrom !== null ) {
-      this.setState({
-        destinationFrom: this.props.booking.destinationFrom,
-        destinationTo: this.props.booking.destinationTo,
-        date: this.props.booking.dateFrom
-      });
-    }
-    if ( this.state.passengers[0] && this.state.passengers[0].email === undefined && this.props.user.email !== null ) {
-=======
     if ( this.state.passengers[0].email === undefined && this.props.user.email !== null ) {
->>>>>>> 8129ab704b841b0481f98442c9e9975c89c6ff7d
       this.setState({ passengers: [{
         email: this.props.user.email,
         phone: this.props.user.phone,
         firstName: this.props.user.firstName,
         lastName: this.props.user.lastName
       }]});
-<<<<<<< HEAD
-    }   
-  }
-  
-=======
     }
   }
->>>>>>> 8129ab704b841b0481f98442c9e9975c89c6ff7d
 
   passengerAdd = () => {
     let passengers = [ ...this.state.passengers ];
