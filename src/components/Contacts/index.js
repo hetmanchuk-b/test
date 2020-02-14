@@ -65,7 +65,6 @@ class Contacts extends PureComponent {
   }
 
   handleSend = () => {
-    console.log('SEND FORM');
     this.props.contactFormSend({
       firstName: this.state.firstName,
       phone: this.state.phone,
