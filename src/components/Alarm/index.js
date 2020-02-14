@@ -33,8 +33,13 @@ class Alarm extends PureComponent
     };
   }
 
+<<<<<<< HEAD
   componentDidMount() {
     if ( this.state.passengers[0] && this.state.passengers[0].email === undefined && this.props.user.email !== null ) {
+=======
+  componentDidUpdate(prevProps) {
+    if ( this.state.passengers[0].email === undefined && this.props.user.email !== null ) {
+>>>>>>> 8129ab704b841b0481f98442c9e9975c89c6ff7d
       this.setState({ passengers: [{
         email: this.props.user.email,
         phone: this.props.user.phone,
