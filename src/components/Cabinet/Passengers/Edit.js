@@ -11,7 +11,18 @@ class Edit extends PureComponent {
     this.setState({ [key]: value });
   }
 
+  validation = () => {
+    if ( this.state.birthdate === null || this.state.birthdate.length === 0 ) {
+      this.setState({ error: 'Введите дату рождения' });
+      return false;
+    }
+
+    return true;
+  }
+
   handleUpdate = () => {
+    if ( ! this.validation() ) return false;
+
     this.props.handleCancel();
     this.props.handleUpdate({ ...this.state });
   }

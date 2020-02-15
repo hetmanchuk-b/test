@@ -1,6 +1,7 @@
 import * as types from './../constants/ActionTypesPassengers';
 import axiosDispatch from './../axios/dispatch';
 import { appError } from './App';
+import { getDate } from './../utility/time';
 
 export function getList() {
   return (dispatch, getState) => {
@@ -12,6 +13,8 @@ export function getList() {
 }
 
 export function update(params) {
+  if ( params.birthdate ) params.birthdate = getDate(params.birthdate, false);
+
   return dispatch => {
     axiosDispatch(dispatch, '/passengers/update', params)
       .then(data => dispatch(getList()))
