@@ -2,6 +2,7 @@ import React from 'react';
 import Content from './components/Content';
 import PasswordRestore from './containers/Auth/PasswordRestoreModal';
 import PasswordRestoreSuccess from './containers/Auth/PasswordRestoreSuccessModal';
+import SignUpSuccess from './containers/Auth/SignUpSuccessModal';
 import SignIn from './containers/Auth/SignInModal';
 import SignUp from './containers/Auth/SignUpModal';
 import Footer from './components/Footer';
@@ -20,5 +21,6 @@ export default () => (
     <SignUp />
     <PasswordRestore />
     <PasswordRestoreSuccess />
+    <SignUpSuccess />
   </div>
 );

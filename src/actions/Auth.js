@@ -14,7 +14,10 @@ export function signIn(params) {
 export function signUp(params) {
   return dispatch => {
     axiosDispatch(dispatch, '/auth/signUp', params)
-      .then(data => dispatch(handleSuccess(data.token)))
+      .then(data => {
+        dispatch(handleSuccess(data.token));
+        dispatch(modalOpen('signUpSuccess'));
+      })
       .catch(error => dispatch(handleError(error)));
   }
 }
