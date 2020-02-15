@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-date-picker';
+import { dateToString } from './../../utility/time';
 import Select from 'react-select';
 import SelectSaved from './../../containers/Passengers/SelectSaved';
 import nationalityOptions from './_nationalityOptions';
@@ -25,7 +26,7 @@ class Form extends Component
   }
 
   handleInputDate = birthdate => {
-    this.props.fieldUpdate('birthdate', birthdate);
+    this.props.fieldUpdate('birthdate', dateToString(birthdate));
   }
 
   handleSelect = key => option => {

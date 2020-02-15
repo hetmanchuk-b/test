@@ -8,6 +8,10 @@ export const getDate = (msg, params) => {
   return date.toLocaleDateString('ru-RU', params);
 };
 
+export const dateToString = date => {
+  return date.toLocaleDateString('en-US');
+}
+
 export const getTripDuration = msg => {
   const hours = msg / 60;
   const minutes = (hours - Math.floor(hours)) * 60;

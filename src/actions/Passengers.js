@@ -13,8 +13,6 @@ export function getList() {
 }
 
 export function update(params) {
-  if ( params.birthdate ) params.birthdate = getDate(params.birthdate, false);
-
   return dispatch => {
     axiosDispatch(dispatch, '/passengers/update', params)
       .then(data => dispatch(getList()))
