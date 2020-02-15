@@ -22,7 +22,7 @@ export function signUp(params) {
 export function passwordRestore(params) {
   return dispatch => {
     axiosDispatch(dispatch, '/auth/passwordRestore', params)
-      .then(data => dispatch(modalClose()))
+      .then(data => dispatch(modalOpen('passwordRestoreSuccess')))
       .catch(error => dispatch(handleError(error)));
   }
 }

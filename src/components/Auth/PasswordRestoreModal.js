@@ -29,10 +29,7 @@ class Modal extends PureComponent {
     e.preventDefault();
     const { email } = this.state;
 
-
     if ( this.validation() ) this.props.passwordRestore({ email });
-
-    this.props.modalOpen('passwordRestoreSuccess');
   }
 
   render() {
