@@ -1953,6 +1953,20 @@ body {
 .inner-page.apply-page {
   border: 1px solid #989a9c;
 }
+.toaster {
+  position: fixed;
+  top: -10vh;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  left: 50%;
+  transform: translate(-50%);
+  transition: .3s ease-in-out;
+}
+.toaster.active{
+  top: 0vh;
+}
 
 .inner-page.apply-page .title {
   margin-bottom: 10px;
@@ -2767,6 +2781,24 @@ body {
   line-height: 1.5;
 }
 
+.cabinet-page .editPassword .edit-box__item.error {
+  box-shadow: 0 0 0 1px red;
+}
+.cabinet-page .editPassword .title {
+  font-family: "ProximaNova-Regular", Arial, sans-serif;
+  font-size: 15px;
+  color: #606161;
+  white-space: nowrap;
+}
+.cabinet-page .editPassword .edit-box__item {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #909294;
+  border-radius: 18px;
+  padding: 8px 20px;
+  color: #000;
+  line-height: 1.5;
+}
 .cabinet-page .edit-box__item .title {
   font-family: "ProximaNova-Regular", Arial, sans-serif;
   font-size: 15px;

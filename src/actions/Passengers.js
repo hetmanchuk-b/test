@@ -36,6 +36,7 @@ export function remove(id) {
   }
 }
 
+
 export function fetchList(data) {
   return {
     type: types.PASSENGERS_FETCH,

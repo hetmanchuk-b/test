@@ -5,7 +5,6 @@ import { appError } from './App';
 export function getData() {
   return (dispatch, getState) => {
     if ( getState().auth.jwt === null ) return;
-
     axiosDispatch(dispatch, '/users/me')
       .then(data => dispatch(fetchData(data)))
       .catch(error => dispatch(appError(error)));
@@ -15,8 +14,16 @@ export function getData() {
 export function update(params) {
   return dispatch => {
     axiosDispatch(dispatch, '/users/update', params)
-      .then(data => dispatch(fetchData(data)))
+      .then(data => dispatch(fetchDataUpdate(data)))
       .catch(error => dispatch(appError(error)));
+  }
+}
+
+export function updatePass(params) {
+  return dispatch => {
+    axiosDispatch(dispatch, '/users/updatePass', params)
+      .then(data => dispatch(fetchDataPassword(data)))
+      .catch(error => dispatch(fetchDataPasswordWrong(error)));
   }
 }
 
@@ -24,6 +31,25 @@ export function fetchData(data) {
   return {
     type: types.USER_FETCH,
     payload: data
+  };
+}
+export function fetchDataUpdate(data) {
+  return {
+    type: types.USER_FETCH_UPDATE,
+    payload: data
+  };
+}
+export function fetchDataPassword(data) {
+  return {
+    type: types.USER_FETCH_PASSWORD,
+    payload: data
+  };
+}
+
+export function fetchDataPasswordWrong(error) {
+  return {
+    type: types.USER_FETCH_PASSWORD_WRONG,
+    payload: error
   };
 }
 
