@@ -3482,10 +3482,16 @@ body {
   padding-bottom: 35px;
 }
 
+#recover-pass-accept .modal-body {
+  text-align: center;
+  padding-bottom: 35px;
+}
 .recover-pass-accept .modal-dialog {
   max-width: 400px;
 }
-
+.recover-pass-icon{
+  width: auto;
+}
 .recover-pass-accept .modal-header {
   padding: 35px 35px 0;
 }

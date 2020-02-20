@@ -12,8 +12,8 @@ export default props => (
             <h5 className="modal-title">Восстановить пароль</h5>
           </div>
           <div className="modal-body">
-            <img src="../img/icons/accept.jpg" alt="" />
-            <p>На указанный вами адрес  отправлено письмо с ссылкой  для изменения пароля.</p>
+            <img className="recover-pass-icon" src="../img/icons/accept.jpg" alt="" />
+            <p>На указанный вами адрес  отправлено письмо с  новым паролем.</p>
           </div>
         </div>
       </div>

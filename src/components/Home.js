@@ -43,7 +43,7 @@ class Home extends PureComponent {
 						<div className="container">
 							<div className="row">
 								<div className="col-lg-8 offset-lg-2">
-									<h1 className="sect-title">Наши уникальные услуги для вас</h1>
+									<h1 className="sect-title">Наши уникальные услуги</h1>
 									<p className="sect-subtitle">Наш сайт станет вашим надёжным и верным помощником для оформления билетов на высокоскоростные поезда "Сапсан".</p>
 									<p className="sect-subtitle">Наши уникальные сервисы помогут вам оформить билеты, даже когда мест уже нет в продаже или продажа ещё не открыта.</p>
 									<p className="sect-subtitle">Счастливые пассажиры уже едут на встречу приключениям, купив билеты у нас. Присоединяйся!</p>

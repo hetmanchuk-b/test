@@ -2323,7 +2323,11 @@ body {
 .recover-pass-accept .modal-header {
   padding: 35px 35px 0; }
 
+.recover-pass-accept .modal-body img{
+  width: auto;
+}
 .recover-pass-accept .modal-body {
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-between;

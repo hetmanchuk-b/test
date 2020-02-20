@@ -8,7 +8,6 @@ export default props => {
       <button type="button" className="btn btn__transparent" onClick={props.signOut}>Выйти</button>
     </Fragment>
   );
-
   return (
     <Fragment>
       <button type="button" className="btn btn__transparent" onClick={() => props.modalOpen('signUp')}>Регистрация</button>
