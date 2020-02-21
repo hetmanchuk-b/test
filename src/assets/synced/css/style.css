@@ -340,18 +340,23 @@ body {
   color: #fff;
   font-size: 13px;
   font-weight: bold;
-  background: #ff6c6c;
+  background: -moz-linear-gradient(45deg, #ff6d6c 1000%, #ffb712 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #ff6d6c 1000%, #ffb712 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #ff6d6c 100%, #ffb712 100%);
   border-radius: 20px;
+  transition: background 0.4s linear;
 }
 
 .btn__main:hover {
   color: #fff;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,ff6d6c+0,ffb712+100 */
-  background: -moz-linear-gradient(45deg, #ff6d6c 0%, #ffb712 100%);
+  background: -moz-linear-gradient(45deg, #ff6d6c 40%, #ffb712 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #ff6d6c 0%, #ffb712 100%);
+  background: -webkit-linear-gradient(45deg, #ff6d6c 40%, #ffb712 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #ff6d6c 0%, #ffb712 100%);
+  background: linear-gradient(45deg, #ff6d6c 40%, #ffb712 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#ffb712', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
@@ -3269,7 +3274,9 @@ body {
 
 .modal form .btn {
   width: 100%;
-  background: #ff6c6c;
+  background: -moz-linear-gradient(45deg, #ff6c6c 100%, #ffb712 100%);
+  background: -webkit-linear-gradient(45deg, #ff6c6c 100%, #ffb712 100%);
+  background: linear-gradient(45deg, #ff6c6c 100%, #ffb712 100%);
   color: #fff;
   padding: 10px 20px;
   border-radius: 20px;
@@ -4311,7 +4318,8 @@ body {
 }
 
 .message-sent {
-  border: 2px dashed #36ce36!important;
+  /*border: 2px dashed #36ce36!important;*/
+  border: none!important;
   padding: 10px 0!important;
   margin-top: 10px;
   border-radius: 10px;
