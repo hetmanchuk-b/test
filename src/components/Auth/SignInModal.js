@@ -1,100 +1,103 @@
-import React, { PureComponent, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React, {PureComponent, Fragment} from 'react';
+import {Link} from 'react-router-dom';
 
 class Modal extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-      validationError: null,
-      passwordType: true
-    };
-  }
-
-  handlePasswordType = () => {
-    this.setState({
-      passwordType: !this.state.passwordType
-    });
-
-    if (!this.state.passwordType) {
-      document.querySelector('#pass').type = "password";
-    } else {
-      document.querySelector('#pass').type = "text";
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            validationError: null,
+            passwordType: true
+        };
     }
-  }
 
-  handleInput = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+    handlePasswordType = () => {
+        this.setState({
+            passwordType: !this.state.passwordType
+        });
 
-  validation = () => {
-    const { email, password } = this.state;
-    let validationError = null;
+        if (!this.state.passwordType) {
+            document.querySelector('#pass').type = "password";
+        } else {
+            document.querySelector('#pass').type = "text";
+        }
+    }
 
-    if ( email.length < 1 ) validationError = 'Введите Ваш email';
+    handleInput = e => {
+        this.setState({[e.target.name]: e.target.value});
+        if (e.target.name === 'email')
+            this.props.updateData(e.target.value);
+    }
 
-    if ( password.length < 1 ) validationError = 'Введите Ваш пароль';
+    validation = () => {
+        const {email, password} = this.state;
+        if (email.length < 1 || password.length < 1){
+            this.setState({validationError: 'Введите Ваш логин и пароль'});
+            return false;
+        } else {
+            this.setState({validationError: null});
+            return true;
+        }
+    }
 
-    if ( validationError === null ) return true;
+    handleSubmit = e => {
+        e.preventDefault();
+        const {email, password} = this.state;
+        if (this.validation()) this.props.signIn({email, password});
 
-    this.setState({ validationError: validationError });
-    return false;
-  }
+    }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const { email, password } = this.state;
+    render() {
+        const {email, password, validationError} = this.state;
+        const error = this.props.error;
+        return (
+            <Fragment>
+                <div className="modal show" id="signInModal">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <button type="button" className="close" onClick={this.props.modalClose}>
+                                <i className="fas fa-times"></i>
+                            </button>
+                            <div className="modal-header">
+                                <h5 className="modal-title">Личный кабинет</h5>
 
-    if ( this.validation() ) this.props.signIn({ email, password });
-  }
-
-  render() {
-    const { email, password, validationError } = this.state;
-    const error = this.props.error;
-
-    return (
-      <Fragment>
-        <div className="modal show" id="signInModal">
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <button type="button" className="close" onClick={this.props.modalClose}>
-                <i className="fas fa-times"></i>
-              </button>
-              <div className="modal-header">
-                <h5 className="modal-title">Личный кабинет</h5>
-
-              </div>
-              <div className="modal-body">
-                <form>
-                  <div className="form-group-wrap">
-                    <div className="form-group">
-                      <input type="text" className="form-control" id="email" placeholder="test@test.ru"
-                        name="email" value={email} onChange={this.handleInput}
-                      />
-                    </div>
-                    <hr/>
-                    <div className="form-group eye-wrap">
-                      <input type="password" className="form-control" id="pass" placeholder="Пароль"
-                        name="password" value={password} onChange={this.handleInput}
-                      />
-                      <span className="eye-icon" onClick={this.handlePasswordType}>
+                            </div>
+                            <div className="modal-body">
+                                <form>
+                                    <div className="form-group-wrap">
+                                        <div className="form-group">
+                                            <input type="text" className="form-control" id="email"
+                                                   placeholder="test@test.ru"
+                                                   name="email" value={email} onChange={this.handleInput}
+                                            />
+                                        </div>
+                                        <hr/>
+                                        <div className="form-group eye-wrap">
+                                            <input type="password" className="form-control" id="pass"
+                                                   placeholder="Пароль"
+                                                   name="password" value={password} onChange={this.handleInput}
+                                            />
+                                            <span className="eye-icon" onClick={this.handlePasswordType}>
                          <i className="fas fa-eye"></i> 
                       </span>
-                    </div>
-                  </div>
-                  <button type="submit" className="btn" onClick={this.handleSubmit}>Войти</button>
+                                        </div>
+                                    </div>
+                                    <button type="submit" className="btn" onClick={this.handleSubmit}>Войти</button>
 
-                  {validationError !== null ? (<p>{validationError}</p>) : null}
-                  {error !== null ? (<p>{error}</p>) : null}
-                </form>
-                <div className="help-btn">
-                  <a className="reg-btn" href="#" onClick={() => this.props.modalOpen('signUp')}>Регистрация</a>
-                  <a className="forgot-pass" href="#" onClick={() => this.props.modalOpen('passwordRestore')}>Забыли пароль?</a>
-                </div>
-              </div>
-              <div className="modal-footer">
-                {/* <p>Вы также можете зайти через свой профиль в социальных сетях</p>
+                                    {validationError !== null ? (
+                                        <p className='pt-2 text-center text-danger'>{validationError}</p>) : null}
+                                    {error !== null ? (<p className='pt-2 text-center text-danger'>{error}</p>) : null}
+                                </form>
+                                <div className="help-btn">
+                                    <a className="reg-btn" href="#"
+                                       onClick={() => this.props.modalOpen('signUp')}>Регистрация</a>
+                                    <a className="forgot-pass" href="#"
+                                       onClick={() => this.props.modalOpen('passwordRestore')}>Забыли пароль?</a>
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                {/* <p>Вы также можете зайти через свой профиль в социальных сетях</p>
                 <div className="social-btn-wrap">
                   <a href="#" className="fb">
                     <svg className="img-fluid" height="512pt" viewBox="0 0 512 512" width="512pt"
@@ -170,20 +173,20 @@ class Modal extends PureComponent {
 
                   </a>
                 </div> */}
-                <p>Нажимая кнопку "Войти" я соглашаюсь с</p>
-                  <div className="bottom-link"> 
-                    <Link to="/conditions" target="_blank">политикой конфиденциальности</Link>
-                    &nbsp;и&nbsp; 
-                    <Link to="/conditions" target="_blank">обработкой персональных данных.</Link>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="overlay show"></div>
-      </Fragment>
-    );
-  }
+                                <p>Нажимая кнопку "Войти" я соглашаюсь с</p>
+                                <div className="bottom-link">
+                                    <Link to="/conditions" target="_blank">политикой конфиденциальности</Link>
+                                    &nbsp;и&nbsp;
+                                    <Link to="/conditions" target="_blank">обработкой персональных данных.</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="overlay show"></div>
+            </Fragment>
+        );
+    }
 }
 
 export default Modal;

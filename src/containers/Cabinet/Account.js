@@ -3,6 +3,7 @@ import {updatePass, update, authorizePayment} from './../../actions/User';
 import Account from './../../components/Cabinet/Account';
 
 const mapStateToProps = state => ({
+    error : state.user.error,
     ...state.user.data,
     message: state.user.message,
     ticketsCount: state.user.reservations.length,
@@ -11,6 +12,7 @@ const mapStateToProps = state => ({
             ? (accumulator + parseFloat(el.amount))
             : accumulator;
     }, 0)
+
 });
 
 export default connect(mapStateToProps, {updatePass, update, authorizePayment})(Account);

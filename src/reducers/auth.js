@@ -20,6 +20,7 @@ export default (state = initialState, action) => {
       return { jwt: action.payload.jwt, modal: null, error: null };
 
     case types.AUTH_ERROR:
+      console.log(action.payload);
       return { modal: state.modal, error: action.payload.error, jwt: null };
 
     case types.SIGN_OUT:

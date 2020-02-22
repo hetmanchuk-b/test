@@ -33,6 +33,10 @@ export default (state = initialState, action) => {
             newState.reservations = action.payload;
             return newState;
 
+        case types.USER_EXIST:
+            newState.error = action.payload;
+            return newState;
+
         default:
             return state;
     }

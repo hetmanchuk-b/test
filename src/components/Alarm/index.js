@@ -34,7 +34,7 @@ class Alarm extends PureComponent
   }
 
   componentDidMount() {
-    if ( this.state.passengers[0] && this.state.passengers[0].email === undefined && this.props.user.email !== null ) {
+    if ( this.state.passengers[0] && this.state.passengers[0].email === undefined && this.props.user.email != null ) {
       this.setState({ passengers: [{
         email: this.props.user.email,
         phone: this.props.user.phone,
@@ -93,6 +93,11 @@ class Alarm extends PureComponent
 
   validation = () => {
     const { passengers, destinationFrom, destinationTo, serviceClass, date } = this.state;
+
+    if (destinationTo === destinationFrom) {
+      this.setState({error: 'Город отправления и город назначения должны быть разными.'});
+      return false;
+    }
 
     if ( destinationFrom === null ) {
       this.setState({ error: 'Выберите станцию отправления.' });

@@ -145,7 +145,11 @@ class Modal extends PureComponent
                       <button type="submit" className="btn reg-btn" onClick={this.handleSubmit}>Зарегистрироваться</button>
 
                       {validationError !== null ? (<p className="signup-error-block">{validationError}</p>) : null}
-                      {error !== null ? (<p className="signup-error-block">{error}</p>) : null}
+                      {error !== null ? (<div className="signup-error-block">
+                            <p>{error}</p>
+                        <a className="" href="#"
+                           onClick={() => this.props.modalOpen('passwordRestore')}>Забыли пароль?</a>
+                      </div>) : null}
                     </form>
                   </div>
                   <div className="modal-footer">

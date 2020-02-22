@@ -6,6 +6,7 @@ class Account extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
+            oldEmail: props.email,
             email: props.email,
             phone: props.phone,
             firstName: props.firstName,
@@ -16,7 +17,7 @@ class Account extends PureComponent {
             confirmPassword: '',
             editPassword: false,
             showToast: false,
-            editPasswordMessage: ''
+            editPasswordMessage: '',
         };
         this.dataSend = false;
 
@@ -26,12 +27,12 @@ class Account extends PureComponent {
         if (this.props.email !== prevProps.email) {
             this.setState({
                 email: this.props.email,
+                oldEmail: this.props.email,
                 phone: this.props.phone,
                 firstName: this.props.firstName,
                 lastName: this.props.lastName,
             });
         }
-
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -45,7 +46,7 @@ class Account extends PureComponent {
                 this.setState({
                     showToast: false,
                 });
-            }, 3000);
+            }, 5000);
         }
     }
 
@@ -88,6 +89,7 @@ class Account extends PureComponent {
 
     handleUpdate = () => {
         this.dataSend = true;
+        console.log(this.props.oldEmail);
         this.props.update({...this.state});
         this.setState({
             edit: false
@@ -95,7 +97,7 @@ class Account extends PureComponent {
     }
 
     render() {
-        const {firstName, lastName, email, phone, oldPassword, newPassword, confirmPassword} = this.state;
+        const {firstName, lastName, email, oldEmail, phone, oldPassword, newPassword, confirmPassword} = this.state;
         const editWrapper = this.state.edit
             ? (
                 <Fragment>
@@ -294,7 +296,8 @@ class Account extends PureComponent {
                         {editPassword}
                     </div>
                 </div>
-                <div className={this.state.showToast ? 'toaster active' : 'toaster'}>{this.props.message}</div>
+                {console.log(this.props)}
+                <div className={this.state.showToast ? this.props.error ? 'bg-danger toaster active' : 'toaster active' : 'toaster'}>{this.props.error ? this.props.error : this.props.message}</div>
             </Fragment>
         );
     }

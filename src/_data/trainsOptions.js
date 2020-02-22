@@ -1,4 +1,5 @@
 export const options = [
+  { value: '', label: 'Любой' },
   { value: '754А', label: '754А' },
   { value: '756А', label: '756А' },
   { value: '760А', label: '760А' },

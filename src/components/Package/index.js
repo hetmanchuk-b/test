@@ -92,6 +92,11 @@ class Tasks extends PureComponent
   validation = () => {
     const { passengers, destinationFrom, destinationTo, serviceClass, date } = this.state;
 
+    if (destinationTo === destinationFrom) {
+      this.setState({error: 'Город отправления и город назначения должны быть разными.'});
+      return false;
+    }
+
     if ( destinationFrom === null ) {
       this.setState({ error: 'Выберите станцию отправления.' });
       return false;

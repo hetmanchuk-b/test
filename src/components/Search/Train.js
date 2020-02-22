@@ -5,18 +5,18 @@ export default props => (
     <div className="search-filter__item">
       <div className="row">
         <div className="col-md-8 d-flex">
-          <div className={props.speedee == props.tripDuration? 'very very__speed' : (props.cheepee == props.minPrice? 'very very__cheap': 'search-filter__item' )}>
+          <div className={props.speedee == props.tripDuration? 'very very__speed' : (props.cheepee == props.minPrice? 'very very__cheap': 'very' )}>
             { props.speedee == props.tripDuration ?
             <div className="text">Самый быстрый</div> : (props.cheepee == props.minPrice? <div className="text">Самый дешевый</div>:  null)}
           </div>
           <div className="col-left">
             <div className="flight">
               <div className="flight__number">
-                <span className="text">{props.number} </span>
+                <span className="text">{props.trainNumber} </span>
                 <span className="icon-star"><i className="fa fa-star" aria-hidden="true"></i></span>
               </div>
               <div className="flight__text">
-                &laquo;{props.name}&raquo;
+                &laquo;{props.trainNumber}&raquo;
                 <span className="desc">эр</span>
                 <span className="desc">дц</span>
               </div>
@@ -94,7 +94,7 @@ export default props => (
           <div className="info-list">
             <div className="info-list__item d-flex j-content-between">
               <div className="col-item">
-                <span className="text">Класс обслуживания</span>
+                <span className="text">Класс</span>
               </div>
               <div className="col-item">
                 <span className="text">Количество мест</span>

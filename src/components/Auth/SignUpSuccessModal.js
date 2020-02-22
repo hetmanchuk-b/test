@@ -11,7 +11,7 @@ export default props => (
           <div className="modal-header">
             <h5 className="modal-title">Успешная регистрация</h5>
           </div>
-          <div className="modal-body">
+          <div className="modal-body pb-3">
             <p>Поздравляем! Вы зарегистрировали личный кабинет в сервисе Sapsan.express!</p>
           </div>
         </div>

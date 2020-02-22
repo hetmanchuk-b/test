@@ -6,8 +6,6 @@ export function notification(type, message) {
 }
 
 export function appError(msg) {
-  console.log('APP ERROR', msg);
-
   return {
     type: 'APP_ERROR_HANDLE',
     payload: { msg }

@@ -15,7 +15,7 @@ export function update(params) {
   return dispatch => {
     axiosDispatch(dispatch, '/users/update', params)
       .then(data => dispatch(fetchDataUpdate(data)))
-      .catch(error => dispatch(appError(error)));
+      .catch(error => dispatch(userExist(error)));
   }
 }
 
@@ -49,6 +49,12 @@ export function fetchDataPassword(data) {
 export function fetchDataPasswordWrong(error) {
   return {
     type: types.USER_FETCH_PASSWORD_WRONG,
+    payload: error
+  };
+}
+export function userExist(error) {
+  return {
+    type: types.USER_EXIST,
     payload: error
   };
 }

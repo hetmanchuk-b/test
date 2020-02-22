@@ -52,7 +52,6 @@ export function handleError(error) {
 
 export function signOut() {
   localStorage.removeItem('jwt');
-
   return { type: types.SIGN_OUT };
 }
 

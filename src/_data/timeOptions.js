@@ -1,4 +1,5 @@
 export const options = [
+  { value: '', label: 'Любое' },
   { value: '00:00', label: '00:00' },
   { value: '01:00', label: '01:00' },
   { value: '02:00', label: '02:00' },

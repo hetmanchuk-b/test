@@ -1,4 +1,5 @@
 const departureTimeOptions = [
+  { value: '', label: 'Любое' },
   { value: '0', label: '00:00' },
   { value: '1', label: '01:00' },
   { value: '2', label: '02:00' },
