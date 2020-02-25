@@ -1299,7 +1299,7 @@ body {
     .inner-page .input__first-name {
       max-width: 160px; }
   .inner-page .btn__main {
-    min-width: 170px; }
+    min-width: 120px; }
   .inner-page.apply-page {
     border: 1px solid #989a9c; }
     .inner-page.apply-page .title {

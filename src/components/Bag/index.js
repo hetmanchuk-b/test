@@ -3,18 +3,19 @@ import Navigation from './../../containers/Navigation/Cabinet';
 import Timer from './../Timer';
 
 class Bag extends PureComponent {
+
   render() {
     const bag = this.props.bag;
 
     return (
-      <Fragment> 
+      <Fragment>
         <Navigation title="Корзина" />
 
-        <div className="cart-header">
-          <div className="container">
-            <h3>Список оформленных билетов</h3>
-          </div>
-        </div>
+        {/*<div className="cart-header">*/}
+        {/*  <div className="container">*/}
+        {/*    <h3>Список оформленных билетов</h3>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
 
         <main className="main bag-view-wrapper">
           {bag.reservations.map(reservation => (
@@ -25,15 +26,13 @@ class Bag extends PureComponent {
                     <div className="title-top">Рейс</div>
                     <div className="title-train">Поезд {reservation.trainNumber} &laquo;Сапсан&raquo;</div>
                     <div className="title-tawn">
-                      {reservation.destinationFrom} 
-                      <span className="icon-item">
-                        <i className="fa fa-arrow-right" aria-hidden="true"></i>
-                      </span>
+                      {reservation.destinationFrom}
+                      <span className="icon-item">&nbsp;<i className="fa fa-arrow-right" aria-hidden="true">&nbsp;</i></span>
                       {reservation.destinationTo}
                     </div>
                     <div className="data">
-                      <span className="text">Отправление:</span>
-                      <span className="data__time">{reservation.time},</span>
+                      <span className="text">Отправление: </span>
+                      <span className="data__time">{reservation.time}, </span>
                       <span className="date">{reservation.date}</span>
                     </div>
                   </div>
@@ -56,6 +55,7 @@ class Bag extends PureComponent {
                     <span className="plus">+</span>
                   </a>
                 </div>
+                <a className="more-info__btn" href="#">Подробнее</a>
                 <div className="more-info active">
                   <div className="passengers-box">
                     <div className="title">Пассажир</div>
@@ -73,7 +73,7 @@ class Bag extends PureComponent {
                     <span className="text">Оплатить за:</span>
                     <button className="btn btn__white btn__icon">
                       <span className="icon">
-                        <img src="img/icons/time-icon.svg" alt="img item" /> 
+                        <img src="img/icons/time-icon.svg" alt="img item" />
                       </span>
                       <Timer seconds={reservation.secondsLeft} />
                     </button>
@@ -88,8 +88,11 @@ class Bag extends PureComponent {
             <div className="text">Итого:</div>
             <div className="price">
               {bag.amount} руб.
-              <button className="btn btn__main" onClick={() => this.props.orderPayment(bag.orderId)}>Оплатить</button>
             </div>
+          </div>
+          <div className="summ-btn__wrap d-flex j-content-end">
+            <button className="btn btn__white" >Очистить корзину</button>
+            <button className="btn btn__main" onClick={() => this.props.orderPayment(bag.orderId)}>Оплатить</button>
           </div>
         </main>
       </Fragment>

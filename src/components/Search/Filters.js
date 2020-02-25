@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import ServiceClass from './../Filters/ServiceClass';
+import ServiceClass from '../Filters/ServiceClass';
 import Price from './../Filters/Price';
 import Time from './../Filters/Time';
 

@@ -335,6 +335,10 @@ body {
   padding: 45px 0 90px;
 }
 
+.btn:hover, .btn:focus{
+
+}
+
 .btn__main {
   padding: 10px 5px;
   color: #fff;
@@ -360,8 +364,8 @@ body {
 
 .btn__transparent {
   border: 1px solid #fff;
-  border-radius: 18px;
-  padding: 10px 20px;
+  border-radius: 20px;
+  padding: 10px 25px;
   color: #fff;
   font-weight: bold;
   font-size: 13px;
@@ -1491,9 +1495,9 @@ body {
   width: 14%;
 }
 
-.search-result .list__title-premium {
-  width: 28%;
-}
+/*.search-result .list__title-premium {*/
+/*  width: 28%;*/
+/*}*/
 
 .search-result .list__title .tooltip-info {
   position: absolute;
@@ -1529,6 +1533,7 @@ body {
 
 .search-result .list__item {
   min-width: 140px;
+  min-height: 200px;
   padding: 15px;
   margin: 10px;
   border: 1px solid #d1d8db;
@@ -1600,6 +1605,7 @@ body {
 
 .icon-wrap .list__item__icon{
   margin: 2px;
+  max-width: 15px;
 }
 
 .search-result .list__item .price {
@@ -1981,8 +1987,22 @@ body {
   max-width: 160px;
 }
 
+.summ-btn__wrap{
+  max-width: 1065px;
+  margin: 40px auto 0;
+  padding: 0 60px;
+}
+
+.summ-btn__wrap .btn__white{
+  margin-right: 10px;
+}
+
+.summ-btn__wrap .btn__main{
+  min-width: 120px;
+}
+
 .inner-page .btn__main {
-  min-width: 170px;
+  min-width: 120px;
 }
 
 .inner-page.apply-page {
@@ -2377,6 +2397,21 @@ body {
   margin-bottom: 40px;
 }
 
+.more-info__btn{
+  font-size: 14px;
+  color: #808285;
+  font-family: 'HelveticaNeueCyr';
+  font-style: italic;
+  border-bottom: 1px dashed #808285;
+  margin-bottom: 10px;
+}
+
+.more-info__btn:hover,
+.more-info__btn.active{
+  color: #ff6c6c;
+  border-bottom: 1px dashed #ff6c6c;
+}
+
 .cart-page .more-info__link {
   display: inline-block;
   font-size: 13px;
@@ -2443,6 +2478,7 @@ body {
 
 .cart-page .more-info.active .passengers-box {
   display: block;
+  margin-top: 10px;
 }
 
 .cart-page .more-info__link {
@@ -2474,6 +2510,12 @@ body {
   margin-right: 10px;
 }
 
+.cart-page .btn-wrap .btn__white:hover{
+  color: #000;
+  border: 1px solid #909294;
+  background-color: #fff;
+}
+
 .cart-page .col-right .text {
   display: inline-block;
   vertical-align: middle;
@@ -2492,7 +2534,7 @@ body {
 .cart-page .checked-link {
   position: absolute;
   top: 50%;
-  right: 40px;
+  right: 12px;
   display: block;
   margin-top: 12px;
   width: 34px;
@@ -2500,7 +2542,7 @@ body {
   text-align: center;
   border: 1px solid #909294;
   border-radius: 50%;
-  transform: rotate(45deg);
+  transform: rotate(45deg) translateY(-50%);
   cursor: pointer;
   transition: 0.2s;
 }
@@ -4497,11 +4539,11 @@ body {
     width: 32%
   }
 
-  .search-result .list__title-economy,
-  .search-result .list__title-business,
-  .search-result .list__title-premium {
-    width: 33%
-  }
+  /*.search-result .list__title-economy,*/
+  /*.search-result .list__title-business,*/
+  /*.search-result .list__title-premium {*/
+  /*  width: 33%*/
+  /*}*/
 }
 
 @media only screen and (max-width: 689px) {
