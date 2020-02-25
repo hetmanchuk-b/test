@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { valueSet, reset } from './../../actions/SearchFilters';
-import Filters from './../../components/Search/Filters';
+import Filters from '../../components/Search/Filters';
 
 const serviceClassesData = trains => {
   let rv = {
