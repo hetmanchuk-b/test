@@ -68,7 +68,7 @@ class Modal extends PureComponent {
                                     <div className="form-group-wrap">
                                         <div className="form-group">
                                             <input type="text" className="form-control" id="email"
-                                                   placeholder="test@test.ru"
+                                                   placeholder="E-mail"
                                                    name="email" value={email} onChange={this.handleInput}
                                             />
                                         </div>

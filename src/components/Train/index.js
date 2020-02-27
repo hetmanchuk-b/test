@@ -51,7 +51,6 @@ class Train extends Component {
         
       } else {
         this.setState({ selectedSeatsCount: selectedSeatsCount - 1 });
-
         this.props.removeSeat(carNumber, seat);
       }
     }

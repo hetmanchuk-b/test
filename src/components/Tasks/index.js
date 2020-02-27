@@ -329,7 +329,7 @@ class Tasks extends PureComponent {
                 </div>
               </div>*/}
 
-                            {/*<div className="box-info rate-type">
+                            {<div className="box-info rate-type">
                 <div className="title">Виды тарифов:</div>
 
                 <div className="desc-info d-flex j-content-between align-items-center">
@@ -382,7 +382,7 @@ class Tasks extends PureComponent {
                     </div>
                   </label>     
                 </div>
-              </div>*/}
+              </div>}
 
                             <div className="add-passengers">
                 <span className="add-passengers__link pointer" onClick={this.passengerAdd}>
