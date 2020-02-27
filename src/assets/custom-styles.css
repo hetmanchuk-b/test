@@ -121,6 +121,9 @@
 }
 
 /* <-- DatePicker --> */
+.react-date-picker__inputGroup{
+  min-width: unset;
+}
 .react-date-picker__inputGroup input {
   color: #fff !important;
 }
@@ -135,7 +138,7 @@
   width: 100%;
 }
 .header__search-result .react-date-picker__wrapper .react-date-picker__inputGroup {
-  padding: 0 20px;
+  padding: 0 5px;
   width: 100%;
 }
 .header__search-result .react-date-picker__wrapper button {

@@ -577,6 +577,10 @@ body {
   color: #fff;
 }
 
+.react-date-picker__button{
+  padding: 4px;
+}
+
 .react-date-picker__button__icon {
   stroke: #fff;
 }
@@ -881,6 +885,7 @@ body {
   color: #ff6c6c;
   border-color: #ff6c6c;
   transition: .3s;
+  margin-right: 10px;
 }
 
 .header__nav-list .btn__transparent {
@@ -989,7 +994,7 @@ body {
 
 .header.header__search-result .header__search {
   width: 100%;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .header.header__search-result .col-item {
@@ -1342,7 +1347,7 @@ body {
 }
 
 .search-result__nav-link {
-  margin-bottom: 5px;
+  margin: 0 10px 10px;
   color: #b2bec3;
 }
 
@@ -1539,6 +1544,7 @@ body {
   border: 1px solid #d1d8db;
   border-radius: 15px;
   transition: all 0.2s ease-in-out;
+  position: relative;
 }
 
 .search-result .list__item-bisiness {
@@ -4062,6 +4068,7 @@ body {
     width: auto;
     background-color: transparent;
     border: 1px solid #fff;
+    margin-right: 10px;
   }
 
   .header__nav-list .btn__transparent:hover {
@@ -4366,27 +4373,10 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width: 1200px) {
-  .list__content {
-    flex-wrap: wrap;
-  }
+  /*.list__content {*/
+  /*  flex-wrap: wrap;*/
+  /*}*/
 
   .search-result .list__item {
     width: 19%;
@@ -4486,6 +4476,10 @@ body {
   .search-result .list__title.list__title-economy .tooltip-info {
     left: 70%;
   }
+
+  .search-result__nav-item{
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 811px) {
@@ -4537,6 +4531,9 @@ body {
 @media only screen and (max-width: 767px) {
   .search-result .list__item {
     width: 32%
+  }
+  .search-result__nav-item{
+    width: 100%;
   }
 
   /*.search-result .list__title-economy,*/
@@ -4732,13 +4729,13 @@ body {
 
   .search-result__nav-link.throw-off {
     width: 100%;
-    margin-top: 10px;
-    padding: 0;
+    padding: 0 15px;
+    text-align: left;
   }
 
   .search-result__nav {
     flex-wrap: wrap;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
   .search-result__nav-content {

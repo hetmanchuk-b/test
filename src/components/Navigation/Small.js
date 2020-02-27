@@ -109,12 +109,12 @@ class Navigation extends PureComponent {
                           ref={this.toRef}
                         />
                       </div>
-                      <div className="col-lg-3 col-sm-6 col-item">
+                      <div className="col-lg-2 col-sm-6 col-item">
                         <div className="title-info">Дата</div>
                         <DatePicker className={dateFrom ? "small-datepicker show" : "small-datepicker"} onChange={date => this.handleSet('dateFrom', date)} value={dateFrom} minDate={dateNow} maxDate={dateNextYear} />
                         {/* <i className="far fa-calendar-alt"></i> */}
                       </div>
-                      <div className="col-lg-3 col-sm-6 col-last col-item">
+                      <div className="col-lg-2 offset-lg-1 col-sm-6 col-last col-item">
                         <div className="title-info">Обратно</div>
                         <DatePicker className={dateTo ? "small-datepicker show" : "small-datepicker"} onChange={date => this.handleSet('dateTo', date)} value={dateTo} minDate={dateFrom ? dateFrom : dateNow} maxDate={dateNextYear} />
                         {/* <i className="far fa-calendar-alt"></i> */}
