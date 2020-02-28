@@ -564,7 +564,7 @@ body {
   position: relative;
   width: 100%;
   margin-bottom: 10px;
-  padding: 6px 20px;
+  padding: 6px 10px;
   font-size: 13px;
   border: 1px solid #fff;
   font-weight: 400;
@@ -1335,6 +1335,22 @@ body {
 .questions .question .card-body {
   font-size: 15px;
   line-height: 1.2;
+}
+
+.card-body .card-body__heading{
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card-body ul.unordered-list{
+  list-style: disc;
+  padding-left: 15px;
+  align: right;
+}
+
+.card-body ol.ordered-list{
+  list-style: decimal;
+  padding-left: 15px;
 }
 
 .search-result__nav {
@@ -4378,6 +4394,9 @@ body {
   /*  flex-wrap: wrap;*/
   /*}*/
 
+  .react-date-picker__wrapper{
+    padding: 6px 10px;
+  }
   .search-result .list__item {
     width: 19%;
     margin-bottom: 15px;
@@ -4455,6 +4474,10 @@ body {
 
   .header__nav-list .react-date-picker__wrapper {
     margin-bottom: 40px;
+  }
+
+  .react-date-picker__wrapper{
+    padding: 6px 20px;
   }
 
   .container {
@@ -4586,11 +4609,6 @@ body {
 }
 
 @media only screen and (max-width: 575px) {
-  .header__datepicker {
-    width: 80%;
-    max-width: 360px;
-    margin: 0 auto !important;
-  }
 
   .search-result__nav-content {
     padding: 0 15px;
