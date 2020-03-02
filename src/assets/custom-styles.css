@@ -462,3 +462,18 @@ g.train-seat.selected {
   stroke: #000 !important;
 }
 /* <!-- Car --> */
+.crumbs-pass-parent {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.crumbs-pass-item{
+  margin-right: 15px;
+  color: #888;
+}
+.crumbs-pass-item.current{
+  color: #ff5722;
+}
+.crumbs-pass-item.done{
+  color: #000;
+}

@@ -5,6 +5,7 @@ import Passengers from './../Passengers';
 import Car from './../Cars';
 import {Helmet} from 'react-helmet';
 import Passenger from "../../containers/Passengers/Passenger";
+import Progress from './../../containers/Search/Progress';
 
 class Train extends Component {
 
@@ -112,9 +113,30 @@ class Train extends Component {
     handlePassengers = () => {
     }
 
+    handleSearch = () => {
+        const {destinationFrom, destinationTo, dateFrom} = this.props;
+        if (destinationFrom === null || destinationTo === null) {
+            return false;
+        }
+        if (dateFrom == null) {
+            this.props.modalOpen('SearchErrorDate');
+            return false;
+        }
+        if (destinationFrom == destinationTo) {
+            this.props.modalOpen('SearchErrorTown');
+            return false;
+        }
+
+        let flag = false;
+        this.props.booking.dateTo !== null ? flag = true : flag = false;
+        this.props.paramSet('isSearchBack', flag);
+        this.props.getList({destinationFrom, destinationTo, date: dateFrom});
+        this.props.history.push('/search');
+    }
+
     render() {
         const {carNumber, carType, availableSeats, selectedSeatsCount, error} = this.state;
-        const {train, selectedSeats} = this.props;
+        const {train, selectedSeats, booking} = this.props;
         const carScheme = (carType !== null)
             ? (<Car
                 carType={carType} availableSeats={availableSeats} seatSelect={this.seatSelect}
@@ -128,14 +150,20 @@ class Train extends Component {
         const passengers = ((selectedSeatsCount !== 0)
             ? (
                 <div>
-                   Выбрано мест - {selectedSeatsCount}. Места - &nbsp;
+                    Выбрано мест - {selectedSeatsCount}. Места - &nbsp;
                     {Object.keys(selectedSeats).map(car =>
                         Object.keys(selectedSeats[car]).map((seat, i, arr) => (
-                            arr.length - 1 === i? seat + '.' : seat + ', '
+                            arr.length - 1 === i ? seat + '.' : seat + ', '
                         ))
                     )}
                     <div className="btn-wrap text-center">
-                        <button className="btn btn__main" onClick={this.handlePassengers}>Перейти к вводу данных пасажиров.</button>
+                        {!booking.isSearchBack || booking.tep === 3 ? (
+                            <button className="btn btn__main" onClick={this.handlePassengers}>Перейти к вводу данных
+                                пасажиров.</button>
+                        ) : (
+                            <button className="btn btn__main" onClick={this.handleSearch}>Перейти к выбору поезда и мест
+                                назад.</button>
+                        )}
                     </div>
                 </div>
 
@@ -149,6 +177,7 @@ class Train extends Component {
                 <Helmet>
                     <title>Поезд: {train.destinationFromName} > {train.destinationToName}</title>
                 </Helmet>
+                <Progress/>
                 <div className="inner-page buy-ticket-page">
                     <div className="go-back-btn" onClick={event => this.handleGoBack(event)}>Назад</div>
                     <div className="form">

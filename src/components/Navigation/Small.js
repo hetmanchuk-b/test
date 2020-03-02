@@ -19,15 +19,21 @@ class Navigation extends PureComponent {
         const {destinationFrom, destinationTo, dateFrom, dateTo} = this.props.booking;
         let params = {};
         this.props.paramSet(key, value);
-        this.props.paramSet('isSearchBack', false);
+
+        setTimeout(() => {
+        let flag = false;
+        this.props.booking.dateTo !== null ? flag = true : flag = false;
+        this.props.paramSet('isSearchBack', flag);
+
+
         params = {
             destinationFrom: (key === 'destinationFrom') ? value : destinationFrom,
             destinationTo: (key === 'destinationTo') ? value : destinationTo,
             date: (key === 'dateFrom') ? value : dateFrom
         };
-        if (key === 'dateFrom') {
+
             this.props.getList(params);
-        }
+        } , 100)
     }
 
     toggleMenuHandler = () => {

@@ -5,11 +5,12 @@ import Loader from 'react-loaders';
 import Filters from './../../containers/Search/Filters';
 import Train from './Train';
 import Empty from './Empty';
-import Progress from './Progress';
+import Progress from './../../containers/Search/Progress';
 import {Helmet} from 'react-helmet';
 
 class Search extends PureComponent {
     handleClick = params => () => {
+        this.props.paramSet('step', 1);
         this.props.paramSet('trainNumber', params.trainNumber);
         this.props.getItem(params);
         this.props.history.push('/train');
@@ -36,12 +37,15 @@ class Search extends PureComponent {
                         {(!loader && trains.length === 0) ? (<Empty/>) : null}
                         <Loader type="line-scale-pulse-out" active={loader}/>
                         <div className="search-result">
+                            { Object.keys(trains).length != 0 &&
+                                <Progress/>
+                            }
                             {trains.map((el, i) => (<Train key={i} {...el} handleClick={this.handleClick({
                                 trainNumber: el.trainNumber,
                                 destinationFrom: el.destinationCodeFrom,
                                 destinationTo: el.destinationCodeTo,
                                 date: el.date,
-                            })}  speedee={speedee} cheepee={cheepee}/>))}
+                            })} speedee={speedee} cheepee={cheepee}/>))}
                         </div>
                     </div>
                 </main>

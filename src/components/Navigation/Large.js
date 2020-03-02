@@ -37,8 +37,9 @@ class Navigation extends PureComponent {
             return false;
         }
 
-
-        this.props.paramSet('isSearchBack', false);
+        let flag = false;
+        this.props.booking.dateTo !== null ? flag = true : flag = false;
+        this.props.paramSet('isSearchBack', flag);
         this.props.getList({destinationFrom, destinationTo, date: dateFrom});
         this.props.history.push('/search');
     }

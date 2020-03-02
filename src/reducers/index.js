@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import searchFilters from './searchFilters';
 import passengers from './passengers';
 import booking from './booking';
+import steps from './steps';
 import cities from './cities';
 import trains from './trains';
 import train from './train';
@@ -15,6 +16,7 @@ export default combineReducers({
   passengers,
   booking,
   cities,
+  steps,
   trains,
   train,
   user,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" uploadOnCheckin="ca964acf-6111-4eaf-b976-d9ef0091c051">
+  <component name="PublishConfigData" persistUploadOnCheckin="false">
     <serverData>
       <paths name="195.24.66.80">
         <serverdata>
@@ -9,7 +9,20 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="Webnauts">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="hhhh">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="195.24.66.80" />
   </component>
 </project>
