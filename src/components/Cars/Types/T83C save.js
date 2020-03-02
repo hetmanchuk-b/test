@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default props => {
-  const { handleClick, availableSeats, selectedSeats } = props;
+	const {handleEndHover, handleHover, handleClick, availableSeats, selectedSeats} = props;
   
   return (
 		<svg version="1.1" id="Layer_1" pointerEvents="bounding-box" xmlnssvg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1140 306.8" style={{enableBackground:"new 0 0 1140 306.8"}} xmlSpace="preserve">

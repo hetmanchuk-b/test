@@ -9,7 +9,6 @@ class Passengers extends Component
 
   render() {
     const selectedSeats = this.props.selectedSeats;
-
     return (
       <Fragment>
         {Object.keys(selectedSeats).map(car =>

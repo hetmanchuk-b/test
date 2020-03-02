@@ -25,6 +25,9 @@ class Navigation extends PureComponent {
 
     handleSearch = () => {
         const {destinationFrom, destinationTo, dateFrom} = this.props.booking;
+        if (destinationFrom === null || destinationTo  === null ){
+            return false;
+        }
         if (dateFrom == null) {
             this.props.modalOpen('SearchErrorDate');
            return false;
@@ -33,6 +36,7 @@ class Navigation extends PureComponent {
             this.props.modalOpen('SearchErrorTown');
             return false;
         }
+
 
         this.props.paramSet('isSearchBack', false);
         this.props.getList({destinationFrom, destinationTo, date: dateFrom});
@@ -125,8 +129,7 @@ class Navigation extends PureComponent {
                             <div className="towns ">
                                 <a href="#" onClick={() => this.handleSet('destinationFrom', '2000000')}>Москва</a>
                                 <a href="#" onClick={() => this.handleSet('destinationFrom', '2004600')}>Тверь</a>
-                                <a href="#"
-                                   onClick={() => this.handleSet('destinationFrom', '2004000')}>Санкт-Петербург</a>
+                                <a href="#" onClick={() => this.handleSet('destinationFrom', '2004000')}>Санкт-Петербург</a>
                             </div>
                             <div className="swap"><a href="#" onClick={event => this.handleDestinationSwap(event)}
                                                      className="swap-btn"><img src="img/icons/search-arrows.png"

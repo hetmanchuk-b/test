@@ -92,8 +92,6 @@ class Contacts extends PureComponent {
     fillInputs() {
         const userFirstName = this.props.data.user.data.firstName;
         const userLastName = this.props.data.user.data.lastName;
-        console.log(111);
-        console.log(this.props);
         const userPhone = this.props.data.user.data.phone;
         const userEmail = this.props.data.user.data.email;
 

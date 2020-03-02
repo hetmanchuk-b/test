@@ -89,7 +89,6 @@ class Account extends PureComponent {
 
     handleUpdate = () => {
         this.dataSend = true;
-        console.log(this.props.oldEmail);
         this.props.update({...this.state});
         this.setState({
             edit: false
@@ -296,7 +295,6 @@ class Account extends PureComponent {
                         {editPassword}
                     </div>
                 </div>
-                {console.log(this.props)}
                 <div className={this.state.showToast ? this.props.error ? 'bg-danger toaster active' : 'toaster active' : 'toaster'}>{this.props.error ? this.props.error : this.props.message}</div>
             </Fragment>
         );

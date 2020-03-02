@@ -1,5 +1,6 @@
 import React from 'react';
 import * as time from './../../utility/time';
+
 export default props => (
    <section className="search-filter pointer" onClick={props.handleClick}>
     <div className="search-filter__item">

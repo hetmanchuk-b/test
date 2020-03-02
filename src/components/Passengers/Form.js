@@ -107,11 +107,12 @@ class Form extends Component
   render() {
     const { title = null, passenger = {}, passengers = [], saveOption = false, selectSavedOption = false, handleRemove = null, error = null } = this.props;
     const { email, phone, lastName, firstName, middleName, documentType, nationality, gender, documentNumber, birthdate, rzhdBonus, universalRzhdCard, businessTravel } = passenger;
-
+    const price = passenger.price ? passenger.price : null;
     return (
       <div className="inner-page apply-page">
         <div className="form train-form">
-          {title ? ( <div className="title">{title}</div>) : null}
+          {title ? ( <div className="title">{title} {price && <span className="price">Цена: {price} руб.</span>} </div>) : null}
+
           {handleRemove === null ? null : (
             <div className="deletePassenger" onClick={this.props.handleRemove}>
               <span>&times;</span>

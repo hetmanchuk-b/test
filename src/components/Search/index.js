@@ -5,6 +5,7 @@ import Loader from 'react-loaders';
 import Filters from './../../containers/Search/Filters';
 import Train from './Train';
 import Empty from './Empty';
+import Progress from './Progress';
 import {Helmet} from 'react-helmet';
 
 class Search extends PureComponent {

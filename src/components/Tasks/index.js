@@ -12,7 +12,6 @@ import {Helmet} from 'react-helmet';
 class Tasks extends PureComponent {
     constructor(props) {
         super(props);
-        console.log('PROPS', props);
         this.state = {
             trainNumber: '',
             destinationFrom: null,
@@ -306,7 +305,6 @@ class Tasks extends PureComponent {
                                         saveOption={true}
                                         selectSavedOption={true}
                                         fieldUpdate={this.passengerUpdate(i)}
-                                        handleRemove={this.passengerRemove(i)}
                                         title={`Пассажир № ${i + 1}:`}
                                         key={i}
                                     />

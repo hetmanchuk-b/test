@@ -8,7 +8,6 @@ function Tickets(props) {
   const [refundId, setRefundId] = useState(null);
 
   const handleConfirmModal = (toggler, id) => {
-    console.log(props);
     setConfirm(toggler);
     setRefundId(id);
   }

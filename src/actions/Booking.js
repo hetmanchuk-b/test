@@ -48,3 +48,10 @@ export function seatsClear() {
     type: types.BOOKING_SEATS_CLEAR
   }
 }
+
+export function bookingStep( step ) {
+  return {
+    type: types.BOOKING_SET_STEP,
+    payload: { step }
+  }
+}
